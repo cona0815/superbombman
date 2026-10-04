@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v4.6  2026-10-04  |  大橋國小  |  v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v4.7  2026-10-04  |  大橋國小  |  v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v4.6｜大橋國小</title>
+<title>成語炸彈超人 3D v4.7｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -321,9 +321,24 @@
   body.ofull #hud .pcard{background:linear-gradient(180deg,rgba(63,174,63,.62),rgba(44,138,44,.62)); border-color:rgba(255,255,255,.7);}
   body.ofull #hud .raceboard{background:rgba(8,24,36,.42); border-color:rgba(255,255,255,.35);}
   body.ofull #hud .topbar .chip{opacity:.88;}
-  body.ofull #hud .side{width:150px; top:58px;}
   body.ofull #hud .keyhint{background:rgba(0,0,0,.32);}
   body.ofull #feed{top:56px;} body.ofull .fline{background:rgba(8,24,36,.6);}
+  /* v4.7 定向越野：左側改成細長條，不再擋住地圖 */
+  body.mode-orient #hud .side{left:8px; top:58px; bottom:10px; width:112px; gap:6px; padding:6px; box-sizing:border-box; overflow:hidden;
+    background:rgba(8,24,36,.4); backdrop-filter:blur(3px); border:2px solid rgba(255,255,255,.35); border-radius:14px;}
+  body.mode-orient #hud .pcard{padding:5px 6px; border-radius:10px;}
+  body.mode-orient #hud .pcard .row1{gap:4px;}
+  body.mode-orient #hud .pcard .face{width:22px; height:22px;}
+  body.mode-orient #hud .pcard .pname{font-size:12px; max-width:30px;}
+  body.mode-orient #hud .pcard .pscore{white-space:nowrap; font-size:12.5px; padding:0 5px; border-radius:9px;}
+  body.mode-orient #hud .pcard .pups{flex-direction:column; gap:3px; margin-top:5px;}
+  body.mode-orient #hud .pcard .pup{font-size:11px; padding:1px 5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  body.mode-orient #hud .raceboard{margin-top:0; background:none !important; border:none; padding:0; backdrop-filter:none; flex:1; overflow:hidden;}
+  body.mode-orient .rbh{font-size:12px;}
+  body.mode-orient .rbr{gap:4px; font-size:12px; padding:2px 1px;}
+  body.mode-orient .rbr span{width:12px; font-size:11px;}
+  body.mode-orient .rbr em{font-size:11px;}
+  body.mode-orient #hud .keyhint{left:128px;}
   .modes{flex-wrap:nowrap; gap:8px;} .modes .opt{min-width:0; flex:1 1 0; padding:10px 4px; font-size:15px; white-space:nowrap;}
   .modes .opt small{font-size:11px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
   @media (max-width:820px){ .modes{gap:6px;} .modes .opt{font-size:13.5px; padding:9px 2px;} .modes .opt small{font-size:10px;} }
@@ -368,9 +383,26 @@
           <label>🗺️ 定向越野地圖</label>
           <div class="opts modes" id="optMap">
             <div class="opt sel" data-v="classic">🌈 五彩大地<small>平坦・新手</small></div>
-            <div class="opt" data-v="lake">🏞️ 湖泊公園<small>四座湖・木橋</small></div>
+            <div class="opt" data-v="lake">🏞️ 湖泊公園<small>兩座湖・木橋</small></div>
             <div class="opt" data-v="river">🌊 大河蜿蜒<small>找橋過河</small></div>
             <div class="opt" data-v="ocean">🏝️ 海洋群島<small>小心落海</small></div>
+          </div>
+          <label style="margin-top:10px">🤖 電腦人數</label>
+          <div class="opts modes" id="optOBots">
+            <div class="opt" data-v="0">0<small>自己計時</small></div>
+            <div class="opt" data-v="1">1 人</div>
+            <div class="opt sel" data-v="3">3 人</div>
+            <div class="opt" data-v="5">5 人</div>
+            <div class="opt" data-v="7">7 人</div>
+            <div class="opt" data-v="10">10 人</div>
+          </div>
+          <label style="margin-top:10px">🚩 成語旗子數量</label>
+          <div class="opts modes" id="optOFlags">
+            <div class="opt" data-v="4">4 面</div>
+            <div class="opt" data-v="6">6 面</div>
+            <div class="opt sel" data-v="8">8 面</div>
+            <div class="opt" data-v="10">10 面</div>
+            <div class="opt" data-v="12">12 面</div>
           </div>
         </div>
         <div class="locktip hidden" id="snowLockTip">🔒 雪球大作戰、成語大亂鬥要先在下方「我的人物」上傳並儲存你自己做的人物，才能開啟喔！</div>
@@ -534,6 +566,7 @@
 </div>
 
 <script>
+
 /* ============================================================
    成語資料：三上(1-20) 三下(21-40) 四上(41-70) 四下(71-100)
    ============================================================ */
@@ -705,8 +738,10 @@ function buildLevels(chapIndex){
   }
   return list;
 }
+
 </script>
 <script>
+
 
 /* ============================================================
    成語炸彈超人 — 遊戲引擎
@@ -1819,6 +1854,9 @@ multiOptGroup('optChapter', arr=>{ G.chapters = arr.length?arr:[0]; });
 optGroup('optMode', v=>{ G.difficulty=v; });
 G.orientMap='classic';
 optGroup('optMap', v=>{ G.orientMap=v; });
+G.orientBots=3; G.orientFlags=8;
+optGroup('optOBots', v=>{ G.orientBots=parseInt(v); });
+optGroup('optOFlags', v=>{ G.orientFlags=parseInt(v); });
 /* 遊戲模式：雪球大作戰、成語大亂鬥需先上傳並儲存自己的人物才能開啟 */
 const NEED_CHAR = v=>v==='snow'||v==='brawl';
 document.querySelectorAll('#optGame .opt').forEach(o=>{
@@ -1838,7 +1876,7 @@ document.querySelectorAll('#optGame .opt').forEach(o=>{
     o.classList.add('sel'); G.gameMode=o.dataset.v;
     const mf=document.getElementById('mapField'); if(mf) mf.style.display = G.gameMode==='orient' ? '' : 'none';
     const nf=document.getElementById('diffLabel');
-    if(nf) nf.textContent = G.gameMode==='snow' ? '🎮 難度（雪人對手）' : G.gameMode==='brawl' ? '🎮 難度（電腦對手人數與強度）' : G.gameMode==='orient' ? '🎮 難度（一起比賽的電腦人數與速度・純收集＝自己計時挑戰）' : '🎮 難度（敵人）';
+    if(nf) nf.textContent = G.gameMode==='snow' ? '🎮 難度（雪人對手）' : G.gameMode==='brawl' ? '🎮 難度（電腦對手人數與強度）' : G.gameMode==='orient' ? '🎮 電腦跑步速度' : '🎮 難度（敵人）';
     const tip=document.getElementById('snowLockTip'); if(tip) tip.classList.add('hidden');
   });
 });
@@ -3146,7 +3184,7 @@ function brawlFeed(html,cls){
 })();
 
 /* ============================================================
-   🚩 成語定向越野   v4.2  (2026-10-04)  無障礙物、速度加快
+   🚩 成語定向越野   v4.7  (2026-10-04)  自選電腦人數與旗子數量、地圖簡化
    - 在大亂鬥的五地形大地圖上，依照 1 → 8 的順序通過所有旗子，最快跑完的人獲勝
    - 每一面旗子對應一個本關成語，通過時顯示成語與解釋
    - 金色箭頭指向下一面旗；下一面旗會有光柱，遠遠就看得到
@@ -3172,29 +3210,27 @@ function buildOrientMap(id){
   const ell=(x0,y0,rx,ry,fn)=>{ for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++){ const a=(c-x0)/rx, b=(r-y0)/ry; if(a*a+b*b<1) fn(c,r); } };
   const water=(c,r)=>{ if(c>0&&r>0&&c<COLS-1&&r<ROWS-1) set(c,r,T_WATER); };
   const bridge=(c,r,dir)=>{ if(inMap(c,r) && G.grid[r][c]===T_WATER){ G.grid[r][c]=T_EMPTY; G.deco[r][c]=dir; } };
+  // v4.7：地圖簡化約一半（水域減少、河道平緩、橋變多）
   if(id==='lake'){
-    ell(9,7,5.4,3.4,water); ell(26,17.5,5.8,3.6,water); ell(25,5.5,3.8,2.5,water); ell(7.5,19,4.4,3,water); ell(17,20.5,2.6,1.6,water);
+    ell(9.5,7,5,3.1,water); ell(25.5,17.5,5.2,3.2,water);
     for(let c=1;c<COLS-1;c++) bridge(c,7,'bridgeH');          // 穿過左上湖的木橋
-    for(let r=1;r<ROWS-1;r++) bridge(26,r,'bridgeV');         // 穿過右下湖的木橋
+    for(let r=1;r<ROWS-1;r++) bridge(25,r,'bridgeV');         // 穿過右下湖的木橋
   }else if(id==='river'){
     let prevY=null;
     for(let c=0;c<COLS;c++){
-      const y=Math.round(12+6.2*Math.sin(c/COLS*Math.PI*2*1.15+.6));
+      const y=Math.round(9+2.4*Math.sin(c/COLS*Math.PI*2));
       const lo=Math.min(y,prevY===null?y:prevY)-1, hi=Math.max(y,prevY===null?y:prevY)+1;
       for(let r=lo;r<=hi;r++) water(c,r);
       prevY=y;
     }
-    ell(29,20.5,3.2,2.2,water); ell(5,4,2.8,1.8,water);
-    [4,11,17,24,31].forEach(c=>{ for(let r=1;r<ROWS-1;r++) bridge(c,r,'bridgeV'); });
+    [4,9,14,20,25,30].forEach(c=>{ for(let r=1;r<ROWS-1;r++) bridge(c,r,'bridgeV'); });
   }else if(id==='ocean'){
     for(let r=0;r<ROWS;r++) for(let c=0;c<COLS;c++) G.grid[r][c]=T_WATER;     // 四周全是海（沒有圍牆）
     const land=(c,r)=>set(c,r,T_EMPTY);
-    ell(17,12,7.6,4.9,land);                                  // 主島
-    ell(5,5,4.3,3.2,land); ell(29,5,4.3,3.2,land); ell(5,19.5,4.3,3.2,land); ell(29,19.5,4.3,3.2,land);
-    ell(17,2.6,3.4,1.7,land); ell(17,22.4,3.4,1.7,land);
-    const bh=(r0,c0,c1)=>{ for(let r=r0;r<=r0+1;r++) for(let c=c0;c<=c1;c++) bridge(c,r,'bridgeH'); };
-    const bv=(c0,r0,r1)=>{ for(let c=c0;c<=c0+1;c++) for(let r=r0;r<=r1;r++) bridge(c,r,'bridgeV'); };
-    bh(7,7,13); bh(7,21,27); bh(16,7,13); bh(16,21,27); bv(16,3,8); bv(16,16,21);
+    ell(17,12,9,5.8,land);                                    // 大主島
+    ell(5.5,5.5,4.8,3.6,land); ell(28.5,5.5,4.8,3.6,land); ell(5.5,19,4.8,3.6,land); ell(28.5,19,4.8,3.6,land);
+    const bh=(r0,c0,c1)=>{ for(let r=r0;r<=r0+2;r++) for(let c=c0;c<=c1;c++) bridge(c,r,'bridgeH'); };
+    bh(6,8,12); bh(6,22,26); bh(16,8,12); bh(16,22,26);
   }
 }
 const ORIENT_LIMIT = 300;      // 5 分鐘內要跑完
@@ -3207,8 +3243,20 @@ function orientSetup(lvl){
   for(let r=1;r<ROWS-1;r++) for(let c=1;c<COLS-1;c++){ G.grid[r][c]=T_EMPTY; G.deco[r][c]=null; }
   G.omap = ORIENT_MAPS[G.orientMap] ? G.orientMap : 'classic';
   buildOrientMap(G.omap);
-  const cfg=ORIENT_DIFF[G.difficulty]||ORIENT_DIFF.easy;
+  let cfg=ORIENT_DIFF[G.difficulty]||ORIENT_DIFF.easy;
+  if(cfg.spd===0) cfg=ORIENT_DIFF.easy;                       // 速度選「純收集」但有電腦時，用簡單速度
+  const NB=Math.max(0,Math.min(10, G.orientBots==null?3:G.orientBots));
+  // ---- 成語旗子數量（自選）：本關不夠就從章節裡補 ----
+  const NF=Math.max(3,Math.min(12, G.orientFlags||8));
+  let pool=lvl.slice(0,NF);
+  if(pool.length<NF){
+    const more=shuffle((G.levels||[]).flat().filter(i=>!pool.includes(i)));
+    pool=pool.concat(more.slice(0,NF-pool.length));
+    if(pool.length<NF) pool=pool.concat(shuffle(IDIOMS.filter(i=>!pool.some(q=>q.w===i.w))).slice(0,NF-pool.length));
+  }
+  lvl=pool;
   const start={c:17,r:15};
+  for(let r=start.r-1;r<=start.r+2;r++) for(let c=start.c-3;c<=start.c+3;c++) if(inMap(c,r)&&G.grid[r][c]===T_WATER) G.grid[r][c]=T_EMPTY;   // 起點附近一定是陸地
   clearAround(start.c,start.r,1); clearAround(start.c,start.r+1,1);
   computeReach();
   // ---- 放旗子：路線走遍不同地形、每面之間有一段距離 ----
@@ -3220,7 +3268,7 @@ function orientSetup(lvl){
     for(let i=0;i<160;i++){
       const s=pick(cand);
       const d=Math.abs(s.c-prev.c)+Math.abs(s.r-prev.r);
-      if(flags.some(f=>Math.abs(f.c-s.c)+Math.abs(f.r-s.r)<6)) continue;
+      if(flags.some(f=>Math.abs(f.c-s.c)+Math.abs(f.r-s.r)<(N>9?4:6))) continue;
       if(Math.abs(s.c-start.c)+Math.abs(s.r-start.r)<5) continue;
       const bio=G.biome[s.r][s.c];
       let sc=-Math.abs(d-12)*1.0 + (bio!==prevBio?6:0) + Math.random()*3;
@@ -3245,7 +3293,7 @@ function orientSetup(lvl){
     name:(window.CHAR&&window.CHAR.saved&&window.CHAR.name)||'你', hitT:0, fireT:0, stunT:0, boostT:0, fallT:0, next:0, finishT:null, id:0});
   const lanes=[-1,1,-2,2,-3,3,0];
   G.bots=[];
-  for(let k=0;k<cfg.bots;k++){
+  for(let k=0;k<NB;k++){
     const dc=lanes[k%lanes.length], dr=1+Math.floor(k/lanes.length);
     let c=start.c+dc, r=start.r+(k%2?0:dr);
     if(G.grid[r]===undefined||G.grid[r][c]!==T_EMPTY){ c=start.c; r=start.r; }
@@ -3423,7 +3471,7 @@ function orientUpdate(dt){
 }
 
 /* ---------- 成績畫面 ---------- */
-function bestKey(){ return 'bomberIdiom.orient.'+(G.chapters||[]).join('-')+'.'+G.levelIndex+'.'+G.difficulty; }
+function bestKey(){ return 'bomberIdiom.orient.'+(G.chapters||[]).join('-')+'.'+G.levelIndex+'.'+G.difficulty+'.'+G.omap+'.f'+G.flags.length+'.b'+G.bots.length; }
 function orientResult(timeout){
   const p=G.players[0]; if(!timeout && (!p || p.finishT===null)) return;
   const rk=orientRanking(), rank=rk.indexOf(p)+1;
@@ -3483,6 +3531,7 @@ G.respawnQ=[];
 
 </script>
 <script type="module">
+
 /* ============================================================
    成語炸彈超人 3D 渲染器 + 自製人物系統   v4.0  (2026-09-29)  ＋大亂鬥大地圖、武器、跟隨鏡頭
    - 讀取遊戲狀態 window.GAME.G，每幀繪出 3D 場景（遊戲邏輯不變）
@@ -4504,17 +4553,20 @@ const clothTex = {};
 function flagClothTex(fl, state) {
   const k = fl.n + state + fl.idiom.w;
   return clothTex[k] || (clothTex[k] = canvasTex(640, 256, (x, w, h) => {
-    const bg = state === 'done' ? ['#b7bec7', '#9aa3ad'] : state === 'next' ? ['#ffe08a', '#ffc12e'] : ['#ff6b5c', '#e8463c'];
-    const gr = x.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, bg[0]); gr.addColorStop(1, bg[1]); x.fillStyle = gr; x.fillRect(0, 0, w, h);
-    x.fillStyle = 'rgba(255,255,255,.18)'; x.fillRect(0, 0, w, 14); x.fillStyle = 'rgba(0,0,0,.12)'; x.fillRect(0, h - 14, w, 14);
-    // 左邊號碼圓牌
-    x.fillStyle = 'rgba(255,255,255,.92)'; x.beginPath(); x.arc(78, h / 2, 56, 0, 7); x.fill();
-    x.fillStyle = state === 'next' ? '#a86a00' : state === 'done' ? '#7a828c' : '#c0392b';
-    x.font = '900 74px Fredoka, "Noto Sans TC", sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(String(fl.n), 78, h / 2 + 5);
-    // 成語
-    x.font = '900 112px "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif';
-    x.lineJoin = 'round'; x.lineWidth = 12; x.strokeStyle = state === 'next' ? 'rgba(120,70,0,.85)' : 'rgba(0,0,0,.45)';
-    x.strokeText(fl.idiom.w, 388, h / 2 + 6); x.fillStyle = '#ffffff'; x.fillText(fl.idiom.w, 388, h / 2 + 6);
+    // v4.7：成語改白底深色粗字，遠看也清楚
+    const edge = state === 'done' ? '#8d96a0' : state === 'next' ? '#f5a700' : '#e8463c';
+    x.fillStyle = edge; x.fillRect(0, 0, w, h);
+    // 左邊號碼
+    x.fillStyle = '#ffffff'; x.beginPath(); x.arc(76, h / 2, 58, 0, 7); x.fill();
+    x.fillStyle = edge === '#f5a700' ? '#8a5200' : edge;
+    x.font = '900 80px Fredoka, "Noto Sans TC", sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(String(fl.n), 76, h / 2 + 5);
+    // 成語白底
+    const rx = 150, ry = 18, rw = w - rx - 16, rh = h - 36, rr = 26;
+    x.fillStyle = state === 'next' ? '#fff8dc' : state === 'done' ? '#eef0f2' : '#ffffff';
+    x.beginPath(); x.moveTo(rx + rr, ry); x.arcTo(rx + rw, ry, rx + rw, ry + rh, rr); x.arcTo(rx + rw, ry + rh, rx, ry + rh, rr); x.arcTo(rx, ry + rh, rx, ry, rr); x.arcTo(rx, ry, rx + rw, ry, rr); x.fill();
+    x.font = '900 118px "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", sans-serif';
+    x.fillStyle = state === 'done' ? '#6b737c' : '#151515';
+    x.fillText(fl.idiom.w, rx + rw / 2, h / 2 + 6, rw - 24);
   }));
 }
 function buildFlag(fl) {
@@ -4522,8 +4574,8 @@ function buildFlag(fl) {
   const base = new THREE.Mesh(new THREE.CylinderGeometry(.26, .32, .12, 20), smat(0x8f98a3, { roughness: .8 })); base.position.y = .06;
   const pole = new THREE.Mesh(new THREE.CylinderGeometry(.04, .04, 2.1, 10), pmat('#f2f2f2', { metalness: .5, roughness: .3 })); pole.position.y = 1.1;
   const knob = new THREE.Mesh(new THREE.SphereGeometry(.08, 14, 10), pmat('#ffcf3f', { metalness: .7, roughness: .25 })); knob.position.y = 2.18;
-  const clothG = new THREE.PlaneGeometry(1.7, .68, 16, 1); clothG.translate(.85, 0, 0);
-  const cloth = new THREE.Mesh(clothG, new THREE.MeshStandardMaterial({ map: flagClothTex(fl, 'later'), side: THREE.DoubleSide, roughness: .75, emissive: new THREE.Color('#ffffff'), emissiveMap: flagClothTex(fl, 'later'), emissiveIntensity: .25 }));
+  const clothG = new THREE.PlaneGeometry(2.1, .84, 16, 1); clothG.translate(1.05, 0, 0);
+  const cloth = new THREE.Mesh(clothG, new THREE.MeshBasicMaterial({ map: flagClothTex(fl, 'later'), side: THREE.DoubleSide, toneMapped: false }));
   cloth.position.set(.04, 1.78, 0); cloth.rotation.x = -.42;   // 旗布稍微朝鏡頭傾斜，成語比較好讀
   const beam = new THREE.Mesh(new THREE.CylinderGeometry(.3, .42, 9, 20, 1, true), new THREE.MeshBasicMaterial({ color: 0xffbe2e, transparent: true, opacity: .2, depthWrite: false })); beam.position.y = 4.5;   // 柔和金色光柱（不疊加發光，避免近看變成白光）
   const ring = new THREE.Mesh(new THREE.RingGeometry(.5, .64, 40), new THREE.MeshBasicMaterial({ color: 0xffbe2e, transparent: true, opacity: .75, depthWrite: false })); ring.rotation.x = -Math.PI / 2; ring.position.y = .03;
@@ -4552,7 +4604,7 @@ function syncBrawl(dt, me) {
     const state = idx < nx ? 'done' : idx === nx ? 'next' : 'later';
     if (u.state !== state) {
       u.state = state;
-      const tx = flagClothTex(fl, state); u.cloth.material.map = tx; u.cloth.material.emissiveMap = tx; u.cloth.material.needsUpdate = true;
+      const tx = flagClothTex(fl, state); u.cloth.material.map = tx; u.cloth.material.needsUpdate = true;
       u.beam.visible = u.ring.visible = state === 'next';
       u.badge.visible = state !== 'done'; u.badge.material.map = flagBadge(fl.n, state === 'next'); u.badge.material.needsUpdate = true;
     }
@@ -4641,7 +4693,7 @@ function safeArea(w, h) {
   const vis = e => e && e.offsetParent !== null && getComputedStyle(e).display !== 'none';
   const tb = document.querySelector('#hud .topbar'), sd = document.getElementById('sideboard'), cl = document.querySelector('#hud .checklist');
   const full = document.body.classList.contains('ofull');
-  if (full) { m.l = 6; m.t = 6; m.b = 6; if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 8; m.r = Math.min(m.r, w * .24); return m; }
+  if (full) { m.l = 6; m.t = 6; m.b = 6; if (vis(sd) && sd.children.length) m.l = Math.min(sd.getBoundingClientRect().right - cr.left + 6, w * .16); if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 8; m.r = Math.min(m.r, w * .24); return m; }
   if (vis(tb)) m.t = tb.getBoundingClientRect().bottom - cr.top + 8;
   if (vis(sd) && sd.children.length) m.l = sd.getBoundingClientRect().right - cr.left + 12;
   if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 12;
@@ -4791,6 +4843,7 @@ try {
   console.warn('3D 初始化失敗，改用 2D 畫面：', e);
 }
 try { initPreview(); bindCharUI(); loadSaved(); } catch (e) { console.warn('人物系統初始化失敗', e); setStatus('⚠️ 這台電腦的瀏覽器不支援 3D，無法上傳人物。', 'err'); }
+
 
 </script>
 </body>
