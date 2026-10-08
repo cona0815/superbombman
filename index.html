@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v4.8  2026-10-04  |  大橋國小  |  v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v4.8  2026-10-04  |  大橋國小  |  v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v4.8｜大橋國小</title>
+<title>成語炸彈超人 3D v4.9｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -937,7 +937,7 @@ window.addEventListener('keydown', e=>{
   if(!e.repeat && (e.key==='p'||e.key==='P'||e.key==='Escape')){ if(typeof togglePause==='function') togglePause(); return; }
   if(G.gameMode==='orient' && G.running && !e.repeat && (e.key==='z'||e.key==='Z') && window.R3D && window.R3D.orientZoom){ window.R3D.orientZoom(window.R3D.zoomLevel>=2?-2:1); return; }
   if(G.gameMode==='brawl' && G.running && !G.paused && !e.repeat){
-    if(/^[1-8]$/.test(e.key)){ brawlSelect(+e.key); return; }
+    if(/^[1-9]$/.test(e.key)){ brawlSelect(+e.key); return; }
     if(e.key==='q'||e.key==='Q'){ brawlCycle(-1); return; }
     if(e.key==='e'||e.key==='E'){ brawlCycle(1); return; }
   }
@@ -1896,7 +1896,7 @@ function updateKeyhint(){
     kh.style.animation='none'; void kh.offsetWidth; kh.style.animation=''; return;
   }
   if(G.gameMode==='brawl'){
-    kh.innerHTML='移動：<b>WASD</b>　·　瞄準：<b>滑鼠</b>　·　攻擊：<b>左鍵</b> 或 <b>空白鍵</b>（按住連發）<br>換武器：<b>1–8</b>、<b>滾輪</b>、<b>Q／E</b>、<b>右鍵</b>　·　<b>P</b> 暫停　·　<b>C</b> 視角　·　<b>F</b> 全螢幕';
+    kh.innerHTML='移動：<b>WASD</b>　·　瞄準：<b>滑鼠</b>　·　攻擊：<b>左鍵</b> 或 <b>空白鍵</b>（按住連發）<br>換武器：<b>1–9</b>、<b>滾輪</b>、<b>Q／E</b>、<b>右鍵</b>　·　<b>P</b> 暫停　·　<b>C</b> 視角　·　<b>F</b> 全螢幕';
     kh.style.animation='none'; void kh.offsetWidth; kh.style.animation=''; return;
   }
   const act = G.gameMode==='snow' ? '丟雪球' : '放炸彈';
@@ -2541,12 +2541,15 @@ function drawSnow2D(){
    - 35×25 大場地，五種地形：中央草原廣場、雪原、沙漠遺跡、湖泊橋樑、火山熔岩
    - 人物手上拿武器；撿「成語寶盒」→ 讀成語、解鎖新武器（共 8 種）
    - 你 vs 多個電腦對手，電腦之間也會互打（大亂鬥）
-   - 滑鼠瞄準、左鍵攻擊；1–8／滾輪／Q E／右鍵換武器
+   - 滑鼠瞄準、左鍵攻擊；1–9／滾輪／Q E／右鍵換武器
    ============================================================ */
 const BRAWL_COLS = 35, BRAWL_ROWS = 25;
 
 /* ---------- 武器 ---------- */
+const SWORD_RANGE = 1.5;   // v4.9：揮劍攻擊範圍統一 1.5 格（不管學生把劍做多長）
+const SWORD_ARC = 1.15;    // 左右各約 66°
 const WEAPONS = [
+  {id:'sword',  name:'揮劍',     icon:'🗡️', cd:.36, ammo:Infinity, range:SWORD_RANGE, desc:'自製人物的基本攻擊：揮動右手的劍（範圍統一 1.5 格）', own:true},
   {id:'snow',   name:'雪球',     icon:'❄️', cd:.34, ammo:Infinity, range:9,  desc:'基本武器，無限使用'},
   {id:'rapid',  name:'連發水槍', icon:'💦', cd:.09, ammo:45, range:9,  desc:'按住不放可以連發'},
   {id:'spread', name:'三向散彈', icon:'🔱', cd:.55, ammo:14, range:5,  desc:'一次射出扇形 5 發'},
@@ -2584,6 +2587,7 @@ const fighters = ()=>G.players.concat(G.bots);
 const fname = f=>!f?'熔岩':(f.isBot?f.name:'你');
 const rnd = (a,b)=>a+Math.random()*(b-a);
 const pick = a=>a[Math.random()*a.length|0];
+const basicW = f=>(f.weapons&&f.weapons.sword>0)?'sword':'snow';
 
 /* ============================================================
    地圖：五種地形
@@ -2683,7 +2687,7 @@ function brawlSetup(lvl){
   // 玩家
   const p=G.players[0];
   Object.assign(p,{px:pSpot.c*TILE+TILE/2, py:pSpot.r*TILE+TILE/2, hp:20, maxhp:20, lives:3, alive:true, invuln:2,
-    weapons:{snow:Infinity}, cur:'snow', cd:0, aim:{x:0,y:-1}, facing:'up', spd:3.6, kills:0, score:0, isBot:false,
+    weapons:(usingCustomChar()?{sword:Infinity, snow:Infinity}:{snow:Infinity}), cur:(usingCustomChar()?'sword':'snow'), cd:0, aim:{x:0,y:-1}, facing:'up', spd:3.6, kills:0, score:0, isBot:false,
     name:(window.CHAR&&window.CHAR.saved&&window.CHAR.name)||'你', hitT:0, fireT:0, respawnT:0, lavaAcc:0, id:0});
   p.spawn={x:p.px,y:p.py};
   // 電腦對手
@@ -2693,7 +2697,7 @@ function brawlSetup(lvl){
       weapons:{snow:Infinity}, cur:'snow', cd:1+Math.random(), aim:{x:0,y:1}, facing:'down',
       spd:cfg.spd*rnd(.92,1.08), kills:0, cfg, think:Math.random()*.5, path:null, target:null,
       moving:false, animT:Math.random()*6, hitT:0, fireT:0, lavaAcc:0, stuckT:0, aimJit:0, seeT:0};
-    for(let i=0;i<cfg.startW;i++){ const w=pick(WEAPONS.filter(w=>w.id!=='snow')); b.weapons[w.id]=Math.ceil(w.ammo*.6); }
+    for(let i=0;i<cfg.startW;i++){ const w=pick(WEAPONS.filter(w=>w.id!=='snow'&&!w.own)); b.weapons[w.id]=Math.ceil(w.ammo*.6); }
     return b;
   });
   // 地上的成語寶盒與愛心
@@ -2755,7 +2759,7 @@ const dirName = a=>Math.abs(a.x)>Math.abs(a.y)?(a.x>0?'right':'left'):(a.y>0?'do
 function tryFire(f){
   if(!f.alive || f.cd>0) return false;
   let w=WMAP[f.cur];
-  if(!(f.weapons[f.cur]>0)){ f.cur='snow'; w=WMAP.snow; }
+  if(!(f.weapons[f.cur]>0)){ f.cur=basicW(f); w=WMAP[f.cur]; }
   const ang=Math.atan2(f.aim.y,f.aim.x);
   switch(w.id){
     case 'snow':   spawnProj(f,'snow',ang,9,1.2,9); break;
@@ -2771,13 +2775,14 @@ function tryFire(f){
     }
     case 'laser':  fireLaser(f,ang); break;
     case 'hammer': swingHammer(f,ang); break;
+    case 'sword':  swingSword(f,ang); break;
   }
   f.cd=w.cd; f.fireT=.18;
   if(w.ammo!==Infinity){
     f.weapons[w.id]--;
-    if(f.weapons[w.id]<=0){ f.weapons[w.id]=0; f.cur='snow'; if(!f.isBot) brawlFeed('彈藥用完了，換回 ❄️ 雪球。再開寶盒可以補充！'); }
+    if(f.weapons[w.id]<=0){ f.weapons[w.id]=0; f.cur=basicW(f); if(!f.isBot) brawlFeed('彈藥用完了，換回 '+WMAP[f.cur].icon+' '+WMAP[f.cur].name+'。再開寶盒可以補充！'); }
   }
-  if(!f.isBot){ const s={snow:[900,.04],rapid:[1200,.02],spread:[500,.06],boom:[700,.06],rocket:[220,.14],bomb:[300,.08],laser:[1500,.1],hammer:[160,.1]}[w.id]; beep(s[0],s[1],w.id==='laser'?'sawtooth':'triangle',.045); }
+  if(!f.isBot){ const s={snow:[900,.04],rapid:[1200,.02],spread:[500,.06],boom:[700,.06],rocket:[220,.14],bomb:[300,.08],laser:[1500,.1],hammer:[160,.1],sword:[520,.07]}[w.id]; beep(s[0],s[1],w.id==='laser'?'sawtooth':'triangle',.045); }
   if(f.isBot && w.id==='bomb'){ f.think=0; }   // 放完炸彈馬上想辦法躲
   return true;
 }
@@ -2816,6 +2821,20 @@ function swingHammer(f,ang){
   const {c,r}=cellAt(f.px+ax*TILE*.85, f.py+ay*TILE*.85);
   if(inMap(c,r) && G.grid[r][c]===T_BRICK) damageBrick(c,r,2);
   G.swings.push({x:f.px,y:f.py,ang,t:0,dur:.22,owner:f});
+}
+/* 揮劍：範圍固定（SWORD_RANGE 格、前方扇形），跟模型上的劍多長無關 */
+function swingSword(f,ang){
+  const ax=Math.cos(ang), ay=Math.sin(ang), R=TILE*SWORD_RANGE;
+  fighters().forEach(o=>{
+    if(o===f||!o.alive) return;
+    const dx=o.px-f.px, dy=o.py-f.py, d=Math.hypot(dx,dy);
+    if(d>R) return;
+    let da=Math.abs(Math.atan2(dy,dx)-ang); if(da>Math.PI) da=Math.PI*2-da;
+    if(d<TILE*.45 || da<SWORD_ARC){ damageFighter(o,2.2,f,dx/(d||1),dy/(d||1),.55); }
+  });
+  const {c,r}=cellAt(f.px+ax*TILE*.8, f.py+ay*TILE*.8);
+  if(inMap(c,r) && G.grid[r][c]===T_BRICK) damageBrick(c,r,1);
+  G.swings.push({x:f.px,y:f.py,ang,t:0,dur:.2,owner:f,kind:'sword'});
 }
 function damageBrick(c,r,amt){
   const k=key(c,r); const hp=(G.brickHp[k]===undefined?2:G.brickHp[k])-amt;
@@ -3141,7 +3160,7 @@ function openBox(f){
     const idm=nextIdiom(); G.collected.add(idm.w); f.score=(f.score||0)+1;
     showCollect(idm); updateChecklist();
   }
-  const locked=WEAPONS.filter(w=>!(w.id in f.weapons));
+  const locked=WEAPONS.filter(w=>!(w.id in f.weapons)&&!w.own);
   if(locked.length && Math.random()<.8){
     const w=pick(locked); f.weapons[w.id]=w.ammo; f.cur=w.id;
     if(!f.isBot){ brawlFeed(`🔓 解鎖新武器：${w.icon} <b>${w.name}</b>（按 ${w.slot}）— ${w.desc}`,'unlock'); chime(); }
@@ -3233,7 +3252,7 @@ function brawlTimeUp(){
    ============================================================ */
 function brawlBuildUI(){
   const bar=document.getElementById('wbar'); if(!bar) return;
-  bar.innerHTML=WEAPONS.map(w=>`<div class="wslot" data-slot="${w.slot}" title="${w.name}：${w.desc}"><span class="wk">${w.slot}</span><span class="wi">${w.icon}</span><span class="wa"></span></div>`).join('');
+  bar.innerHTML=WEAPONS.filter(w=>!w.own||(G.players[0]&&w.id in G.players[0].weapons)).map(w=>`<div class="wslot" data-slot="${w.slot}" title="${w.name}：${w.desc}"><span class="wk">${w.slot}</span><span class="wi">${w.icon}</span><span class="wa"></span></div>`).join('');
   bar.querySelectorAll('.wslot').forEach(s=>s.addEventListener('mousedown',e=>{ e.stopPropagation(); brawlSelect(+s.dataset.slot); }));
   document.getElementById('feed').innerHTML='';
   G.mapBase=null;
@@ -3748,6 +3767,33 @@ gltfLoader.register(parser => {
   };
   return { name: 'NO_BLOB_URL_IMAGES' };
 });
+// v4.9：舊版匯出常用的 KHR_materials_pbrSpecularGlossiness（three.js 已不支援）→ 讀出原本的顏色與貼圖
+gltfLoader.register(parser => ({
+  name: 'KHR_materials_pbrSpecularGlossiness',
+  getMaterialType(mi) { const d = parser.json.materials[mi]; return d && d.extensions && d.extensions[this.name] ? THREE.MeshStandardMaterial : null; },
+  extendMaterialParams(mi, params) {
+    const d = parser.json.materials[mi], ext = d && d.extensions && d.extensions[this.name];
+    if (!ext) return Promise.resolve();
+    const f = ext.diffuseFactor || [1, 1, 1, 1];
+    params.color = new THREE.Color().setRGB(f[0], f[1], f[2], THREE.LinearSRGBColorSpace); params.opacity = f[3];
+    params.metalness = 0; params.roughness = 1 - (ext.glossinessFactor !== undefined ? ext.glossinessFactor : 1) * .6;
+    return ext.diffuseTexture ? parser.assignTexture(params, 'map', ext.diffuseTexture, THREE.SRGBColorSpace) : Promise.resolve();
+  }
+}));
+/* 學生的模型是塑膠/黏土，不是金屬：沒有金屬貼圖卻被當成全金屬（glTF 預設 metallic=1）時，
+   會整個反射成灰白黑的格子，顏色全跑掉 → 改回不反光的塑膠材質 */
+function plasticize(root) {
+  root.traverse(o => {
+    if (!o.isMesh || !o.material) return;
+    (Array.isArray(o.material) ? o.material : [o.material]).forEach(m => {
+      if (m.metalness !== undefined && !m.metalnessMap && m.metalness > .3) m.metalness = 0;
+      if (m.roughness !== undefined && !m.roughnessMap) m.roughness = Math.min(Math.max(m.roughness, .35), .7);
+      if (m.map) m.map.colorSpace = THREE.SRGBColorSpace;
+      m.needsUpdate = true;
+    });
+  });
+  return root;
+}
 const objLoader = new OBJLoader();
 const stlLoader = new STLLoader();
 
@@ -3759,7 +3805,7 @@ let draft = null;   // 尚未儲存的上傳 {buf, ext, obj}
 
 async function parseModel(buf, ext, color) {
   if (ext === 'glb' || ext === 'gltf') {
-    return await new Promise((res, rej) => gltfLoader.parse(buf, '', g => res(g.scene), rej));
+    return await new Promise((res, rej) => gltfLoader.parse(buf, '', g => res(plasticize(g.scene)), rej));
   }
   if (ext === 'obj') {
     const obj = objLoader.parse(new TextDecoder().decode(buf));
@@ -3813,8 +3859,8 @@ function initPreview() {
   const pm = new THREE.PMREMGenerator(pv.r); pv.s.environment = pm.fromScene(new RoomEnvironment(pv.r), .04).texture;
   pv.s.add(new THREE.HemisphereLight(0xffffff, 0x88a0b8, 1.2));
   const d = new THREE.DirectionalLight(0xffffff, 2.2); d.position.set(2, 3, 2.5); pv.s.add(d);
-  const disc = new THREE.Mesh(new THREE.CylinderGeometry(.62, .66, .06, 48), smat(0x2f6f9f, { roughness: .6 })); disc.position.y = -.03; pv.s.add(disc);
-  pv.cam = new THREE.PerspectiveCamera(32, 1, .05, 20); pv.cam.position.set(0, 1.0, 2.4); pv.cam.lookAt(0, .45, 0);
+  const disc = new THREE.Mesh(new THREE.CylinderGeometry(.46, .49, .05, 48), smat(0x2f6f9f, { roughness: .6 })); disc.position.y = -.03; pv.s.add(disc);
+  pv.cam = new THREE.PerspectiveCamera(32, 1, .05, 20); pv.cam.position.set(0, .74, 1.8); pv.cam.lookAt(0, .44, 0);
   pv.holder = new THREE.Group(); pv.s.add(pv.holder);
   pv.ang = 0.5;
   (function tick() { requestAnimationFrame(tick); if (!pv.r || cv.offsetParent === null) return; pv.ang += .012; pv.holder.rotation.y = pv.ang; pv.r.render(pv.s, pv.cam); })();
@@ -3822,6 +3868,13 @@ function initPreview() {
 function showInPreview(obj) {
   if (!pv.holder) return;
   pv.holder.clear(); if (obj) pv.holder.add(obj);
+  // v4.9：鏡頭依人物大小自動拉近，人物佔滿預覽框約 85%（比以前大約 2 倍）
+  if (obj) {
+    const b = new THREE.Box3().setFromObject(obj), sz = b.getSize(new THREE.Vector3()), c = b.getCenter(new THREE.Vector3());
+    const rad = Math.max(sz.y, Math.hypot(sz.x, sz.z)) / 2 || .5;
+    const dist = rad / Math.tan(THREE.MathUtils.degToRad(16)) / .86;
+    pv.cam.position.set(0, c.y + dist * .26, dist * .97); pv.cam.lookAt(0, c.y, 0);
+  }
 }
 function snapshot() {
   if (!pv.r) return null;
@@ -4413,6 +4466,11 @@ function buildWeapon(id) {
       M(new THREE.BoxGeometry(.1, .025, .2), glowMat(0x7fe8ff, .9, .95), 0, .06, .04);
       M(new THREE.TorusGeometry(.05, .015, 8, 16), glowMat(0xc39bff, 1.1, .95), 0, 0, .21); break;
     }
+    case 'sword': {
+      M(new THREE.CylinderGeometry(.022, .022, .14, 8), smat('#6b4a2a'), 0, .07, 0);
+      M(new THREE.BoxGeometry(.16, .03, .05), pmat('#ffcf3f', { metalness: .6, roughness: .3 }), 0, .15, 0);
+      M(new THREE.BoxGeometry(.045, .42, .015), pmat('#dfe6ee', { metalness: .8, roughness: .2 }), 0, .37, 0); break;
+    }
     case 'hammer': {
       M(new THREE.CylinderGeometry(.025, .025, .55, 8), smat('#8a5a32'), 0, .2, 0);
       const h = M(new RoundedBoxGeometry(.26, .16, .16, 2, .03), pmat('#8f98a3', { metalness: .75, roughness: .3 }), 0, .5, 0);
@@ -4659,8 +4717,12 @@ function decorate(m, f) {
     if (u.rig) u.rig.hR.position.set(.27, .33, .1);
   }
   const k = Math.max(0, f.fireT || 0) / .18;
+  u.weapon.visible = !(f.cur === 'sword' && u.kind === 'custom');   // 自製人物：用自己模型上的劍
   if (f.cur === 'hammer') { u.weapon.rotation.x = -.2 + k * 1.9; u.weapon.position.y = .2; }
+  else if (f.cur === 'sword') { u.weapon.rotation.x = -.3 + k * 1.6; u.weapon.position.set(.27, .25, .1); }
   else { u.weapon.rotation.x = 0; u.weapon.position.set(.27, .33, .12 - k * .07); }
+  // 揮劍：整個人物由右往左扭身揮一下
+  if (f.cur === 'sword' && k > 0) u.inner.rotation.y += Math.sin((1 - k) * Math.PI) * -1.1 + k * .5;
   // 掉進水裡：往下沉
   const fy = (f.fallT || 0) > 0 ? -Math.min(1.4, (1.1 - f.fallT) * 1.7) : 0;
   m.position.y = fy;
@@ -4816,12 +4878,13 @@ function syncBrawl(dt, me) {
   // 巨鎚揮擊
   sync(pools.swings, g.swings, sw => {
     const grp = new THREE.Group();
-    const arc = new THREE.Mesh(new THREE.RingGeometry(.35, 1.3, 24, 1, -Math.PI / 2 - 1.1, 2.2), glowMat(0xffd9a0, .7, .7)); arc.rotation.x = -Math.PI / 2;
+    const sword = sw.kind === 'sword', R = sword ? SWORD_RANGE : 1.3, A = sword ? SWORD_ARC : 1.1;
+    const arc = new THREE.Mesh(new THREE.RingGeometry(sword ? R * .55 : .35, R, 28, 1, -Math.PI / 2 - A, A * 2), glowMat(sword ? 0xbfe8ff : 0xffd9a0, .7, .7)); arc.rotation.x = -Math.PI / 2;
     grp.add(arc); grp.position.set(wx(sw.x), .3, wz(sw.y)); grp.rotation.y = Math.atan2(Math.cos(sw.ang), Math.sin(sw.ang));
     grp.userData = { arc };
-    S.parts.emit(wx(sw.x) + Math.cos(sw.ang) * .9, .2, wz(sw.y) + Math.sin(sw.ang) * .9, 8, { color: ['#c9a870', '#8a7a60'], speed: 1.5, up: 2, size: .06, life: .5 });
+    if (!sword) S.parts.emit(wx(sw.x) + Math.cos(sw.ang) * .9, .2, wz(sw.y) + Math.sin(sw.ang) * .9, 8, { color: ['#c9a870', '#8a7a60'], speed: 1.5, up: 2, size: .06, life: .5 });
     return grp;
-  }, (sw, m) => { const k = sw.t / sw.dur; m.userData.arc.material.opacity = .7 * (1 - k); m.scale.setScalar(.85 + k * .3); });
+  }, (sw, m) => { const k = sw.t / sw.dur; m.userData.arc.material.opacity = .7 * (1 - k); m.scale.setScalar(sw.kind === 'sword' ? 1 : .85 + k * .3); });
   // 磚塊被打裂的碎屑
   if (g.chips.length) { g.chips.forEach(ch => { const b = g.biome[ch.r] && g.biome[ch.r][ch.c]; S.parts.emit(cx(ch.c), .5, cz(ch.r), 5, { color: b === 'snow' ? ['#ffffff', '#c0643a'] : b === 'sand' ? ['#e3c98f', '#b0603a'] : ['#c0643a', '#8e4424'], speed: 1.5, up: 2, size: .05, life: .5 }); }); g.chips.length = 0; }
   // 熔岩火星
