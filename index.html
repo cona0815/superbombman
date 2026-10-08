@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v4.8  2026-10-04  |  大橋國小  |  v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v4.9.1  2026-10-08  |  大橋國小  |  v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v4.9｜大橋國小</title>
+<title>成語炸彈超人 3D v4.9.1｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -3803,9 +3803,22 @@ const stlLoader = new STLLoader();
 const CHAR = window.CHAR = { saved: false, name: '', author: '', ext: '', rotX: 0, rotY: 0, color: '#4aa3ff', useInBomb: true, thumb: null, template: null };
 let draft = null;   // 尚未儲存的上傳 {buf, ext, obj}
 
+const LIN_DONE = new WeakSet();
 async function parseModel(buf, ext, color) {
   if (ext === 'glb' || ext === 'gltf') {
-    return await new Promise((res, rej) => gltfLoader.parse(buf, '', g => res(plasticize(g.scene)), rej));
+    return await new Promise((res, rej) => gltfLoader.parse(buf, '', g => {
+      // v4.9.1：Tinkercad 匯出的頂點顏色其實是 sRGB 色碼（例如 #2B2E31），three.js 依規格當成線性 → 顏色整個變淡、變灰白。
+      // 這裡轉回線性，顯示的顏色就會跟 Tinkercad 裡一模一樣。
+      const gen = ((g.parser && g.parser.json && g.parser.json.asset && g.parser.json.asset.generator) || '');
+      if (/tinkercad/i.test(gen)) g.scene.traverse(o => {
+        const c = o.isMesh && o.geometry && o.geometry.attributes.color;
+        if (!c || LIN_DONE.has(c)) return;
+        const col = new THREE.Color();
+        for (let i = 0; i < c.count; i++) { col.setRGB(c.getX(i), c.getY(i), c.getZ(i), THREE.SRGBColorSpace); c.setXYZ(i, col.r, col.g, col.b); }
+        LIN_DONE.add(c); c.needsUpdate = true;
+      });
+      res(plasticize(g.scene));
+    }, rej));
   }
   if (ext === 'obj') {
     const obj = objLoader.parse(new TextDecoder().decode(buf));
