@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v4.9.1  2026-10-08  |  大橋國小  |  v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v5.0  2026-10-15  |  大橋國小  |  v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v4.9.1｜大橋國小</title>
+<title>成語炸彈超人 3D v5.0｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -100,6 +100,12 @@
   .chardrop{display:block; border:2px dashed #c9a85a; border-radius:12px; padding:8px; text-align:center; cursor:pointer; font-weight:700; color:#6b5326; font-size:14px; background:#fffaf0;}
   .chardrop.over{background:#ffeec2; border-color:#e8a91d;}
   .chardrop small{display:block; font-weight:500; color:#a08a55; font-size:11px;}
+  #charFixWrap{background:#fff3cd; border:2px dashed #e0a300; border-radius:10px; padding:6px 8px;}
+  .fixhead{font-size:12px; font-weight:700; color:#7a4a00; margin-bottom:4px;}
+  .fixrow{display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+  .fixitem{display:flex; align-items:center; gap:3px; font-size:12px; font-weight:700; color:#5a3a00; cursor:pointer;}
+  .fixitem input{width:30px; height:26px; padding:0; border:2px solid #fff; border-radius:7px; cursor:pointer;}
+  .fixmore{font-size:11.5px; color:#8a6a2a;}
   .charrow{display:flex; gap:6px; flex-wrap:wrap; align-items:center;}
   .charrow input[type=text]{flex:1; min-width:0; padding:6px 8px; border:2px solid #e7d5a6; border-radius:10px; font:inherit; font-size:14px;}
   .mini{background:#fff; border:2px solid #d8c08a; border-radius:10px; padding:5px 9px; font:inherit; font-size:13px; font-weight:700; color:#6b5326; cursor:pointer;}
@@ -414,9 +420,10 @@
         <div class="charbox" id="charField">
           <canvas id="charPreview" width="300" height="300"></canvas>
           <div class="charside">
-            <label class="chardrop" id="charDrop">📤 點這裡或把檔案拖進來<small>.glb（最推薦，保留顏色）／ .obj ／ .stl，20MB 以內</small>
-              <input type="file" id="charFile" accept=".glb,.gltf,.obj,.stl" hidden>
+            <label class="chardrop" id="charDrop">📤 點這裡或把檔案拖進來<small>.glb ／ Tinkercad 匯出 .OBJ 的 zip（顏色最準）／ .obj ／ .stl，20MB 以內</small>
+              <input type="file" id="charFile" accept=".glb,.gltf,.obj,.stl,.zip" hidden>
             </label>
+            <div id="charFixWrap" style="display:none"></div>
             <div class="charrow"><input type="text" id="charName" maxlength="12" placeholder="人物名字"><input type="text" id="charAuthor" maxlength="12" placeholder="作者（姓名/座號）"></div>
             <div class="charrow">
               <button class="mini" id="charRotX" type="button" title="人物躺著時按這個">↻ 轉正</button>
@@ -3711,6 +3718,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { STLLoader } from 'three/addons/loaders/STLLoader.js';
+import { MTLLoader } from 'three/addons/loaders/MTLLoader.js';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
@@ -3803,8 +3811,99 @@ const stlLoader = new STLLoader();
 const CHAR = window.CHAR = { saved: false, name: '', author: '', ext: '', rotX: 0, rotY: 0, color: '#4aa3ff', useInBomb: true, thumb: null, template: null };
 let draft = null;   // 尚未儲存的上傳 {buf, ext, obj}
 
+/* v5.0 花斑修復：Tinkercad 匯出 .glb 時，部分零件（常見：蛋身、腳）的顏色會不見，
+   變成黑白兩色隨機交錯的「花斑」。這裡找出這些區域，讓使用者改成想要的顏色。
+   輸入：非索引三角形的 position / color Float32Array；輸出：區域陣列（每個是三角形編號列表，大到小） */
+function findSpeckleRegions(pos, col) {
+  const nT = (pos.length / 9) | 0; if (!nT) return [];
+  const tc = new Int32Array(nT);
+  for (let t = 0; t < nT; t++) { const i = t * 9; tc[t] = ((col[i] * 31 | 0) << 10) | ((col[i + 1] * 31 | 0) << 5) | (col[i + 2] * 31 | 0); }
+  const vmap = new Map();
+  for (let i = 0; i < nT * 3; i++) {
+    const k = Math.round(pos[i * 3] * 100) + ',' + Math.round(pos[i * 3 + 1] * 100) + ',' + Math.round(pos[i * 3 + 2] * 100);
+    let a = vmap.get(k); if (!a) { a = []; vmap.set(k, a); } a.push((i / 3) | 0);
+  }
+  const nb = new Array(nT); for (let t = 0; t < nT; t++) nb[t] = new Set();
+  vmap.forEach(a => { if (a.length > 40) return; for (const x of a) for (const y of a) if (x !== y) nb[x].add(y); });
+  const flag = new Uint8Array(nT);
+  for (let t = 0; t < nT; t++) { let d = 0, n = 0; nb[t].forEach(u => { n++; if (tc[u] !== tc[t]) d++; }); if (n >= 3 && d / n >= .3) flag[t] = 1; }
+  for (let r = 0; r < 3; r++) {
+    const nf = flag.slice();
+    for (let t = 0; t < nT; t++) { if (flag[t]) continue; let f = 0, n = 0; nb[t].forEach(u => { n++; if (flag[u]) f++; }); if (n >= 3 && f / n >= .5) nf[t] = 1; }
+    flag.set(nf);
+  }
+  const comp = new Int32Array(nT).fill(-1), regions = [];
+  for (let t = 0; t < nT; t++) {
+    if (!flag[t] || comp[t] >= 0) continue;
+    const id = regions.length, st = [t], tris = []; comp[t] = id;
+    while (st.length) { const x = st.pop(); tris.push(x); nb[x].forEach(u => { if (flag[u] && comp[u] < 0) { comp[u] = id; st.push(u); } }); }
+    // 區域裡的三角形，鄰居平均有多少也是花斑：真正的花斑面 ≥ .6；兩個正常顏色交界的細縫 ≤ .5
+    let inner = 0; tris.forEach(x => { let f = 0, n = 0; nb[x].forEach(u => { n++; if (flag[u]) f++; }); inner += n ? f / n : 0; });
+    const colors = new Map(); tris.forEach(x => colors.set(tc[x], (colors.get(tc[x]) || 0) + 1));
+    const top = [...colors.values()].sort((a, b) => b - a);
+    if (tris.length >= 40 && inner / tris.length >= .6 && top.length >= 2 && top[1] / tris.length >= .2) regions.push(tris);
+  }
+  regions.sort((a, b) => b.length - a.length);
+  return regions;
+}
+
+/* ---- 最小 zip 讀取（Tinkercad「匯出 .OBJ」會給 zip：tinker.obj + obj.mtl）---- */
+async function readZip(buf) {
+  const dv = new DataView(buf), u8 = new Uint8Array(buf), out = {};
+  let p = 0;
+  while (p + 30 <= u8.length && dv.getUint32(p, true) === 0x04034b50) {
+    const method = dv.getUint16(p + 8, true), csz = dv.getUint32(p + 18, true), nlen = dv.getUint16(p + 26, true), xlen = dv.getUint16(p + 28, true);
+    const name = new TextDecoder().decode(u8.subarray(p + 30, p + 30 + nlen)); const start = p + 30 + nlen + xlen;
+    let data = u8.subarray(start, start + csz);
+    if (method === 8) { const ds = new DecompressionStream('deflate-raw'); const r = new Blob([data]).stream().pipeThrough(ds); data = new Uint8Array(await new Response(r).arrayBuffer()); }
+    else if (method !== 0) throw new Error('zip 壓縮方式不支援');
+    out[name.split('/').pop()] = data; p = start + csz;
+  }
+  return out;
+}
+const SPECKLE = { regions: [], meshes: [], fix: [] };
+/* 找出花斑區域並上色；fix = 每個區域的顏色（hex），沒給就用該區域最多的顏色 */
+function applySpeckleFix(root, fix) {
+  SPECKLE.regions = []; SPECKLE.meshes = []; SPECKLE.fix = [];
+  root.traverse(o => {
+    if (!o.isMesh || !o.geometry || !o.geometry.attributes.color) return;
+    if (o.geometry.index) o.geometry = o.geometry.toNonIndexed();
+    const pos = o.geometry.attributes.position, col = o.geometry.attributes.color;
+    const c3 = new Float32Array(pos.count * 3); for (let i = 0; i < pos.count; i++) { c3[i * 3] = col.getX(i); c3[i * 3 + 1] = col.getY(i); c3[i * 3 + 2] = col.getZ(i); }
+    findSpeckleRegions(pos.array, c3).forEach(tris => { SPECKLE.regions.push(tris); SPECKLE.meshes.push(o); });
+  });
+  const order = SPECKLE.regions.map((r, i) => i).sort((a, b) => SPECKLE.regions[b].length - SPECKLE.regions[a].length);
+  SPECKLE.regions = order.map(i => SPECKLE.regions[i]); SPECKLE.meshes = order.map(i => SPECKLE.meshes[i]);
+  SPECKLE.regions.forEach((tris, k) => {
+    let hex = fix && fix[k];
+    if (!hex) {   // 預設：這個區域裡最多的那個顏色
+      const col = SPECKLE.meshes[k].geometry.attributes.color, cnt = new Map();
+      tris.forEach(t => { const key = '#' + new THREE.Color(col.getX(t * 3), col.getY(t * 3), col.getZ(t * 3)).getHexString(); cnt.set(key, (cnt.get(key) || 0) + 1); });
+      hex = [...cnt.entries()].sort((a, b) => b[1] - a[1])[0][0];
+    }
+    SPECKLE.fix[k] = hex; paintRegion(k, hex);
+  });
+  return SPECKLE.regions.length;
+}
+function paintRegion(k, hex) {
+  const tris = SPECKLE.regions[k], m = SPECKLE.meshes[k]; if (!tris || !m) return;
+  const col = m.geometry.attributes.color, c = new THREE.Color(hex);
+  tris.forEach(t => { for (let v = 0; v < 3; v++) col.setXYZ(t * 3 + v, c.r, c.g, c.b); });
+  col.needsUpdate = true; SPECKLE.fix[k] = hex;
+}
 const LIN_DONE = new WeakSet();
-async function parseModel(buf, ext, color) {
+async function parseModel(buf, ext, color, fix) {
+  SPECKLE.regions = []; SPECKLE.meshes = []; SPECKLE.fix = [];
+  if (ext === 'zip') {
+    const files = await readZip(buf);
+    const objName = Object.keys(files).find(n => /\.obj$/i.test(n)), mtlName = Object.keys(files).find(n => /\.mtl$/i.test(n));
+    if (!objName) throw new Error('zip 裡沒有 .obj 檔');
+    const loader = new OBJLoader();
+    if (mtlName) { const mc = new MTLLoader().parse(new TextDecoder().decode(files[mtlName]), ''); mc.preload(); loader.setMaterials(mc); }
+    const obj = loader.parse(new TextDecoder().decode(files[objName]));
+    obj.traverse(m => { if (m.isMesh) { const mats = Array.isArray(m.material) ? m.material : [m.material]; m.material = mats.map(mt => { const sm = smat(mt.color ? mt.color.getHex() : color, { roughness: .55 }); sm.userData.userColor = false; return sm; }); if (m.material.length === 1) m.material = m.material[0]; } });
+    return obj;
+  }
   if (ext === 'glb' || ext === 'gltf') {
     return await new Promise((res, rej) => gltfLoader.parse(buf, '', g => {
       // v4.9.1：Tinkercad 匯出的頂點顏色其實是 sRGB 色碼（例如 #2B2E31），three.js 依規格當成線性 → 顏色整個變淡、變灰白。
@@ -3817,7 +3916,9 @@ async function parseModel(buf, ext, color) {
         for (let i = 0; i < c.count; i++) { col.setRGB(c.getX(i), c.getY(i), c.getZ(i), THREE.SRGBColorSpace); c.setXYZ(i, col.r, col.g, col.b); }
         LIN_DONE.add(c); c.needsUpdate = true;
       });
-      res(plasticize(g.scene));
+      const scene = plasticize(g.scene);
+      if (/tinkercad/i.test(gen)) applySpeckleFix(scene, fix);
+      res(scene);
     }, rej));
   }
   if (ext === 'obj') {
@@ -3907,7 +4008,8 @@ function refreshLockUI() {
 async function rebuildDraft() {
   if (!draft) return;
   try {
-    const raw = await parseModel(draft.buf, draft.ext, $('charColor').value);
+    const raw = await parseModel(draft.buf, draft.ext, $('charColor').value, draft.fix);
+    draft.fix = SPECKLE.regions.length ? SPECKLE.fix.slice() : null; renderFixUI(() => draft);
     draft.obj = normalize(raw, draft.rotX, draft.rotY);
     showInPreview(draft.obj);
     $('charSave').disabled = false;
@@ -3919,22 +4021,25 @@ async function rebuildDraft() {
 async function onFile(file) {
   if (!file) return;
   const ext = (file.name.split('.').pop() || '').toLowerCase();
-  if (!['glb', 'gltf', 'obj', 'stl'].includes(ext)) { setStatus('❌ 只接受 .glb / .gltf / .obj / .stl', 'err'); return; }
+  if (!['glb', 'gltf', 'obj', 'stl', 'zip'].includes(ext)) { setStatus('❌ 只接受 .glb / .gltf / .obj / .stl / .zip（Tinkercad 匯出的 OBJ）', 'err'); return; }
   if (file.size > 20 * 1024 * 1024) { setStatus('❌ 檔案太大（上限 20MB），請在 Tinkercad 簡化後再匯出', 'err'); return; }
   setStatus('⏳ 讀取中…');
   const buf = await file.arrayBuffer();
-  draft = { buf, ext, rotX: (ext === 'stl' ? -Math.PI / 2 : 0), rotY: 0, obj: null };
+  draft = { buf, ext, rotX: (ext === 'stl' || ext === 'zip' || ext === 'obj' ? -Math.PI / 2 : 0), rotY: 0, obj: null, fix: null };
   if (!$('charName').value) $('charName').value = file.name.replace(/\.[^.]+$/, '').slice(0, 12);
   $('charColorWrap').style.display = (ext === 'obj' || ext === 'stl') ? '' : 'none';
   await rebuildDraft();
-  if (draft.obj) setStatus('👀 預覽中：如果人物躺著或背對你，按「轉正／轉向」調整，填好名字後按 <b>儲存我的人物</b>。', 'info');
+  if (draft && draft.obj && ext === 'zip') return setStatus('👀 已讀入 OBJ＋材質顏色。如果人物躺著或背對你，按「轉正／轉向」調整，填好名字後按 <b>儲存我的人物</b>。', 'info');
+  if (draft && draft.obj) setStatus(SPECKLE.regions.length
+    ? '⚠️ 這個 .glb 有 <b>' + SPECKLE.regions.length + ' 個零件的顏色被 Tinkercad 匯出時弄壞了</b>（黑白花斑）。已先自動補色，可以在下方「顏色修復」一個一個調；或回 Tinkercad 改用 <b>匯出 → .OBJ</b>，把下載的 zip 直接拖進來，顏色會最準。'
+    : '👀 預覽中：如果人物躺著或背對你，按「轉正／轉向」調整，填好名字後按 <b>儲存我的人物</b>。', SPECKLE.regions.length ? 'err' : 'info');
 }
 async function saveChar() {
   if (!draft || !draft.obj) return;
   const name = ($('charName').value || '').trim(), author = ($('charAuthor').value || '').trim();
   if (!name) { setStatus('✏️ 請幫人物取個名字', 'err'); $('charName').focus(); return; }
   if (!author) { setStatus('✏️ 請填上作者（你的名字或座號）', 'err'); $('charAuthor').focus(); return; }
-  const rec = { name, author, ext: draft.ext, rotX: draft.rotX, rotY: draft.rotY, color: $('charColor').value, useInBomb: $('charUseBomb').checked, buf: draft.buf, savedAt: Date.now() };
+  const rec = { name, author, ext: draft.ext, rotX: draft.rotX, rotY: draft.rotY, color: $('charColor').value, useInBomb: $('charUseBomb').checked, buf: draft.buf, fix: draft.fix || null, savedAt: Date.now() };
   try { await DB.put('mine', rec); } catch (e) { console.warn('IndexedDB 無法儲存（本次仍可使用）', e); }
   Object.assign(CHAR, { saved: true, name, author, ext: rec.ext, rotX: rec.rotX, rotY: rec.rotY, color: rec.color, useInBomb: rec.useInBomb, template: draft.obj, thumb: snapshot() });
   draft = null; $('charSave').disabled = true;
@@ -3954,7 +4059,8 @@ async function loadSaved() {
   try { rec = await DB.get('mine'); } catch (e) { console.warn('IndexedDB 讀取失敗', e); }
   if (!rec) { setStatus('還沒有人物。上傳你在 Tinkercad 做的人物（匯出 .glb / .obj / .stl），就能開啟 <b>❄️ 雪球大作戰</b> 和 <b>🥊 成語大亂鬥</b>！'); refreshLockUI(); return; }
   try {
-    const raw = await parseModel(rec.buf, rec.ext, rec.color);
+    const raw = await parseModel(rec.buf, rec.ext, rec.color, rec.fix);
+    renderFixUI(() => null);
     const obj = normalize(raw, rec.rotX, rec.rotY);
     showInPreview(obj);
     Object.assign(CHAR, { saved: true, name: rec.name, author: rec.author, ext: rec.ext, rotX: rec.rotX, rotY: rec.rotY, color: rec.color, useInBomb: rec.useInBomb !== false, template: obj });
@@ -3985,12 +4091,35 @@ function bindCharUI() {
   });
   void editing;
 }
+/* 顏色修復面板：每個花斑區域一個色塊 */
+function renderFixUI(getDraft) {
+  const w = $('charFixWrap'); if (!w) return;
+  if (!SPECKLE.regions.length) { w.style.display = 'none'; w.innerHTML = ''; return; }
+  w.style.display = '';
+  const shown = Math.min(SPECKLE.regions.length, 8);
+  w.innerHTML = '<div class="fixhead">🩹 顏色修復（Tinkercad 匯出時弄壞的零件）：滑鼠移到色塊上，那個零件會變桃紅色；點色塊改顏色</div><div class="fixrow">' +
+    SPECKLE.regions.slice(0, shown).map((r, k) => `<label class="fixitem" title="${r.length} 個三角面"><input type="color" data-k="${k}" value="${SPECKLE.fix[k]}"><span>零件 ${k + 1}</span></label>`).join('') +
+    (SPECKLE.regions.length > shown ? `<span class="fixmore">＋${SPECKLE.regions.length - shown} 個小零件（維持自動補色）</span>` : '') + '</div>';
+  // 滑鼠移到色塊上：那個零件閃成桃紅色，一看就知道是哪一塊
+  w.querySelectorAll('.fixitem').forEach(it => {
+    const k = +it.querySelector('input').dataset.k;
+    it.addEventListener('pointerenter', () => { const keep = SPECKLE.fix[k]; paintRegion(k, '#ff2fd6'); SPECKLE.fix[k] = keep; });
+    it.addEventListener('pointerleave', () => paintRegion(k, SPECKLE.fix[k]));
+  });
+  w.querySelectorAll('input[type=color]').forEach(inp => inp.addEventListener('input', async e => {
+    const k = +e.target.dataset.k, hex = e.target.value;
+    let d = getDraft();
+    if (!d) { await startEditFromSaved(() => { }); d = draft; renderFixUI(() => draft); const again = $('charFixWrap').querySelector(`input[data-k="${k}"]`); if (again) again.value = hex; }
+    paintRegion(k, hex); if (d) { d.fix = SPECKLE.fix.slice(); }
+    setStatus('🎨 已改顏色，記得按 <b>儲存我的人物</b>', 'info'); $('charSave').disabled = false;
+  }));
+}
 function cycle(a) { const steps = [0, -Math.PI / 2, Math.PI, Math.PI / 2]; const i = steps.findIndex(s => Math.abs(s - a) < 1e-3); return steps[(i + 1) % 4]; }
 async function startEditFromSaved(mutate) {
   // 已儲存的人物要調整 → 轉成草稿，改完再按儲存
   let rec = null; try { rec = await DB.get('mine'); } catch (e) { }
   if (!rec) return;
-  draft = { buf: rec.buf, ext: rec.ext, rotX: rec.rotX, rotY: rec.rotY, obj: null };
+  draft = { buf: rec.buf, ext: rec.ext, rotX: rec.rotX, rotY: rec.rotY, obj: null, fix: rec.fix || null };
   mutate(); await rebuildDraft();
   setStatus('✏️ 調整中… 記得按 <b>儲存我的人物</b>', 'info');
 }
