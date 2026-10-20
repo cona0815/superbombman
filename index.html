@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v5.0  2026-10-15  |  大橋國小  |  v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v5.1  2026-10-20  |  大橋國小  |  v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v5.0｜大橋國小</title>
+<title>成語炸彈超人 3D v5.1｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -4450,12 +4450,13 @@ function buildBomber(pal) {
   g.userData = { inner, rig: { head, hL, hR, fL, fR }, kind: 'bomber', ang: 0, base: 1.12 };
   return g;
 }
+const CUSTOM_SCALE = 1.9, CUSTOM_SCALE_ORIENT = 2.7;   // 自製人物在遊戲裡的大小（原本 1.12）；定向越野是全圖，再放大一些
 function buildCustom(template) {
   const g = new THREE.Group(), inner = new THREE.Group(); g.add(inner);
   const body = SkeletonUtils.clone(template);
   body.traverse(o => { if (o.isMesh && o.material) o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone(); });
   inner.add(body);
-  g.userData = { inner, rig: null, kind: 'custom', ang: 0, base: 1.12 };
+  g.userData = { inner, rig: null, kind: 'custom', ang: 0, base: G().gameMode === 'orient' ? CUSTOM_SCALE_ORIENT : CUSTOM_SCALE };   // v5.1：自製人物放大，學生的設計看得清楚
   return g;
 }
 function buildBlob(skin, chaser) {
@@ -4871,7 +4872,7 @@ function decorate(m, f) {
   if ((f.fallT || 0) > 0 && !u.splash) { u.splash = true; S.parts.emit(m.position.x, .1, m.position.z, 26, { color: ['#ffffff', '#bfe6ff', '#6fc3ff'], speed: 2.4, up: 4, size: .07, life: .8 }); }
   if (!((f.fallT || 0) > 0)) u.splash = false;
   // 名牌血條
-  if (!u.bar) { u.bar = makeBar(f.isBot ? f.name : (f.name || '你'), f.isBot ? f.color.body : '#7fe3ff'); m.add(u.bar); }
+  if (!u.bar) { u.bar = makeBar(f.isBot ? f.name : (f.name || '你'), f.isBot ? f.color.body : '#7fe3ff'); if (u.kind === 'custom') u.bar.position.y = 1.32 * u.base / 1.12 + .05; m.add(u.bar); }
   const hp = Math.max(0, f.hp / f.maxhp), bd = u.bar.userData;
   bd.fill.scale.x = Math.max(.001, hp); bd.fill.position.x = -.31 * (1 - hp);
   bd.fill.material.color.setHex(G().gameMode === 'orient' ? 0xffcf3f : hp > .5 ? 0x5dff8a : hp > .25 ? 0xffd23f : 0xff4a4a);
@@ -5096,7 +5097,7 @@ function brawlCamera(dt) {
     else { const k = Math.min(1, dt * 6); follow.x += (tx - follow.x) * k; follow.z += (tz - follow.z) * k; }
   }
   const el = THREE.MathUtils.degToRad(VIEWS[viewIdx].elev), tanV = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-  let dist = Math.max(11.8 / (tanV * camera.aspect), 7.6 * Math.sin(el) / tanV); dist = Math.min(32, Math.max(9, dist));
+  let dist = Math.max(9.6 / (tanV * camera.aspect), 6.4 * Math.sin(el) / tanV); dist = Math.min(32, Math.max(8, dist));   // v5.1：鏡頭拉近一點，人物更大
   if (G().gameMode === 'orient') dist *= ozoom === 1 ? 1.55 : 1;
   camera.clearViewOffset();
   camBase.set(follow.x, Math.sin(el) * dist, follow.z + Math.cos(el) * dist);
