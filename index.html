@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v5.5  2026-10-20  |  大橋國小  |  v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v5.6  2026-10-20  |  大橋國小  |  v5.6：自製人物自動骨架——走路時腳前後擺、手跟著擺，攻擊／放炸彈／丟雪球時右手橫揮武器；v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v5.5｜大橋國小</title>
+<title>成語炸彈超人 3D v5.6｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -1265,6 +1265,7 @@ function placeBomb(p){
   // any player currently overlapping this tile can pass through until they leave
   G.players.forEach(pl=>{ if(pl.alive && Math.floor(pl.px/TILE)===c && Math.floor(pl.py/TILE)===r) passable.add(pl.id); });
   G.bombs.push({c,r,owner:p.id,fire:p.fire,timer:2.2,passable});
+  p.fireT=.22;   // v5.6：自製人物放炸彈時手會揮一下
 }
 
 function detonate(bomb){
@@ -2324,6 +2325,7 @@ function throwSnowball(shooter, side){
   const mine=G.snowballs.filter(b=>b.shooter===shooter).length;
   const limit = side==='p' ? shooter.maxBombs : 1;
   if(mine>=limit) return false;
+  if(side==='p') shooter.fireT=.22;   // v5.6：丟雪球時手揮一下
   G.snowballs.push({
     x:shooter.px+v[0]*TILE*0.35, y:shooter.py+v[1]*TILE*0.35,
     dx:v[0], dy:v[1], side, shooter, power:(side==='p'?shooter.fire:1), alive:true, t:0,
@@ -3949,7 +3951,7 @@ function paintRegion(k, hex) {
   const tris = SPECKLE.regions[k], m = SPECKLE.meshes[k]; if (!tris || !m) return;
   const col = m.geometry.attributes.color, c = new THREE.Color(hex);
   tris.forEach(t => { for (let v = 0; v < 3; v++) col.setXYZ(t * 3 + v, c.r, c.g, c.b); });
-  col.needsUpdate = true; SPECKLE.fix[k] = hex;
+  col.needsUpdate = true; SPECKLE.fix[k] = hex; CHAR.paintVer = (CHAR.paintVer || 0) + 1;
 }
 const LIN_DONE = new WeakSet();
 async function parseModel(buf, ext, color, fix) {
@@ -4517,13 +4519,112 @@ function buildBomber(pal) {
   g.userData = { inner, rig: { head, hL, hR, fL, fR }, kind: 'bomber', ang: 0, base: 1.12 };
   return g;
 }
+
+/* =========================================================
+   v5.6 自製人物自動骨架：把模型拆成一塊一塊的殼（Tinkercad 的每個零件都是獨立的殼），
+   在地上、兩側下方的 → 腳；在身體左右兩側的 → 手（連同手上的武器）
+   走路時腳前後擺、手跟著擺；攻擊時右手左右揮
+   ========================================================= */
+function shellsOf(geo) {   // 非索引幾何 → 各個連通殼的三角形清單
+  const pos = geo.attributes.position, nT = pos.count / 3 | 0, parent = new Int32Array(nT);
+  for (let t = 0; t < nT; t++) parent[t] = t;
+  const find = x => { while (parent[x] !== x) { parent[x] = parent[parent[x]]; x = parent[x]; } return x; };
+  const vmap = new Map();
+  for (let i = 0; i < pos.count; i++) {
+    const k = Math.round(pos.getX(i) * 2000) + ',' + Math.round(pos.getY(i) * 2000) + ',' + Math.round(pos.getZ(i) * 2000);
+    const t = i / 3 | 0, f = vmap.get(k);
+    if (f === undefined) vmap.set(k, t); else { const a = find(f), b = find(t); if (a !== b) parent[a] = b; }
+  }
+  const groups = new Map();
+  for (let t = 0; t < nT; t++) { const r = find(t); let a = groups.get(r); if (!a) { a = []; groups.set(r, a); } a.push(t); }
+  return [...groups.values()];
+}
+function subGeo(geo, tris) {
+  const out = new THREE.BufferGeometry();
+  for (const name in geo.attributes) {
+    const src = geo.attributes[name], n = src.itemSize, arr = new Float32Array(tris.length * 3 * n);
+    tris.forEach((t, k) => { for (let v = 0; v < 3; v++) for (let c = 0; c < n; c++) arr[(k * 3 + v) * n + c] = src.array[(t * 3 + v) * n + c]; });
+    out.setAttribute(name, new THREE.BufferAttribute(arr, n));
+  }
+  out.computeBoundingBox(); return out;
+}
+function autoRig(template) {
+  template.updateMatrixWorld(true);
+  const inv = template.matrixWorld.clone().invert();   // 以人物自己為基準（預覽台會旋轉，不能用世界座標）
+  const parts = [];   // {geo, mat, tris, box}
+  template.traverse(o => {
+    if (!o.isMesh || !o.geometry) return;
+    let g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
+    g.applyMatrix4(new THREE.Matrix4().multiplyMatrices(inv, o.matrixWorld));
+    const mats = Array.isArray(o.material) ? o.material : [o.material];
+    if (g.groups && g.groups.length && mats.length > 1) {   // OBJ 多材質：先依材質拆
+      g.groups.forEach(gr => { const tris = []; for (let t = gr.start / 3; t < (gr.start + gr.count) / 3; t++) tris.push(t); const sg = subGeo(g, tris); sg.clearGroups(); shellsOf(sg).forEach(ts => parts.push({ geo: sg, mat: mats[gr.materialIndex] || mats[0], tris: ts })); });
+    } else shellsOf(g).forEach(ts => parts.push({ geo: g, mat: mats[0], tris: ts }));
+  });
+  if (!parts.length) return null;
+  parts.forEach(p => { p.sub = subGeo(p.geo, p.tris); p.box = p.sub.boundingBox; p.c = p.box.getCenter(new THREE.Vector3()); p.size = p.box.getSize(new THREE.Vector3()); p.vol = p.size.x * p.size.y * p.size.z; });
+  const all = new THREE.Box3(); parts.forEach(p => all.union(p.box));
+  const H = all.max.y - all.min.y, W = all.max.x - all.min.x, cx = (all.min.x + all.max.x) / 2;
+  const body = parts.reduce((a, b) => b.vol > a.vol ? b : a);
+  const bodyHalf = body.size.x / 2;
+  const role = p => {
+    if (p === body) return 'body';
+    if (p.vol > body.vol * .45) return 'body';
+    const onGround = p.box.min.y < all.min.y + H * .04, low = p.box.max.y < all.min.y + H * .38;
+    if (onGround && low && p.size.y < H * .35) return p.c.x < cx ? 'footL' : 'footR';
+    if (p.box.min.x > body.c.x + bodyHalf * .35 && p.c.x > cx) return 'armR';
+    if (p.box.max.x < body.c.x - bodyHalf * .35 && p.c.x < cx) return 'armL';
+    return 'body';
+  };
+  const groups = { body: [], footL: [], footR: [], armL: [], armR: [] };
+  parts.forEach(p => groups[role(p)].push(p));
+  // 手：只有一邊有東西時，另一邊不動；太小的零件（眼睛之類誤判）併回身體
+  ['armL', 'armR', 'footL', 'footR'].forEach(k => { const vol = groups[k].reduce((n, p) => n + p.vol, 0); if (vol < body.vol * .004) { groups.body.push(...groups[k]); groups[k] = []; } });
+  const root = new THREE.Group(); root.name = 'autoRig';
+  const mk = (list, name, pivotFn) => {
+    if (!list.length) return null;
+    const box = new THREE.Box3(); list.forEach(p => box.union(p.box));
+    const piv = pivotFn(box, list); const g = new THREE.Group(); g.name = name; g.position.copy(piv);
+    list.forEach(p => { const m = new THREE.Mesh(p.sub, p.mat); m.position.copy(piv).negate(); m.castShadow = true; m.receiveShadow = true; g.add(m); });
+    root.add(g); return g;
+  };
+  mk(groups.body, 'rigBody', () => new THREE.Vector3(0, 0, 0));
+  const nearest = list => list.reduce((a, b) => Math.hypot(b.c.x - body.c.x, b.c.y - body.c.y) < Math.hypot(a.c.x - body.c.x, a.c.y - body.c.y) ? b : a);
+  mk(groups.footL, 'rigFootL', b => new THREE.Vector3((b.min.x + b.max.x) / 2, b.max.y, (b.min.z + b.max.z) / 2));
+  mk(groups.footR, 'rigFootR', b => new THREE.Vector3((b.min.x + b.max.x) / 2, b.max.y, (b.min.z + b.max.z) / 2));
+  mk(groups.armL, 'rigArmL', (b, l) => { const h = nearest(l); return new THREE.Vector3(b.max.x, h.c.y + h.size.y * .35, h.c.z); });
+  mk(groups.armR, 'rigArmR', (b, l) => { const h = nearest(l); return new THREE.Vector3(b.min.x, h.c.y + h.size.y * .35, h.c.z); });
+  root.userData.rigInfo = { feet: !!(groups.footL.length || groups.footR.length), arms: !!(groups.armL.length || groups.armR.length) };
+  return root;
+}
+function riggedTemplate(template) {
+  const ver = CHAR.paintVer || 0;
+  if (!template.userData.rigged || template.userData.rigVer !== ver) {
+    let r = null; try { r = autoRig(template); } catch (e) { safeLog('autoRig 失敗，改用原模型', e); }
+    template.userData.rigged = r; template.userData.rigVer = ver;
+  }
+  return template.userData.rigged;
+}
+function animCustomRig(u, f) {
+  const r = u.crig; if (!r) return;
+  const a = f.animT || 0, sw = f.moving ? Math.sin(a) : 0;
+  if (r.footL) r.footL.rotation.x = sw * .55; if (r.footR) r.footR.rotation.x = -sw * .55;
+  const k = Math.max(0, f.fireT || 0) / .22;   // 攻擊 / 放炸彈 / 丟雪球：右手由右往左橫揮
+  if (r.armL) { r.armL.rotation.x = -sw * .45; r.armL.rotation.y = 0; }
+  if (r.armR) {
+    if (k > 0) { r.armR.rotation.y = -(k - .5) * 1.9; r.armR.rotation.x = -.35 * Math.sin(k * Math.PI); }
+    else { r.armR.rotation.y = 0; r.armR.rotation.x = sw * .45; }
+  } else if (k > 0 && r.armL) { r.armL.rotation.y = (k - .5) * 1.9; }
+}
 const CUSTOM_SCALE = 2.2, CUSTOM_SCALE_BOMB = 2.7, CUSTOM_SCALE_ORIENT = 3.0;   // v5.4 自製人物在遊戲裡的大小（原本 1.12）：大亂鬥 2.2、炸彈／雪球 2.7、定向越野全圖 3.0
 function buildCustom(template) {
   const g = new THREE.Group(), inner = new THREE.Group(); g.add(inner);
-  const body = SkeletonUtils.clone(template);
+  const rigged = riggedTemplate(template);
+  const body = SkeletonUtils.clone(rigged || template);
   body.traverse(o => { if (o.isMesh && o.material) o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone(); });
   inner.add(body);
-  g.userData = { inner, rig: null, kind: 'custom', ang: 0, base: G().gameMode === 'orient' ? CUSTOM_SCALE_ORIENT : G().gameMode === 'brawl' ? CUSTOM_SCALE : CUSTOM_SCALE_BOMB };   // v5.1：自製人物放大，學生的設計看得清楚
+  const crig = rigged ? { footL: body.getObjectByName('rigFootL'), footR: body.getObjectByName('rigFootR'), armL: body.getObjectByName('rigArmL'), armR: body.getObjectByName('rigArmR') } : null;
+  g.userData = { inner, rig: null, crig, kind: 'custom', ang: 0, base: G().gameMode === 'orient' ? CUSTOM_SCALE_ORIENT : G().gameMode === 'brawl' ? CUSTOM_SCALE : CUSTOM_SCALE_BOMB };   // v5.1：自製人物放大，學生的設計看得清楚
   return g;
 }
 function buildBlob(skin, chaser) {
@@ -4869,7 +4970,7 @@ function syncAll(dt) {
     const faceV = g.gameMode === 'orient' ? (p.moveDir || p.aim) : p.aim;   // 定向越野：面向前進方向；大亂鬥：面向瞄準方向
     u.ang = lerpAng(u.ang, (brawl && faceV) ? Math.atan2(faceV.x, faceV.y) : (FACE_ANG[p.facing] || 0), brawl ? .3 : .25); u.inner.rotation.y = u.ang;
     const bs = u.base || 1;
-    if (p.moving) { u.inner.position.y = Math.abs(Math.sin(a)) * .07; u.inner.rotation.z = u.kind === 'custom' ? Math.sin(a) * .09 : 0; u.inner.scale.setScalar(bs); }
+    if (p.moving) { u.inner.position.y = Math.abs(Math.sin(a)) * .07; u.inner.rotation.z = (u.kind === 'custom' && !(u.crig && u.crig.footL)) ? Math.sin(a) * .09 : 0; u.inner.scale.setScalar(bs); }
     else { u.inner.position.y = 0; u.inner.rotation.z = 0; const br = 1 + Math.sin(T * 3) * .015; u.inner.scale.set(bs, bs * br, bs); }
     if (u.rig) {
       const sw = p.moving ? Math.sin(a) : 0;
@@ -4877,6 +4978,7 @@ function syncAll(dt) {
       u.rig.hL.position.z = .02 - sw * .09; u.rig.hR.position.z = .02 + sw * .09;
       u.rig.head.rotation.z = Math.sin(T * 2) * .03;
     }
+    if (u.crig) animCustomRig(u, p);
     if (brawl) decorate(m, p);
     if (p.id === 0 && p.alive) me = m;
   });
@@ -4932,7 +5034,7 @@ function decorate(m, f) {
   else if (f.cur === 'sword') { u.weapon.rotation.x = -.3 + k * 1.6; u.weapon.position.set(.27, .25, .1); }
   else { u.weapon.rotation.x = 0; u.weapon.position.set(.27, .33, .12 - k * .07); }
   // 揮劍：整個人物由右往左扭身揮一下
-  if (f.cur === 'sword' && k > 0) u.inner.rotation.y += Math.sin((1 - k) * Math.PI) * -1.1 + k * .5;
+  if (f.cur === 'sword' && k > 0 && !(u.crig && (u.crig.armR || u.crig.armL))) u.inner.rotation.y += Math.sin((1 - k) * Math.PI) * -1.1 + k * .5;
   // 掉進水裡：往下沉
   const fy = (f.fallT || 0) > 0 ? -Math.min(1.4, (1.1 - f.fallT) * 1.7) : 0;
   m.position.y = fy;
@@ -5267,7 +5369,7 @@ function adapt(ms, dt) {
 try {
   init();
   scene.add(root);
-  window.R3D = { aim: AIM, orientZoom, get zoomLevel() { return ozoom; }, toggleGlow() { quality.bloom = !quality.bloom; quality.decided = true; return quality.bloom; }, ready: true, debug: { get camera() { return camera; } }, render, newLevel() { gridRef = null; }, cycleView, shake, get quality() { return quality; } };
+  window.R3D = { aim: AIM, orientZoom, get zoomLevel() { return ozoom; }, toggleGlow() { quality.bloom = !quality.bloom; quality.decided = true; return quality.bloom; }, ready: true, debug: { get camera() { return camera; }, get scene() { return scene; }, get pools() { return pools; } }, render, newLevel() { gridRef = null; }, cycleView, shake, get quality() { return quality; } };
   document.body.classList.add('r3d');
   const cb = document.getElementById('camBtn'); if (cb) cb.addEventListener('click', cycleView);
 } catch (e) {
