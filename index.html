@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v5.3  2026-10-20  |  大橋國小  |  v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v5.4  2026-10-20  |  大橋國小  |  v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v5.3｜大橋國小</title>
+<title>成語炸彈超人 3D v5.4｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -925,7 +925,7 @@ function buildLevels(chapIndex){
 "use strict";
 
 const TILE = 44;
-let COLS = 13, ROWS = 11;          // 大亂鬥模式會改成 35×25
+let COLS = 11, ROWS = 9;           // v5.4：炸彈模式 11×9（原 13×11），格子大、人物看得清楚；大亂鬥模式會改成 35×25
 const W = COLS*TILE, H = ROWS*TILE;
 
 const T_EMPTY = 0, T_WALL = 1, T_BRICK = 2, T_STEEL = 3;   // T_STEEL：雪球模式的固定鋼塊（打不掉）
@@ -967,7 +967,7 @@ const PLAYER_COLORS = [
   {body:'#ffffff', trim:'#2e8bff', name:'白炸彈人'},   // P1
   {body:'#7fd0ff', trim:'#1059c9', name:'藍炸彈人'},   // P2
 ];
-const SPAWNS = [ {c:1,r:1}, {c:COLS-2,r:ROWS-2} ];
+const SPAWNS = [ {c:1,r:1}, {get c(){return COLS-2;}, get r(){return ROWS-2;}} ];
 
 /* ---------- input ---------- */
 const keys = {};
@@ -1901,7 +1901,7 @@ function startLevel(){
   keys['space']=false; keys['enter']=false; bombTap=false;   // 清掉選單時殘留的按鍵
   G.bots=[]; G.proj=[]; G.bb=[]; G.beams=[]; G.swings=[]; G.chips=[];
   const bigMap = G.gameMode==='brawl' || G.gameMode==='orient';
-  if(!bigMap){ COLS=13; ROWS=11; }
+  if(!bigMap){ if(G.gameMode==='snow'){ COLS=13; ROWS=11; } else { COLS=11; ROWS=9; } }   // 雪球地圖是固定 13×11 的版型
   document.body.classList.toggle('mode-brawl', bigMap);
   document.body.classList.toggle('mode-orient', G.gameMode==='orient');
   G.players = [];
@@ -3984,7 +3984,7 @@ function normalize(src, rotX, rotY) {
   let box = new THREE.Box3().setFromObject(wrap);
   const s = box.getSize(new THREE.Vector3());
   if (!isFinite(s.x) || s.length() === 0) throw new Error('模型是空的或無法計算大小');
-  const k = Math.min(0.92 / Math.max(s.y, 1e-6), 0.82 / Math.max(s.x, s.z, 1e-6));
+  const k = Math.min(0.92 / Math.max(s.y, 1e-6), 1.05 / Math.max(s.x, s.z, 1e-6));   // v5.4：寬一點的人物（雙手拿武器）不再被縮太小
   inner.scale.setScalar(k);
   wrap.updateMatrixWorld(true);
   box = new THREE.Box3().setFromObject(wrap);
@@ -4498,13 +4498,13 @@ function buildBomber(pal) {
   g.userData = { inner, rig: { head, hL, hR, fL, fR }, kind: 'bomber', ang: 0, base: 1.12 };
   return g;
 }
-const CUSTOM_SCALE = 1.9, CUSTOM_SCALE_ORIENT = 2.7;   // 自製人物在遊戲裡的大小（原本 1.12）；定向越野是全圖，再放大一些
+const CUSTOM_SCALE = 2.2, CUSTOM_SCALE_BOMB = 2.7, CUSTOM_SCALE_ORIENT = 3.0;   // v5.4 自製人物在遊戲裡的大小（原本 1.12）：大亂鬥 2.2、炸彈／雪球 2.7、定向越野全圖 3.0
 function buildCustom(template) {
   const g = new THREE.Group(), inner = new THREE.Group(); g.add(inner);
   const body = SkeletonUtils.clone(template);
   body.traverse(o => { if (o.isMesh && o.material) o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone(); });
   inner.add(body);
-  g.userData = { inner, rig: null, kind: 'custom', ang: 0, base: G().gameMode === 'orient' ? CUSTOM_SCALE_ORIENT : CUSTOM_SCALE };   // v5.1：自製人物放大，學生的設計看得清楚
+  g.userData = { inner, rig: null, kind: 'custom', ang: 0, base: G().gameMode === 'orient' ? CUSTOM_SCALE_ORIENT : G().gameMode === 'brawl' ? CUSTOM_SCALE : CUSTOM_SCALE_BOMB };   // v5.1：自製人物放大，學生的設計看得清楚
   return g;
 }
 function buildBlob(skin, chaser) {
