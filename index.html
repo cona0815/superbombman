@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v5.1  2026-10-20  |  大橋國小  |  v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v5.2  2026-10-20  |  大橋國小  |  v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v5.1｜大橋國小</title>
+<title>成語炸彈超人 3D v5.2｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -364,6 +364,40 @@
   .ranktbl td:first-child{width:34px; text-align:center; font-size:18px;}
   .ranktbl td:last-child{text-align:right; font-family:Fredoka,sans-serif; font-weight:700; color:#1f6fa8;}
   .ranktbl tr.me td{background:#fff3c4;}
+
+  /* ===== v5.2 遊戲中 UI 全部縮小，畫面留給地圖 ===== */
+  #hud .topbar{top:6px; left:8px; right:8px; gap:6px;}
+  #hud .topbar .chip{font-size:13px; padding:4px 11px; border-width:2px; box-shadow:0 2px 6px rgba(0,0,0,.25); gap:5px;}
+  #hud .topbar .chip.timer{font-size:17px; min-width:84px;}
+  #hud .topbar .chip.topbtn{padding:4px 10px;}
+  #hud .side{left:8px; top:44px; width:124px; gap:5px;}
+  #hud .pcard{padding:5px 7px; border-width:2px;}
+  #hud .pcard .face{width:22px; height:22px;}
+  #hud .pcard .pname{font-size:12px; max-width:66px;}
+  #hud .pcard .pscore{font-size:13px; padding:0 6px;}
+  #hud .pcard .hpbar{height:11px; margin-top:4px;} #hud .pcard .hpbar span{font-size:9px; line-height:11px;}
+  #hud .pcard .lives{font-size:10px; margin-top:2px;}
+  #hud .pcard .pups{gap:3px; margin-top:4px;} #hud .pcard .pup{font-size:10.5px; padding:0 5px;}
+  #hud .checklist{right:8px; top:44px; width:138px; padding:5px; gap:4px; border-width:2px; border-radius:12px; max-height:calc(100% - 56px);}
+  #hud .checklist h4{font-size:11.5px; margin:1px 0 2px; letter-spacing:0;}
+  #hud .clist{gap:3px;}
+  #hud .cidiom{font-size:12.5px; padding:3px 6px; border-radius:7px;}
+  #hud .cidiom .cm{font-size:10px; line-height:1.3;}
+  #hud .cidiom .dot{width:6px; height:6px;}
+  #hud .keyhint{left:8px; bottom:8px; font-size:11px; line-height:1.5; padding:4px 9px; max-width:520px;}
+  body.mode-brawl #wbarWrap{bottom:6px; gap:2px;}
+  body.mode-brawl #wname{font-size:11px; padding:2px 9px;}
+  body.mode-brawl #wbar{gap:4px; padding:4px 6px; border-radius:14px;}
+  body.mode-brawl .wslot{width:36px; height:36px; border-radius:10px;}
+  body.mode-brawl .wslot .wi{font-size:19px;} body.mode-brawl .wslot.locked .wi{font-size:14px;}
+  body.mode-brawl .wslot .wk{font-size:9px; top:1px; left:4px;} body.mode-brawl .wslot .wa{font-size:10px;}
+  body.mode-brawl #minimap{width:150px; height:107px; right:8px; bottom:8px; border-width:2px;}
+  body.mode-brawl #hud .checklist{max-height:calc(100% - 180px);}
+  body.mode-brawl #hud .keyhint{bottom:62px;}
+  body.mode-orient #hud .side{width:100px; top:44px; padding:5px;}
+  body.mode-orient #hud .keyhint{left:116px; bottom:8px;}
+  #feed{top:44px;} .fline{font-size:12.5px; padding:4px 12px;} .fline.big{font-size:14px;} .fline.unlock{font-size:13px;}
+  body.ofull #feed{top:44px;}
 </style>
 </head>
 <body>
@@ -5049,9 +5083,10 @@ function safeArea(w, h) {
   const tb = document.querySelector('#hud .topbar'), sd = document.getElementById('sideboard'), cl = document.querySelector('#hud .checklist');
   const full = document.body.classList.contains('ofull');
   if (full) { m.l = 6; m.t = 6; m.b = 6; if (vis(sd) && sd.children.length) m.l = Math.min(sd.getBoundingClientRect().right - cr.left + 6, w * .16); if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 8; m.r = Math.min(m.r, w * .24); return m; }
-  if (vis(tb)) m.t = tb.getBoundingClientRect().bottom - cr.top + 8;
-  if (vis(sd) && sd.children.length) m.l = sd.getBoundingClientRect().right - cr.left + 12;
-  if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 12;
+  if (vis(tb)) m.t = tb.getBoundingClientRect().bottom - cr.top + 4;
+  if (vis(sd) && sd.children.length) m.l = sd.getBoundingClientRect().right - cr.left + 6;
+  if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 6;
+  m.b = 6;
   m.l = Math.min(m.l, w * .28); m.r = Math.min(m.r, w * .28); m.t = Math.min(m.t, h * .2);
   return m;
 }
@@ -5097,7 +5132,7 @@ function brawlCamera(dt) {
     else { const k = Math.min(1, dt * 6); follow.x += (tx - follow.x) * k; follow.z += (tz - follow.z) * k; }
   }
   const el = THREE.MathUtils.degToRad(VIEWS[viewIdx].elev), tanV = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-  let dist = Math.max(9.6 / (tanV * camera.aspect), 6.4 * Math.sin(el) / tanV); dist = Math.min(32, Math.max(8, dist));   // v5.1：鏡頭拉近一點，人物更大
+  let dist = Math.max(8.2 / (tanV * camera.aspect), 5.6 * Math.sin(el) / tanV); dist = Math.min(32, Math.max(7, dist));   // v5.2：鏡頭再拉近，人物更大
   if (G().gameMode === 'orient') dist *= ozoom === 1 ? 1.55 : 1;
   camera.clearViewOffset();
   camBase.set(follow.x, Math.sin(el) * dist, follow.z + Math.cos(el) * dist);
