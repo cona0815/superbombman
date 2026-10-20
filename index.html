@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v5.4  2026-10-20  |  大橋國小  |  v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v5.5  2026-10-20  |  大橋國小  |  v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v5.4｜大橋國小</title>
+<title>成語炸彈超人 3D v5.5｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -400,6 +400,24 @@
   body.mode-orient #hud .keyhint{left:116px; bottom:8px;}
   #feed{top:44px;} .fline{font-size:12.5px; padding:4px 12px;} .fline.big{font-size:14px;} .fline.unlock{font-size:13px;}
   body.ofull #feed{top:44px;}
+
+  /* ===== v5.5 炸彈／雪球：介面全貼邊，地圖撐滿 ===== */
+  body.mode-small #hud .side{top:6px; left:8px; width:auto; flex-direction:row; gap:6px;}
+  body.mode-small #hud .pcard{display:flex; flex-direction:row; align-items:center; gap:8px; padding:3px 10px 3px 6px; border-radius:30px; white-space:nowrap;}
+  body.mode-small #hud .pcard .row1{gap:5px;} body.mode-small #hud .pcard .pscore{margin-left:2px;}
+  body.mode-small #hud .pcard .lives{margin:0;} body.mode-small #hud .pcard .pups{margin:0; flex-wrap:nowrap;}
+  body.mode-small #hud .topbar{left:300px; justify-content:flex-end; gap:8px;}
+  body.mode-small #hud .topbar .chip.timer{min-width:76px;}
+  body.mode-small #hud .checklist{top:auto; bottom:6px; left:50%; right:auto; transform:translateX(-50%); width:auto; max-width:calc(100% - 16px); max-height:none;
+    flex-direction:row; align-items:center; padding:3px 10px; gap:8px; border-radius:30px;}
+  body.mode-small #hud .checklist h4{margin:0; white-space:nowrap;}
+  body.mode-small #hud .clist{flex-direction:row; flex-wrap:nowrap; justify-content:center; max-height:none; overflow:visible; gap:4px; padding:0;}
+  body.mode-small #hud .cidiom{flex-direction:row; align-items:center; padding:2px 8px; border-radius:20px; font-size:12px; white-space:nowrap;}
+  @media (max-width:1100px){ body.mode-small #hud .cidiom{font-size:11px; padding:2px 6px;} body.mode-small #hud .checklist h4{display:none;} }
+  body.mode-small #hud .cidiom .cm{display:none;}
+  body.mode-small #hud .keyhint{bottom:48px; max-width:420px;}
+  body.mode-small #collectPop{bottom:50px;}
+  @media (max-width:1000px){ body.mode-small #hud .topbar{left:250px;} body.mode-small #hud .pcard .pups{display:none;} }
 </style>
 </head>
 <body>
@@ -1903,6 +1921,7 @@ function startLevel(){
   const bigMap = G.gameMode==='brawl' || G.gameMode==='orient';
   if(!bigMap){ if(G.gameMode==='snow'){ COLS=13; ROWS=11; } else { COLS=11; ROWS=9; } }   // 雪球地圖是固定 13×11 的版型
   document.body.classList.toggle('mode-brawl', bigMap);
+  document.body.classList.toggle('mode-small', !bigMap);   // v5.5：小地圖模式：玩家卡併到上排、成語清單改成底部橫列，地圖撐滿
   document.body.classList.toggle('mode-orient', G.gameMode==='orient');
   G.players = [];
   for(let i=0;i<G.numPlayers;i++) G.players.push(makePlayer(i));
@@ -2101,7 +2120,7 @@ document.getElementById('loseMenuBtn').addEventListener('click', goMenu);
 document.getElementById('menuBtn').addEventListener('click', ()=>{ G.running=false; goMenu(); });
 function goMenu(){
   G.running=false; G.ended=true; G.paused=false;
-  document.body.classList.remove('mode-brawl','mode-orient');
+  document.body.classList.remove('mode-brawl','mode-orient','mode-small');
   hideOverlays();
   document.getElementById('hud').style.display='none';
   document.getElementById('menu').style.display='flex';
@@ -5097,6 +5116,14 @@ function safeArea(w, h) {
   const tb = document.querySelector('#hud .topbar'), sd = document.getElementById('sideboard'), cl = document.querySelector('#hud .checklist');
   const full = document.body.classList.contains('ofull');
   if (full) { m.l = 6; m.t = 6; m.b = 6; if (vis(sd) && sd.children.length) m.l = Math.min(sd.getBoundingClientRect().right - cr.left + 6, w * .16); if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 8; m.r = Math.min(m.r, w * .24); return m; }
+  if (document.body.classList.contains('mode-small')) {   // v5.5：上排＝狀態列＋玩家卡，下排＝成語清單，左右貼邊
+    m.l = 6; m.r = 6; m.t = 6; m.b = 6;
+    if (vis(tb)) m.t = Math.max(m.t, tb.getBoundingClientRect().bottom - cr.top + 4);
+    if (vis(sd) && sd.children.length) m.t = Math.max(m.t, sd.getBoundingClientRect().bottom - cr.top + 4);
+    if (vis(cl)) m.b = Math.max(m.b, cr.bottom - cl.getBoundingClientRect().top + 4);
+    m.t = Math.min(m.t, h * .2); m.b = Math.min(m.b, h * .2);
+    return m;
+  }
   if (vis(tb)) m.t = tb.getBoundingClientRect().bottom - cr.top + 4;
   if (vis(sd) && sd.children.length) m.l = sd.getBoundingClientRect().right - cr.left + 6;
   if (vis(cl)) m.r = cr.right - cl.getBoundingClientRect().left + 6;
