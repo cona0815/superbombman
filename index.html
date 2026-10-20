@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v5.2  2026-10-20  |  大橋國小  |  v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v5.3  2026-10-20  |  大橋國小  |  v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v5.2｜大橋國小</title>
+<title>成語炸彈超人 3D v5.3｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -94,6 +94,8 @@
   .locktip.hidden{display:none;}
   .charbox{display:flex; gap:12px; align-items:stretch; background:#fff; border:3px solid #e7d5a6; border-radius:16px; padding:10px;}
   .charbox.nudge{animation:nudge .5s; border-color:#e8463c;}
+  .mini.go:not(:disabled){animation:savepulse 1.2s ease-in-out infinite;}   /* 還沒儲存時按鈕一直跳 */
+  @keyframes savepulse{0%,100%{transform:scale(1); box-shadow:0 0 0 0 rgba(46,160,67,.5);} 50%{transform:scale(1.06); box-shadow:0 0 0 8px rgba(46,160,67,0);}}
   @keyframes nudge{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
   #charPreview{width:150px; height:150px; flex-shrink:0; border-radius:12px; background:radial-gradient(circle at 50% 35%,#dff2ff,#8fc3ea);}
   .charside{flex:1; display:flex; flex-direction:column; gap:6px; min-width:0; text-align:left;}
@@ -2081,8 +2083,13 @@ window.onCharChanged = function(){
   const tip=document.getElementById('snowLockTip'); if(tip && window.CHAR && window.CHAR.saved) tip.classList.add('hidden');
 };
 
-document.getElementById('startBtn').addEventListener('click', ()=>{
+document.getElementById('startBtn').addEventListener('click', async ()=>{
   try{actx=actx||new(window.AudioContext||window.webkitAudioContext)();}catch(e){}
+  // v5.3：預覽裡還有沒儲存的人物 → 開始遊戲前自動幫他存（名字沒填就擋下來提醒）
+  if(window.CHAR && window.CHAR.hasDraft && window.CHAR.hasDraft()){
+    const ok = await window.CHAR.commitDraft();
+    if(!ok){ const up=document.getElementById('charField'); if(up){ up.classList.remove('nudge'); void up.offsetWidth; up.classList.add('nudge'); up.scrollIntoView({behavior:'smooth',block:'center'}); } return; }
+  }
   if(NEED_CHAR(G.gameMode) && !(window.CHAR && window.CHAR.saved)){ G.gameMode='bomb'; }
   if((G.gameMode==='brawl'||G.gameMode==='orient') && !(window.R3D && window.R3D.ready)){ G.gameMode='bomb'; }
   startGame();
@@ -4063,10 +4070,10 @@ async function onFile(file) {
   if (!$('charName').value) $('charName').value = file.name.replace(/\.[^.]+$/, '').slice(0, 12);
   $('charColorWrap').style.display = (ext === 'obj' || ext === 'stl') ? '' : 'none';
   await rebuildDraft();
-  if (draft && draft.obj && ext === 'zip') return setStatus('👀 已讀入 OBJ＋材質顏色。如果人物躺著或背對你，按「轉正／轉向」調整，填好名字後按 <b>儲存我的人物</b>。', 'info');
+  if (draft && draft.obj && ext === 'zip') return setStatus('👀 已讀入 OBJ＋材質顏色（<b>還沒儲存</b>）。如果人物躺著或背對你，按「轉正／轉向」調整，填好名字後按 <b>儲存我的人物</b>，遊戲裡才會換成這一隻。', 'info');
   if (draft && draft.obj) setStatus(SPECKLE.regions.length
     ? '⚠️ 這個 .glb 有 <b>' + SPECKLE.regions.length + ' 個零件的顏色被 Tinkercad 匯出時弄壞了</b>（黑白花斑）。已先自動補色，可以在下方「顏色修復」一個一個調；或回 Tinkercad 改用 <b>匯出 → .OBJ</b>，把下載的 zip 直接拖進來，顏色會最準。'
-    : '👀 預覽中：如果人物躺著或背對你，按「轉正／轉向」調整，填好名字後按 <b>儲存我的人物</b>。', SPECKLE.regions.length ? 'err' : 'info');
+    : '👀 預覽中（<b>還沒儲存</b>）：如果人物躺著或背對你，按「轉正／轉向」調整，填好名字後按 <b>儲存我的人物</b>，遊戲裡才會換成這一隻。', SPECKLE.regions.length ? 'err' : 'info');
 }
 async function saveChar() {
   if (!draft || !draft.obj) return;
@@ -4087,6 +4094,13 @@ async function removeChar() {
   setStatus('已移除人物。雪球大作戰、成語大亂鬥需要重新上傳人物才能開啟。');
   refreshLockUI();
 }
+CHAR.hasDraft = () => !!(draft && draft.obj);
+CHAR.commitDraft = async () => {   // 回傳 true = 已儲存（或沒有草稿）
+  if (!draft || !draft.obj) return true;
+  const name = ($('charName').value || '').trim(), author = ($('charAuthor').value || '').trim();
+  if (!name || !author) { setStatus('⚠️ 預覽裡的人物<b>還沒儲存</b>！先填好名字和作者，再按「儲存我的人物」，遊戲裡才會用這一隻。', 'err'); (!name ? $('charName') : $('charAuthor')).focus(); return false; }
+  await saveChar(); return CHAR.saved && !draft;
+};
 function escapeHTML(s) { return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 async function loadSaved() {
   let rec = null;
