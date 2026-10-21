@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v6.0  2026-10-21  |  大橋國小  |  v6.0：🌐 連線對戰（成語大亂鬥，每房 8 人；老師在 teacher.html 開房，伺服器 server/ 部署於 Render）；v5.6：自製人物自動骨架——走路時腳前後擺、手跟著擺，攻擊／放炸彈／丟雪球時右手橫揮武器；v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v6.1  2026-10-21  |  大橋國小  |  v6.1：大亂鬥預設只有近身揮劍，寶盒給一把有次數的武器、新的取代舊的；所有角色等高（以自製人物 ×0.8 為準）；v6.0：🌐 連線對戰（成語大亂鬥，每房 8 人；老師在 teacher.html 開房，伺服器 server/ 部署於 Render）；v5.6：自製人物自動骨架——走路時腳前後擺、手跟著擺，攻擊／放炸彈／丟雪球時右手橫揮武器；v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v6.0｜大橋國小</title>
+<title>成語炸彈超人 3D v6.1｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -1988,7 +1988,7 @@ function updateKeyhint(){
     kh.style.animation='none'; void kh.offsetWidth; kh.style.animation=''; return;
   }
   if(G.gameMode==='brawl'){
-    kh.innerHTML='移動：<b>WASD</b>　·　瞄準：<b>滑鼠</b>　·　攻擊：<b>左鍵</b> 或 <b>空白鍵</b>（按住連發）<br>換武器：<b>1–9</b>、<b>滾輪</b>、<b>Q／E</b>、<b>右鍵</b>　·　<b>P</b> 暫停　·　<b>C</b> 視角　·　<b>F</b> 全螢幕';
+    kh.innerHTML='移動：<b>WASD</b>　·　瞄準：<b>滑鼠</b>　·　攻擊：<b>左鍵</b> 或 <b>空白鍵</b>（按住連發）<br>武器：<b>1</b> 揮劍、<b>2</b> 寶盒武器（滾輪／Q／E／右鍵切換）　·　<b>P</b> 暫停　·　<b>C</b> 視角　·　<b>F</b> 全螢幕';
     kh.style.animation='none'; void kh.offsetWidth; kh.style.animation=''; return;
   }
   const act = G.gameMode==='snow' ? '丟雪球' : '放炸彈';
@@ -2648,15 +2648,15 @@ const BRAWL_COLS = 35, BRAWL_ROWS = 25;
 const SWORD_RANGE = 1.5;   // v4.9：揮劍攻擊範圍統一 1.5 格（不管學生把劍做多長）
 const SWORD_ARC = 1.15;    // 左右各約 66°
 const WEAPONS = [
-  {id:'sword',  name:'揮劍',     icon:'🗡️', cd:.36, ammo:Infinity, range:SWORD_RANGE, desc:'自製人物的基本攻擊：揮動右手的劍（範圍統一 1.5 格）', own:true},
-  {id:'snow',   name:'雪球',     icon:'❄️', cd:.34, ammo:Infinity, range:9,  desc:'基本武器，無限使用'},
+  {id:'sword',  name:'揮劍',     icon:'🗡️', cd:.36, ammo:Infinity, range:SWORD_RANGE, desc:'基本攻擊：近身揮劍（範圍 1.5 格），開寶盒拿遠距武器', own:true},
+  {id:'snow',   name:'雪球',     icon:'❄️', cd:.34, ammo:24, range:9,  desc:'丟雪球，24 發'},
   {id:'rapid',  name:'連發水槍', icon:'💦', cd:.09, ammo:45, range:9,  desc:'按住不放可以連發'},
   {id:'spread', name:'三向散彈', icon:'🔱', cd:.55, ammo:14, range:5,  desc:'一次射出扇形 5 發'},
   {id:'boom',   name:'迴旋飛盤', icon:'🥏', cd:.5,  ammo:10, range:6,  desc:'穿過敵人再飛回來，接住退還彈藥'},
   {id:'rocket', name:'火箭筒',   icon:'🚀', cd:1.0, ammo:6,  range:9,  desc:'爆炸範圍傷害，能炸毀磚塊'},
   {id:'bomb',   name:'炸彈',     icon:'💣', cd:.6,  ammo:5,  range:1.8,desc:'放在腳下，1.8 秒後十字爆炸'},
   {id:'laser',  name:'雷射槍',   icon:'⚡', cd:.8,  ammo:8,  range:13, desc:'瞬間貫穿一整排敵人'},
-  {id:'hammer', name:'巨鎚',     icon:'🔨', cd:.55, ammo:Infinity, range:1.4, desc:'近戰重擊，把敵人打飛'},
+  {id:'hammer', name:'巨鎚',     icon:'🔨', cd:.55, ammo:14, range:1.4, desc:'近戰重擊，把敵人打飛（14 次）'},
 ];
 const WMAP = {}; WEAPONS.forEach((w,i)=>{ w.slot=i+1; WMAP[w.id]=w; });
 
@@ -2690,6 +2690,10 @@ const netOn = ()=>!!(window.NET&&NET.active);
 const rnd = (a,b)=>a+Math.random()*(b-a);
 const pick = a=>a[Math.random()*a.length|0];
 const basicW = f=>(f.weapons&&f.weapons.sword>0)?'sword':'snow';
+/* v6.1 大亂鬥武器規則：每個人預設只有近身的揮劍；開寶盒拿到一把有次數的武器，拿到新的就取代舊的 */
+const PICKUPS = ()=>WEAPONS.filter(w=>!w.own);
+const specialOf = f=>Object.keys(f.weapons||{}).find(k=>k!=='sword')||null;
+function giveWeapon(f,id){ const w=WMAP[id]; f.weapons={sword:Infinity}; f.weapons[id]=w.ammo; f.cur=id; }
 
 /* ============================================================
    地圖：五種地形
@@ -2789,17 +2793,17 @@ function brawlSetup(lvl){
   // 玩家
   const p=G.players[0];
   Object.assign(p,{px:pSpot.c*TILE+TILE/2, py:pSpot.r*TILE+TILE/2, hp:20, maxhp:20, lives:3, alive:true, invuln:2,
-    weapons:(usingCustomChar()?{sword:Infinity, snow:Infinity}:{snow:Infinity}), cur:(usingCustomChar()?'sword':'snow'), cd:0, aim:{x:0,y:-1}, facing:'up', spd:3.6, kills:0, score:0, isBot:false,
+    weapons:{sword:Infinity}, cur:'sword', cd:0, aim:{x:0,y:-1}, facing:'up', spd:3.6, kills:0, score:0, isBot:false,
     name:(window.CHAR&&window.CHAR.saved&&window.CHAR.name)||'你', hitT:0, fireT:0, respawnT:0, lavaAcc:0, id:0});
   p.spawn={x:p.px,y:p.py};
   // 電腦對手
   G.bots = spots.slice(0,nBots).map((s,k)=>{
     const b={id:100+k, isBot:true, name:BOT_NAMES[k], color:BOT_COLORS[k%BOT_COLORS.length],
       px:s.c*TILE+TILE/2, py:s.r*TILE+TILE/2, hp:cfg.hp, maxhp:cfg.hp, alive:true, invuln:1.5,
-      weapons:{snow:Infinity}, cur:'snow', cd:1+Math.random(), aim:{x:0,y:1}, facing:'down',
+      weapons:{sword:Infinity}, cur:'sword', cd:1+Math.random(), aim:{x:0,y:1}, facing:'down',
       spd:cfg.spd*rnd(.92,1.08), kills:0, cfg, think:Math.random()*.5, path:null, target:null,
       moving:false, animT:Math.random()*6, hitT:0, fireT:0, lavaAcc:0, stuckT:0, aimJit:0, seeT:0};
-    for(let i=0;i<cfg.startW;i++){ const w=pick(WEAPONS.filter(w=>w.id!=='snow'&&!w.own)); b.weapons[w.id]=Math.ceil(w.ammo*.6); }
+    if(cfg.startW>0){ const w=pick(PICKUPS()); giveWeapon(b,w.id); b.weapons[w.id]=Math.ceil(w.ammo*.6); b.cur='sword'; }
     return b;
   });
   // 地上的成語寶盒與愛心
@@ -2872,7 +2876,7 @@ function tryFire(f){
   }
   if(w.ammo!==Infinity && netAuth()){
     f.weapons[w.id]--;
-    if(f.weapons[w.id]<=0){ f.weapons[w.id]=0; f.cur=basicW(f); if(!f.isBot) brawlFeed('彈藥用完了，換回 '+WMAP[f.cur].icon+' '+WMAP[f.cur].name+'。再開寶盒可以補充！'); }
+    if(f.weapons[w.id]<=0){ delete f.weapons[w.id]; f.cur=basicW(f); if(!f.isBot) brawlFeed(w.icon+' '+w.name+' 用完了，換回 🗡️ 揮劍。再開寶盒拿新武器！'); }
   }
   if(!f.isBot){ const s={snow:[900,.04],rapid:[1200,.02],spread:[500,.06],boom:[700,.06],rocket:[220,.14],bomb:[300,.08],laser:[1500,.1],hammer:[160,.1],sword:[520,.07]}[w.id]; beep(s[0],s[1],w.id==='laser'?'sawtooth':'triangle',.045); }
   if(f.isBot && w.id==='bomb'){ f.think=0; }   // 放完炸彈馬上想辦法躲
@@ -3090,17 +3094,15 @@ function turnBoom(pr){ pr.phase=1; pr.hit=new Set(); }
    ============================================================ */
 function brawlSelect(slot){
   const p=G.players[0]; if(!p||!p.alive) return;
-  const w=WEAPONS[slot-1]; if(!w) return;
-  if(!(w.id in p.weapons)){ brawlFeed('🔒 '+w.icon+' '+w.name+' 還沒解鎖，打開成語寶盒 🎁 就有機會拿到！'); return; }
-  if(!(p.weapons[w.id]>0)){ brawlFeed(w.icon+' '+w.name+' 沒有彈藥了'); return; }
-  p.cur=w.id; beep(700,.04,'square',.03); brawlHUD(true);
+  if(slot===1){ p.cur='sword'; }
+  else { const sp=specialOf(p); if(!sp){ brawlFeed('還沒有武器，打開成語寶盒 🎁 就能拿到！'); return; } p.cur=sp; }
+  beep(700,.04,'square',.03); brawlHUD(true);
+  if(netOn()&&!NET.host) NET.ev({t:'sel',w:p.cur});
 }
 function brawlCycle(d){
   const p=G.players[0]; if(!p||!p.alive) return;
-  const own=WEAPONS.filter(w=>p.weapons[w.id]>0);
-  if(own.length<=1) return;
-  let i=own.findIndex(w=>w.id===p.cur); i=(i+d+own.length)%own.length;
-  p.cur=own[i].id; beep(700,.04,'square',.03); brawlHUD(true);
+  const sp=specialOf(p); if(!sp) return;
+  brawlSelect(p.cur==='sword'?2:1);
 }
 function playerControl(p,dt){
   if(!p.alive) return;
@@ -3157,6 +3159,7 @@ function pathTo(from,to,danger){
 function chooseWeapon(b,d,los){
   const has=id=>b.weapons[id]>0;
   if(has('hammer') && d<1.5) return 'hammer';
+  if(d<1.6) return 'sword';
   if(has('bomb') && d<2 && Math.random()<.45) return 'bomb';
   if(los){
     if(has('rocket') && d>2.6 && d<8.5) return 'rocket';
@@ -3164,8 +3167,9 @@ function chooseWeapon(b,d,los){
     if(has('spread') && d<5) return 'spread';
     if(has('rapid') && d<8.5) return 'rapid';
     if(has('boom') && d<6) return 'boom';
+    if(has('snow') && d<9) return 'snow';
   }
-  return 'snow';
+  return has('hammer')?'hammer':has('bomb')?'bomb':'sword';
 }
 function findSafe(from,danger){
   let best=null, bd=1e9;
@@ -3196,7 +3200,7 @@ function botDecide(b){
   b.cur=chooseWeapon(b,td,los);
   b.canShoot=los && td<=WMAP[b.cur].range+.3;
   // 3) 撿寶盒／愛心
-  const lowHp=b.hp<b.maxhp*.4, fewW=Object.keys(b.weapons).length<3;
+  const lowHp=b.hp<b.maxhp*.4, fewW=!specialOf(b);
   let item=null, ib=1e9;
   G.items.forEach(it=>{
     if(!((lowHp&&it.kind==='heart')||(fewW&&it.kind==='box'))) return;
@@ -3208,7 +3212,7 @@ function botDecide(b){
     const s=pick(G.reach); if(Math.abs(s.c-me.c)+Math.abs(s.r-me.r)<10){ b.path=pathTo(me,s,danger); b.mode='wander'; }
     return;
   }
-  if(b.canShoot && b.cur!=='hammer' && b.cur!=='bomb'){
+  if(b.canShoot && b.cur!=='hammer' && b.cur!=='bomb' && b.cur!=='sword'){
     b.mode='fight';
     const ideal=Math.min(WMAP[b.cur].range*.6,6);
     if(td<ideal-1.5){   // 太近了，往後退
@@ -3241,7 +3245,7 @@ function botUpdate(b,dt){
     b.aim={x:Math.cos(ang),y:Math.sin(ang)};
     b.seeT+=dt;
     if(b.seeT>=b.cfg.react && d/TILE<=WMAP[b.cur].range+.3 && b.cd<=0 && Math.random()<b.cfg.fireP) tryFire(b);
-  }else if(t && t.alive && (b.cur==='hammer'||b.cur==='bomb')){
+  }else if(t && t.alive && (b.cur==='hammer'||b.cur==='bomb'||b.cur==='sword')){
     b.seeT=0;
     const dx=t.px-b.px, dy=t.py-b.py, d=Math.hypot(dx,dy);
     if(d<WMAP[b.cur].range*TILE){ b.aim={x:dx/d,y:dy/d}; if(b.cd<=0) tryFire(b); }
@@ -3253,7 +3257,7 @@ function botUpdate(b,dt){
     const tx=n.c*TILE+TILE/2, ty=n.r*TILE+TILE/2, dx=tx-b.px, dy=ty-b.py, d=Math.hypot(dx,dy);
     if(nt===T_BRICK){
       b.aim={x:dx/(d||1), y:dy/(d||1)};
-      const keep=b.cur; b.cur=(b.weapons.hammer>0&&d<TILE*1.3)?'hammer':'snow';
+      const keep=b.cur; b.cur=(b.weapons.hammer>0&&d<TILE*1.3)?'hammer':(b.weapons.snow>0||b.weapons.rapid>0)?(b.weapons.snow>0?'snow':'rapid'):'sword';
       if(b.cd<=0) tryFire(b); b.cur=keep;
     }else if(nt===T_WALL||nt===T_STEEL||nt===T_TREE||nt===T_WATER){ b.path=null; }
     else if(d<3){ b.path.shift(); }
@@ -3279,20 +3283,10 @@ function openBox(f){
     idm=nextIdiom(); f.score=(f.score||0)+1;
     if(!f.remote){ G.collected.add(idm.w); showCollect(idm); updateChecklist(); }
   }
-  const locked=WEAPONS.filter(w=>!(w.id in f.weapons)&&!w.own);
-  if(locked.length && Math.random()<.8){
-    const w=pick(locked); f.weapons[w.id]=w.ammo; f.cur=w.id;
-    if(!f.isBot){ brawlFeed(`🔓 解鎖新武器：${w.icon} <b>${w.name}</b>（按 ${w.slot}）— ${w.desc}`,'unlock'); chime(); }
-  }else{
-    const own=WEAPONS.filter(w=>w.ammo!==Infinity && (w.id in f.weapons));
-    if(own.length){
-      own.sort((a,b)=>f.weapons[a.id]/a.ammo - f.weapons[b.id]/b.ammo);
-      const w=own[0]; f.weapons[w.id]=w.ammo;
-      if(!f.isBot) brawlFeed(`🎁 補滿 ${w.icon} ${w.name} 的彈藥，再回復一點血！`,'unlock');
-    }
-    f.hp=Math.min(f.maxhp,f.hp+2);
-    if(!f.isBot) chime();
-  }
+  // 拿到一把新武器（和手上的不同），取代舊的
+  const old=specialOf(f), opts=PICKUPS().filter(w=>w.id!==old), w=pick(opts);
+  giveWeapon(f,w.id); f.hp=Math.min(f.maxhp,f.hp+1);
+  if(!f.isBot){ brawlFeed(`🎁 拿到 ${w.icon} <b>${w.name}</b>×${w.ammo}${old?`（取代 ${WMAP[old].icon} ${WMAP[old].name}）`:''}— ${w.desc}　按 2 使用、1 換回揮劍`,'unlock'); chime(); }
   if(netOn() && f.remote){ NET.hev({t:'box', id:NET.idOf(f), w:idm?idm.w:null, cur:f.cur, wp:f.weapons}); }
   brawlHUD(true);
 }
@@ -3376,7 +3370,7 @@ function brawlTimeUp(){
    ============================================================ */
 function brawlBuildUI(){
   const bar=document.getElementById('wbar'); if(!bar) return;
-  bar.innerHTML=WEAPONS.filter(w=>!w.own||(G.players[0]&&w.id in G.players[0].weapons)).map(w=>`<div class="wslot" data-slot="${w.slot}" title="${w.name}：${w.desc}"><span class="wk">${w.slot}</span><span class="wi">${w.icon}</span><span class="wa"></span></div>`).join('');
+  bar.innerHTML=`<div class="wslot" data-slot="1" title="揮劍：近身攻擊"><span class="wk">1</span><span class="wi">🗡️</span><span class="wa">∞</span></div><div class="wslot" data-slot="2" title="寶盒武器"><span class="wk">2</span><span class="wi">🎁</span><span class="wa"></span></div>`;
   bar.querySelectorAll('.wslot').forEach(s=>s.addEventListener('mousedown',e=>{ e.stopPropagation(); brawlSelect(+s.dataset.slot); }));
   document.getElementById('feed').innerHTML='';
   G.mapBase=null;
@@ -3401,7 +3395,7 @@ function brawlHUD(force){
     const bar=d.querySelector('.hpbar i'); bar.style.width=(k*100)+'%'; bar.style.background=k>.5?'#5dff8a':k>.25?'#ffd23f':'#ff4a4a';
     d.querySelector('.hpbar span').textContent=Math.ceil(Math.max(0,p.hp))+' / '+p.maxhp;
     const lv=d.querySelector('.lives'); const want='❤️'.repeat(Math.max(0,p.lives)); if(lv.textContent!==want) lv.textContent=want||'💀';
-    const w=WMAP[p.cur]; d.querySelector('.vwep').textContent=w.icon+' '+(w.ammo===Infinity?'∞':p.weapons[w.id]);
+    const w=WMAP[p.cur]||WMAP.sword; d.querySelector('.vwep').textContent=w.icon+' '+(w.ammo===Infinity?'∞':p.weapons[w.id]);
     d.querySelector('.vbio').textContent='📍'+(BIOME_NAME[p.biome]||'');
   }
   const left=G.bots.filter(b=>b.alive).length;
@@ -3409,12 +3403,13 @@ function brawlHUD(force){
   // 武器列
   const bar=document.getElementById('wbar');
   if(bar){
-    bar.querySelectorAll('.wslot').forEach(s=>{
-      const w=WEAPONS[+s.dataset.slot-1], has=(w.id in p.weapons), am=p.weapons[w.id];
-      s.classList.toggle('locked',!has); s.classList.toggle('on',p.cur===w.id); s.classList.toggle('empty',has&&!(am>0));
-      s.querySelector('.wi').textContent=has?w.icon:'🔒';
-      s.querySelector('.wa').textContent=!has?'':(am===Infinity?'∞':am);
-    });
+    const sp=specialOf(p), s1=bar.querySelector('[data-slot="1"]'), s2=bar.querySelector('[data-slot="2"]');
+    if(s1&&s2){
+      s1.classList.toggle('on',p.cur==='sword');
+      s2.classList.toggle('on',!!sp&&p.cur===sp); s2.classList.toggle('locked',!sp);
+      s2.querySelector('.wi').textContent=sp?WMAP[sp].icon:'🎁'; s2.querySelector('.wa').textContent=sp?p.weapons[sp]:'';
+      s2.title=sp?WMAP[sp].name+'：'+WMAP[sp].desc:'開寶盒拿武器';
+    }
     const nm=document.getElementById('wname'); const w=WMAP[p.cur];
     if(nm){ const t=w.icon+' '+w.name+'　'+w.desc; if(nm.textContent!==t) nm.textContent=t; }
   }
@@ -4023,7 +4018,7 @@ const NET = window.NET = {
     G.bots=[]; NET.remotes.clear();
     NET.people.filter(q=>q.id!==NET.me).forEach(q=>{
       const b={id:200+q.slot, netId:q.id, remote:true, isBot:true, name:q.name, color:BOT_COLORS[q.slot%BOT_COLORS.length], hp:20, maxhp:20, lives:3, alive:true, invuln:3,
-        weapons:{sword:Infinity,snow:Infinity}, cur:'sword', cd:0, aim:{x:0,y:1}, facing:'down', spd:3.6, kills:0, score:0, cfg:{dmg:1}, think:9, path:null, target:null,
+        weapons:{sword:Infinity}, cur:'sword', cd:0, aim:{x:0,y:1}, facing:'down', spd:3.6, kills:0, score:0, cfg:{dmg:1}, think:9, path:null, target:null,
         moving:false, animT:0, hitT:0, fireT:0, respawnT:0, lavaAcc:0, stuckT:0, tx:0, ty:0, tpl:NET.models.get(q.id)||null, tplVer:1};
       put(b,q.slot); b.tx=b.px; b.ty=b.py; G.bots.push(b); NET.remotes.set(q.id,b);
     });
@@ -4086,7 +4081,7 @@ const NET = window.NET = {
       if(f===me){ if(m.lives>0){ f.respawnT=2; brawlFeed('你被打倒了！2 秒後復活（剩 '+m.lives+' 條命）','bad'); } else brawlFeed('你出局了，可以繼續觀戰到這場結束','bad'); if(window.R3D&&R3D.ready) R3D.shake(.3); }
       brawlHUD(true); }
     else if(m.t==='respawn'){ const f=entOf(m.id); if(!f) return; f.alive=true; f.hp=f.maxhp; f.invuln=2.5; if(f===G.players[0]){ f.px=m.x; f.py=m.y; } else { f.px=f.tx=m.x; f.py=f.ty=m.y; } G.fx.push({x:m.x,y:m.y,t:0,dur:.6,color:'#7fe3ff'}); brawlHUD(true); }
-    else if(m.t==='box'){ const f=entOf(m.id); if(!f) return; if(f===G.players[0]){ const idm=m.w?IDIOMS.find(i=>i.w===m.w):null; if(idm){ G.collected.add(idm.w); f.score=(f.score||0)+1; showCollect(idm); updateChecklist(); } const before=f.weapons||{}; f.weapons=decW(m.wp); f.cur=m.cur; const nw=Object.keys(m.wp).find(k=>!(k in before)); const w=WMAP[m.cur]; if(nw&&WMAP[nw]) { brawlFeed(`🔓 解鎖新武器：${WMAP[nw].icon} <b>${WMAP[nw].name}</b>（按 ${WMAP[nw].slot}）— ${WMAP[nw].desc}`,'unlock'); chime(); } else { brawlFeed('🎁 補滿 '+(w?w.icon+' '+w.name:'武器')+' 的彈藥，再回復一點血！','unlock'); chime(); } brawlHUD(true); } else { f.weapons=decW(m.wp); f.cur=m.cur; } }
+    else if(m.t==='box'){ const f=entOf(m.id); if(!f) return; if(f===G.players[0]){ const idm=m.w?IDIOMS.find(i=>i.w===m.w):null; if(idm){ G.collected.add(idm.w); f.score=(f.score||0)+1; showCollect(idm); updateChecklist(); } const before=f.weapons||{}; f.weapons=decW(m.wp); f.cur=m.cur; const nw=Object.keys(f.weapons).find(k=>k!=='sword'), old=Object.keys(before).find(k=>k!=='sword'&&k!==nw); if(nw&&WMAP[nw]){ brawlFeed(`🎁 拿到 ${WMAP[nw].icon} <b>${WMAP[nw].name}</b>×${WMAP[nw].ammo}${old&&WMAP[old]?`（取代 ${WMAP[old].icon} ${WMAP[old].name}）`:''}　按 2 使用、1 換回揮劍`,'unlock'); chime(); } brawlHUD(true); } else { f.weapons=decW(m.wp); f.cur=m.cur; } }
   }
 
   /* ---------- 結束 ---------- */
@@ -5009,7 +5004,23 @@ function importNetModel(m) {
   const grp = new THREE.Group(); grp.add(mesh);
   return normalize(grp, 0, 0);
 }
-const CUSTOM_SCALE = 2.2, CUSTOM_SCALE_BOMB = 2.7, CUSTOM_SCALE_ORIENT = 3.0;   // v5.4 自製人物在遊戲裡的大小（原本 1.12）：大亂鬥 2.2、炸彈／雪球 2.7、定向越野全圖 3.0
+const CUSTOM_SCALE = 2.2 * .8, CUSTOM_SCALE_BOMB = 2.7 * .8, CUSTOM_SCALE_ORIENT = 3.0 * .8;   // v6.1：自製人物 ×0.8，並以它為基準，所有角色（電腦、怪物、雪人）一樣高
+const heroScale = () => G().gameMode === 'orient' ? CUSTOM_SCALE_ORIENT : G().gameMode === 'brawl' ? CUSTOM_SCALE : CUSTOM_SCALE_BOMB;
+const heroH = () => .92 * heroScale();   // 自製人物在場上的高度（世界單位）
+/* 把任何角色縮放成和自製人物一樣高：量 inner 原始高度，算出 base */
+function fitHero(m) {
+  const u = m.userData, inn = u.inner; if (!inn) return m;
+  if (u.kind === 'custom') { u.base = heroScale(); }
+  else {
+    const keep = inn.scale.clone(); inn.scale.setScalar(1); inn.updateMatrixWorld(true);
+    const b = new THREE.Box3().setFromObject(inn), h = b.max.y - Math.max(0, b.min.y);
+    inn.scale.copy(keep); u.base = h > .05 ? heroH() / h : 1;
+    inn.scale.setScalar(u.base);
+  }
+  u.barY = heroH() + .14; if (u.bar && u.bar.isObject3D) u.bar.position.y = u.barY;
+  return m;
+}
+
 function buildCustom(template) {
   const g = new THREE.Group(), inner = new THREE.Group(); g.add(inner);
   const rigged = riggedTemplate(template);
@@ -5017,7 +5028,7 @@ function buildCustom(template) {
   body.traverse(o => { if (o.isMesh && o.material) o.material = Array.isArray(o.material) ? o.material.map(m => m.clone()) : o.material.clone(); });
   inner.add(body);
   const crig = rigged ? { footL: body.getObjectByName('rigFootL'), footR: body.getObjectByName('rigFootR'), armL: body.getObjectByName('rigArmL'), armR: body.getObjectByName('rigArmR') } : null;
-  g.userData = { inner, rig: null, crig, kind: 'custom', ang: 0, base: G().gameMode === 'orient' ? CUSTOM_SCALE_ORIENT : G().gameMode === 'brawl' ? CUSTOM_SCALE : CUSTOM_SCALE_BOMB };   // v5.1：自製人物放大，學生的設計看得清楚
+  g.userData = { inner, rig: null, crig, kind: 'custom', ang: 0, base: heroScale() };   // v5.1：自製人物放大，學生的設計看得清楚
   return g;
 }
 function buildBlob(skin, chaser) {
@@ -5333,13 +5344,13 @@ function syncAll(dt) {
     u.outer.opacity = .95 * (1 - k * .9); u.core.opacity = .95 * (1 - k);
   });
   // 炸彈模式敵人
-  sync(pools.enemies, g.enemies.filter(e => e.alive), en => buildBlob(en.skin, en.type === 'chase'), (en, m) => {
+  sync(pools.enemies, g.enemies.filter(e => e.alive), en => fitHero(buildBlob(en.skin, en.type === 'chase')), (en, m) => {
     m.position.set(wx(en.px), 0, wz(en.py));
     const u = m.userData; u.ang = lerpAng(u.ang, FACE_ANG[en.dir] || 0, .2); u.inner.rotation.y = u.ang;
     const w = Math.sin((en.animT || 0) * 1.3); const bs = u.base; u.inner.scale.set(bs * (1 + w * .05), bs * (1 - w * .07), bs * (1 + w * .05));
   });
   // 雪人對手
-  sync(pools.foes, g.foes, f => buildSnowman(f.color), (f, m) => {
+  sync(pools.foes, g.foes, f => fitHero(buildSnowman(f.color)), (f, m) => {
     m.visible = f.alive && !(f.invuln > 0 && f.hitT <= 0 && Math.floor(f.invuln * 12) % 2 === 0);
     if (!f.alive) return;
     m.position.set(wx(f.px), 0, wz(f.py));
@@ -5355,7 +5366,7 @@ function syncAll(dt) {
   });
   // 玩家
   let me = null;
-  sync(pools.players, g.players, p => useCustomFor(p) ? buildCustom(CHAR.template) : buildBomber(p.color), (p, m) => {
+  sync(pools.players, g.players, p => fitHero(useCustomFor(p) ? buildCustom(CHAR.template) : buildBomber(p.color)), (p, m) => {
     const blink = p.invuln > 0 && Math.floor(p.invuln * 10) % 2 === 0;
     m.visible = p.alive && !blink;
     m.position.set(wx(p.px), 0, wz(p.py));
@@ -5434,7 +5445,7 @@ function decorate(m, f) {
   if ((f.fallT || 0) > 0 && !u.splash) { u.splash = true; S.parts.emit(m.position.x, .1, m.position.z, 26, { color: ['#ffffff', '#bfe6ff', '#6fc3ff'], speed: 2.4, up: 4, size: .07, life: .8 }); }
   if (!((f.fallT || 0) > 0)) u.splash = false;
   // 名牌血條
-  if (!u.bar) { u.bar = makeBar(f.isBot ? f.name : (f.name || '你'), f.isBot ? f.color.body : '#7fe3ff'); if (u.kind === 'custom') u.bar.position.y = 1.32 * u.base / 1.12 + .05; m.add(u.bar); }
+  if (!u.bar) { u.bar = makeBar(f.isBot ? f.name : (f.name || '你'), f.isBot ? f.color.body : '#7fe3ff'); u.bar.position.y = u.barY || 1.32; m.add(u.bar); }
   const hp = Math.max(0, f.hp / f.maxhp), bd = u.bar.userData;
   bd.fill.scale.x = Math.max(.001, hp); bd.fill.position.x = -.31 * (1 - hp);
   bd.fill.material.color.setHex(G().gameMode === 'orient' ? 0xffcf3f : hp > .5 ? 0x5dff8a : hp > .25 ? 0xffd23f : 0xff4a4a);
@@ -5507,7 +5518,7 @@ function syncBrawl(dt, me) {
   // 電腦對手
   // 遠端同學（連線對戰）：人物還沒載到時先用預設炸彈人；模型到了就重建
   for (const [b, m] of pools.bots) if (b.remote && m.userData.tplVer !== (b.tplVer || 0)) { root.remove(m); pools.bots.delete(b); }
-  sync(pools.bots, g.bots.filter(b => b.alive), b => { const m = (b.remote && b.tpl) ? buildCustom(b.tpl) : buildBomber(b.color); m.userData.tplVer = b.tplVer || 0; return m; }, (b, m) => {
+  sync(pools.bots, g.bots.filter(b => b.alive), b => { const m = fitHero((b.remote && b.tpl) ? buildCustom(b.tpl) : buildBomber(b.color)); m.userData.tplVer = b.tplVer || 0; return m; }, (b, m) => {
     m.visible = !(b.invuln > 0 && Math.floor(b.invuln * 10) % 2 === 0);
     m.position.set(wx(b.px), 0, wz(b.py));
     const u = m.userData; u.ang = lerpAng(u.ang, Math.atan2(b.aim.x, b.aim.y), .3); u.inner.rotation.y = u.ang;
