@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v6.1  2026-10-21  |  大橋國小  |  v6.1：大亂鬥預設只有近身揮劍，寶盒給一把有次數的武器、新的取代舊的；所有角色等高（以自製人物 ×0.8 為準）；v6.0：🌐 連線對戰（成語大亂鬥，每房 8 人；老師在 teacher.html 開房，伺服器 server/ 部署於 Render）；v5.6：自製人物自動骨架——走路時腳前後擺、手跟著擺，攻擊／放炸彈／丟雪球時右手橫揮武器；v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v6.2  2026-10-21  |  大橋國小  |  v6.2：大亂鬥所有人開場只有近身揮劍；人物面向行走方向（攻擊時才轉向瞄準）；v6.1：大亂鬥預設只有近身揮劍，寶盒給一把有次數的武器、新的取代舊的；所有角色等高（以自製人物 ×0.8 為準）；v6.0：🌐 連線對戰（成語大亂鬥，每房 8 人；老師在 teacher.html 開房，伺服器 server/ 部署於 Render）；v5.6：自製人物自動骨架——走路時腳前後擺、手跟著擺，攻擊／放炸彈／丟雪球時右手橫揮武器；v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v6.1｜大橋國小</title>
+<title>成語炸彈超人 3D v6.2｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -2803,12 +2803,11 @@ function brawlSetup(lvl){
       weapons:{sword:Infinity}, cur:'sword', cd:1+Math.random(), aim:{x:0,y:1}, facing:'down',
       spd:cfg.spd*rnd(.92,1.08), kills:0, cfg, think:Math.random()*.5, path:null, target:null,
       moving:false, animT:Math.random()*6, hitT:0, fireT:0, lavaAcc:0, stuckT:0, aimJit:0, seeT:0};
-    if(cfg.startW>0){ const w=pick(PICKUPS()); giveWeapon(b,w.id); b.weapons[w.id]=Math.ceil(w.ammo*.6); b.cur='sword'; }
     return b;
   });
   // 地上的成語寶盒與愛心
   G.items=[];
-  const free=G.reach.filter(({c,r})=>G.grid[r][c]===T_EMPTY && Math.abs(c-pSpot.c)+Math.abs(r-pSpot.r)>2);
+  const free=G.reach.filter(({c,r})=>G.grid[r][c]===T_EMPTY && Math.abs(c-pSpot.c)+Math.abs(r-pSpot.r)>2 && !G.bots.some(b=>Math.abs(cellAt(b.px,b.py).c-c)+Math.abs(cellAt(b.px,b.py).r-r)<2));   // 寶盒不放在任何人的出生點旁邊
   shuffle(free).slice(0,25).forEach(({c,r},i)=>G.items.push({c,r,kind:i<20?'box':'heart',t:Math.random()*3}));
   // 成語池：先開本關 8 個，之後從章節裡再抽
   G.boxPool = shuffle(G.levels.flat().filter(i=>!lvl.includes(i)));
@@ -3111,7 +3110,7 @@ function playerControl(p,dt){
   if(keys['w']||keys['arrowup']) iy-=1;   if(keys['s']||keys['arrowdown']) iy+=1;
   const len=Math.hypot(ix,iy);
   p.moving=len>0;
-  if(len){ ix/=len; iy/=len; brawlMove(p, ix*p.spd*TILE*dt, iy*p.spd*TILE*dt); p.animT+=dt*10; }
+  if(len){ ix/=len; iy/=len; brawlMove(p, ix*p.spd*TILE*dt, iy*p.spd*TILE*dt); p.animT+=dt*10; p.moveDir={x:ix,y:iy}; }
   const A=window.R3D && window.R3D.aim;
   if(A && A.active){ const dx=A.x-p.px, dy=A.y-p.py, d=Math.hypot(dx,dy); if(d>6) p.aim={x:dx/d,y:dy/d}; }
   else if(len) p.aim={x:ix,y:iy};
@@ -3266,7 +3265,7 @@ function botUpdate(b,dt){
   if(vx||vy){
     const ox=b.px, oy=b.py;
     brawlMove(b,vx*b.spd*TILE*dt,vy*b.spd*TILE*dt);
-    b.moving=true; b.animT+=dt*10;
+    b.moving=true; b.animT+=dt*10; b.moveDir={x:vx,y:vy};
     if(!b.canShoot) b.aim={x:vx,y:vy};
     if(Math.hypot(b.px-ox,b.py-oy)<.3){ b.stuckT+=dt; if(b.stuckT>.6){ b.stuckT=0; b.path=null; b.think=0; brawlMove(b,rnd(-8,8),rnd(-8,8)); } }
     else b.stuckT=0;
@@ -4041,6 +4040,7 @@ const NET = window.NET = {
     if(b.cd>0) b.cd-=dt; if(b.fireT>0) b.fireT-=dt;
     const k=Math.min(1,dt*14), dx=b.tx-b.px, dy=b.ty-b.py;
     if(Math.hypot(dx,dy)>TILE*3){ b.px=b.tx; b.py=b.ty; } else { b.px+=dx*k; b.py+=dy*k; }
+    const dl=Math.hypot(dx,dy); if(b.moving&&dl>.5) b.moveDir={x:dx/dl,y:dy/dl};
     if(b.moving) b.animT+=dt*10;
     b.facing=dirName(b.aim);
   };
@@ -4963,6 +4963,11 @@ function animCustomRig(u, f) {
 /* =========================================================
    v6.0 連線對戰：把自己的人物打包成小小的頂點資料（位置 uint16、顏色 uint8）分享給同學
    ========================================================= */
+/* 角色面向：走路時面向行走方向；攻擊（fireT>0）時轉向瞄準方向，揮劍、丟雪球才朝對的地方 */
+function faceDir(f, mode) {
+  if (mode !== 'orient' && (f.fireT || 0) > 0 && f.aim) return f.aim;
+  return f.moveDir || f.aim || { x: 0, y: 1 };
+}
 function exportNetModel(template) {
   if (!template) return null;
   template.updateMatrixWorld(true);
@@ -5371,7 +5376,7 @@ function syncAll(dt) {
     m.visible = p.alive && !blink;
     m.position.set(wx(p.px), 0, wz(p.py));
     const u = m.userData, a = p.animT || 0;
-    const faceV = g.gameMode === 'orient' ? (p.moveDir || p.aim) : p.aim;   // 定向越野：面向前進方向；大亂鬥：面向瞄準方向
+    const faceV = faceDir(p, g.gameMode);   // v6.2：面向行走方向；攻擊的瞬間轉向瞄準方向
     u.ang = lerpAng(u.ang, (brawl && faceV) ? Math.atan2(faceV.x, faceV.y) : (FACE_ANG[p.facing] || 0), brawl ? .3 : .25); u.inner.rotation.y = u.ang;
     const bs = u.base || 1;
     if (p.moving) { u.inner.position.y = Math.abs(Math.sin(a)) * .07; u.inner.rotation.z = (u.kind === 'custom' && !(u.crig && u.crig.footL)) ? Math.sin(a) * .09 : 0; u.inner.scale.setScalar(bs); }
@@ -5521,7 +5526,7 @@ function syncBrawl(dt, me) {
   sync(pools.bots, g.bots.filter(b => b.alive), b => { const m = fitHero((b.remote && b.tpl) ? buildCustom(b.tpl) : buildBomber(b.color)); m.userData.tplVer = b.tplVer || 0; return m; }, (b, m) => {
     m.visible = !(b.invuln > 0 && Math.floor(b.invuln * 10) % 2 === 0);
     m.position.set(wx(b.px), 0, wz(b.py));
-    const u = m.userData; u.ang = lerpAng(u.ang, Math.atan2(b.aim.x, b.aim.y), .3); u.inner.rotation.y = u.ang;
+    const u = m.userData, fv = faceDir(b, g.gameMode); u.ang = lerpAng(u.ang, Math.atan2(fv.x, fv.y), .3); u.inner.rotation.y = u.ang;
     walkAnim(u, b); if (u.crig) animCustomRig(u, b); decorate(m, b);
   });
   // 定向越野：旗子＋導引箭頭
