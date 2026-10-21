@@ -1,0 +1,10 @@
+{
+  "name": "bomber-idiom-room-server",
+  "version": "6.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node server.mjs", "test": "node --test test.mjs" },
+  "dependencies": { "ws": "8.21.3" },
+  "description": "成語炸彈超人 多人連線伺服器 v6.0.0 (2026-10-21)"
+}

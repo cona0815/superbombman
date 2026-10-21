@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- 成語炸彈超人 老師連線控制台　版本 v6.0　日期 2026-10-21　協定 1
+     老師專用：輸入金鑰、開房（成語大亂鬥／炸彈超人）、管理多房、投影房號、匯出成績。學生遊戲頁面不會出現這些功能。 -->
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>成語炸彈超人 老師控制台</title>
+<style>
+  :root{--ink:#3a2a10;--sub:#7a6a40;--line:#e7d5a6;--paper:#f7f1dc;--card:#fffdf5;--head:#1c6b1c;--cream:#fff4d6;--accent:#e8463c;--ok:#2e7d4f;--warn:#b3401f;--chip:#e8f3dc}
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+  header{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;padding:12px 18px;background:var(--head);color:var(--cream);box-shadow:0 4px 18px #0002}
+  header h1{margin:0;font-size:20px;white-space:nowrap}
+  #net{font-size:13px;opacity:.9} header .sp{flex:1 1 0} header .acts{display:flex;flex-wrap:wrap;gap:8px}
+  button{cursor:pointer;border:0;border-radius:10px;padding:9px 14px;background:var(--chip);color:var(--ink);font:inherit;font-weight:700}
+  button:disabled{opacity:.45;cursor:default}
+  header button{background:#ffffff24;color:var(--cream)} .primary,header .primary{background:var(--accent);color:#fff}
+  main{max-width:1240px;margin:0 auto;padding:16px 18px 40px}
+  input,select{width:100%;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);padding:9px 10px;font:inherit}
+  label{display:block;font-size:13px;color:var(--sub);margin:10px 0 4px}
+  .login{max-width:480px;margin:36px auto;background:#fffaf0;border:2px solid var(--line);border-radius:18px;padding:22px}
+  .login h2{margin:0 0 6px;font-size:20px} .muted{color:var(--sub);font-size:13px}.warn{color:var(--warn)}
+  .steps{margin:14px 0 0;padding-left:20px;color:var(--sub);font-size:13px}
+  .new{display:grid;grid-template-columns:2fr 1.4fr 1fr auto;gap:10px;align-items:end;background:#fffaf0;border:2px solid var(--line);border-radius:16px;padding:12px 14px;margin-bottom:14px}
+  .new label{margin:0 0 4px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:14px}
+  .room{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:9px}
+  .rTop{display:flex;align-items:center;gap:8px;flex-wrap:wrap} .rTitle{font-weight:700;font-size:17px;cursor:pointer}
+  .rCode{font:700 17px ui-monospace,Consolas,monospace;letter-spacing:2px;background:var(--head);color:var(--cream);border-radius:8px;padding:1px 8px}
+  .badge{margin-left:auto;border-radius:99px;padding:2px 10px;color:#fff;font-size:12px;white-space:nowrap}
+  .rMeta{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--sub)} .rMeta select{width:auto;padding:4px 6px;font-size:13px}
+  table{width:100%;border-collapse:collapse;font-size:14px} td{padding:4px;border-top:1px solid #efe7d6;vertical-align:middle}
+  .rBtns{display:flex;flex-wrap:wrap;gap:6px}.rBtns button{padding:7px 10px;font-size:13px}
+  .kick{background:none;color:#a44;padding:0 6px} .empty{color:#8a958d;text-align:center;padding:26px}
+  .hist{font-size:12.5px;color:var(--sub);background:#f7f1dc;border-radius:10px;padding:6px 10px}
+  #toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#213a31f0;color:#fff4d6;border-radius:12px;padding:10px 18px;font-size:15px;z-index:20;max-width:90vw}
+  #proj{width:96vw;height:92vh;border:0;border-radius:24px;background:var(--head);color:var(--cream);text-align:center}
+  #proj::backdrop{background:#102b35d0} #proj .big{font:700 min(17vw,190px) ui-monospace,Consolas,monospace;letter-spacing:.08em;margin:2vh 0}
+  #proj .name{font-size:min(6vw,58px);font-weight:700;margin:3vh 0 0} #proj p{font-size:min(3.2vw,30px);margin:.6em}
+  @media (max-width:760px){.new{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}header h1{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>👩‍🏫 成語炸彈超人｜老師控制台</h1>
+  <span id="net">未登入</span>
+  <span class="sp"></span>
+  <div class="acts">
+    <button id="startAll" class="primary" disabled>🏁 全部開始</button>
+    <button id="exportBtn" disabled>📋 匯出成績</button>
+    <button id="gameBtn">🎮 開遊戲畫面</button>
+    <button id="logout" hidden>登出</button>
+  </div>
+</header>
+<main>
+  <section id="login" class="login">
+    <h2>老師登入</h2>
+    <p class="muted">金鑰只用來登入，不存入瀏覽器、不寫進網址。老師不參賽、不占學生名額。</p>
+    <label for="key">老師開房金鑰</label>
+    <input id="key" type="password" autocomplete="off" placeholder="請輸入老師開房金鑰">
+    <details id="adv"><summary class="muted" style="margin-top:10px;cursor:pointer">連線伺服器（通常不用改）</summary>
+      <label for="server">伺服器網址</label><input id="server" type="url" spellcheck="false">
+    </details>
+    <div style="margin-top:14px"><button id="loginBtn" class="primary">登入並開房</button></div>
+    <p id="loginMsg" class="warn" role="status" aria-live="polite"></p>
+    <ol class="steps">
+      <li>登入後輸入房名、選模式與分鐘數，按「＋ 開新房間」，要幾房開幾房（每房最多 8 人）。</li>
+      <li>學生先在遊戲主選單「我的人物」上傳並儲存自己的 Tinkercad 人物，再按「🌐 連線對戰」，就會看到你開好的房間，點一下加入。</li>
+      <li>名單都「✅ 準備好」後按「🏁 開始」或上方「全部開始」。一場結束後可以按「再來一場」。</li>
+    </ol>
+  </section>
+  <section id="mainPanel" hidden>
+    <div class="new">
+      <div><label for="label">房間名稱</label><input id="label" maxlength="16" placeholder="例如：601 第一組"></div>
+      <div><label for="mode">模式</label><select id="mode"><option value="brawl">🥊 成語大亂鬥</option><option value="bomb">💣 炸彈超人（下一版開放）</option></select></div>
+      <div><label for="minutes">時間</label><select id="minutes"><option value="2">2 分鐘</option><option value="3">3 分鐘</option><option value="4" selected>4 分鐘</option><option value="5">5 分鐘</option><option value="6">6 分鐘</option><option value="8">8 分鐘</option></select></div>
+      <button id="create" class="primary">＋ 開新房間</button>
+    </div>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+<div id="toast" hidden></div>
+<dialog id="proj"></dialog>
+<script src="multiplayer-config.js"></script>
+<script>
+(() => {
+  'use strict';
+  const PROTOCOL = 1;
+  const $ = id => document.getElementById(id);
+  const el = (tag, attrs, ...kids) => { const e = document.createElement(tag); if (attrs) for (const [k, v] of Object.entries(attrs)) { if (k === 'class') e.className = v; else if (k === 'text') e.textContent = v; else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else if (v !== false && v != null) e.setAttribute(k, v === true ? '' : v); } for (const c of kids) if (c != null) e.append(c); return e; };
+  const PHASE = { lobby: '等待開始', countdown: '倒數中', play: '比賽中', results: '成績出爐' };
+  const PHASE_C = { lobby: '#5b7d6a', countdown: '#c7822b', play: '#b95438', results: '#3f6aa0' };
+  const MODES = { brawl: '🥊 成語大亂鬥', bomb: '💣 炸彈超人' };
+  const sget = k => { try { return JSON.parse(sessionStorage.getItem(k) || 'null'); } catch { return null; } };
+  const sset = (k, v) => { try { v == null ? sessionStorage.removeItem(k) : sessionStorage.setItem(k, JSON.stringify(v)); } catch {} };
+  let toastT = 0; const toast = m => { const t = $('toast'); t.textContent = m; t.hidden = false; clearTimeout(toastT); toastT = setTimeout(() => t.hidden = true, 3500); };
+  function wsURL(value) { const u = new URL(value); if (u.protocol === 'https:') u.protocol = 'wss:'; if (u.protocol === 'http:') u.protocol = 'ws:'; if (!['ws:', 'wss:'].includes(u.protocol) || u.username || u.password || u.search || u.hash) throw Error('請輸入完整 ws:// 或 wss:// 伺服器網址。'); if (location.protocol === 'https:' && u.protocol !== 'wss:') throw Error('HTTPS 網頁必須使用 wss:// 安全連線。'); if (u.pathname === '/' || !u.pathname) u.pathname = '/room'; return u.href; }
+  const healthURL = ws => ws.replace(/^ws/, 'http').replace(/\/room\/?$/, '/health');
+  async function wake(endpoint, onWait) { const t0 = Date.now(); while (Date.now() - t0 < 90000) { try { const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 20000); await fetch(healthURL(endpoint), { mode: 'no-cors', cache: 'no-store', signal: ctl.signal }); clearTimeout(timer); return true; } catch { onWait && onWait(Math.round((Date.now() - t0) / 1000)); await new Promise(r => setTimeout(r, 2500)); } } return false; }
+  const clock = { offset: 0, rtt: 0, s: [], add(c, sv) { const now = Date.now(), rtt = now - c; if (rtt < 0 || rtt > 10000) return; this.s.push({ rtt, off: sv - (c + rtt / 2) }); if (this.s.length > 10) this.s.shift(); this.offset = this.s.reduce((a, b) => b.rtt < a.rtt ? b : a).off; this.rtt = Math.round(rtt); } };
+  const params = new URL(location.href).searchParams;
+  const defaultServer = window.BOMB_MP_SERVER || (['localhost', '127.0.0.1'].includes(location.hostname) ? 'ws://127.0.0.1:8787/room' : '');
+  $('server').value = params.get('roomServer') || sget('bomber_teacher')?.server || defaultServer;
+  $('adv').open = !$('server').value;
+  let ws = null, endpoint = '', token = '', state = null, live = false, closed = true, retries = 0, retryT = 0, pingT = 0;
+  const results = sget('bomber_teacher_results') || []; const seen = new Set(results.map(r => r.key));
+  const send = m => { if (ws?.readyState === WebSocket.OPEN) ws.send(JSON.stringify(m)); };
+
+  $('loginBtn').onclick = () => { try { const e = wsURL($('server').value.trim()); if (!$('key').value) throw Error('請輸入老師開房金鑰。'); login(e, $('key').value, null); } catch (err) { $('loginMsg').textContent = err.message; } };
+  $('key').addEventListener('keydown', e => { if (e.key === 'Enter') $('loginBtn').click(); });
+  $('logout').onclick = () => { if (state?.rooms?.length && !confirm('登出後房間仍保留 30 分鐘，學生可繼續；重新登入即可接手。確定登出？')) return; shutdown(true); };
+  $('create').onclick = () => { send({ t: 'create', mode: $('mode').value, minutes: +$('minutes').value, label: $('label').value.trim() }); $('label').value = ''; };
+  $('startAll').onclick = () => { if (confirm('同時開始所有人員到齊的房間？')) send({ t: 'startAll' }); };
+  $('exportBtn').onclick = exportCSV;
+  $('gameBtn').onclick = () => window.open(gameURL(), '_blank');
+
+  function shutdown(forget) {
+    closed = true; live = false; clearTimeout(retryT); clearInterval(pingT);
+    if (ws) { const o = ws; ws = null; o.close(); } state = null;
+    if (forget) sset('bomber_teacher', null);
+    $('login').hidden = false; $('mainPanel').hidden = true; $('logout').hidden = true; $('net').textContent = '未登入'; $('startAll').disabled = true;
+  }
+  async function login(server, key, tok) {
+    endpoint = server; $('loginMsg').textContent = ''; $('loginBtn').disabled = true; $('net').textContent = '連線中…';
+    const ok = await wake(server, s => { $('loginMsg').textContent = `正在喚醒連線伺服器…已等 ${s} 秒（免費主機閒置後約需 30–60 秒）`; });
+    $('loginBtn').disabled = false;
+    if (!ok) { $('loginMsg').textContent = '連線伺服器沒有回應，請確認伺服器狀態。'; $('net').textContent = '無法連線'; return; }
+    closed = false; retries = 0; open({ t: 'hello', v: PROTOCOL, role: 'teacher', key: key || undefined, token: tok || undefined });
+  }
+  function open(hello) {
+    const s = new WebSocket(endpoint); ws = s;
+    s.onopen = () => { if (ws !== s) return; s.send(JSON.stringify(hello)); hello.key = undefined; clearInterval(pingT); let k = 0; const ping = () => { if (s.readyState === 1) s.send(JSON.stringify({ t: 'ping', c: Date.now() })); }; ping(); pingT = setInterval(() => { if (++k < 5 || k % 6 === 0) ping(); }, 500); };
+    s.onmessage = e => {
+      if (ws !== s) return; let m; try { m = JSON.parse(e.data); } catch { return; }
+      if (m.t === 'pong') { clock.add(m.c, m.s); return; }
+      if (m.t === 'console') {
+        if (m.welcome) { live = true; retries = 0; token = m.token; sset('bomber_teacher', { server: endpoint, token }); $('key').value = ''; $('login').hidden = true; $('mainPanel').hidden = false; $('logout').hidden = false; setTimeout(() => $('label').focus(), 50); }
+        state = m; render(); return;
+      }
+      if (m.t === 'error') { if (!live) { $('loginMsg').textContent = m.message; if (/過期/.test(m.message)) sset('bomber_teacher', null); shutdown(false); } else toast(m.message); return; }
+      if (m.t === 'notice') { toast(m.message); return; }
+      if (m.t === 'created') { toast('已開新房間 ' + m.code + '，學生按遊戲裡的「連線對戰」就會看到。'); return; }
+    };
+    s.onclose = () => {
+      if (ws !== s || closed) return; clearInterval(pingT);
+      if (!live) { shutdown(false); $('net').textContent = '無法連線'; return; }
+      if (++retries > 30) { shutdown(false); toast('控制台已斷線，請重新登入（房間保留 30 分鐘）。'); return; }
+      $('net').textContent = `斷線重連中（第 ${retries} 次）…房間與學生都還在`;
+      retryT = setTimeout(() => { if (!closed) open({ t: 'hello', v: PROTOCOL, role: 'teacher', token }); }, Math.min(10000, 800 * Math.pow(1.5, retries)));
+    };
+  }
+  const serverNow = () => Date.now() + clock.offset;
+  function card(r) {
+    const n = r.people.filter(p => p.connected).length, all = r.people.length, ready = all && r.people.every(p => p.connected && p.model), c = r.code;
+    const act = (t, extra) => () => send({ t, code: c, ...(extra || {}) });
+    const playing = ['countdown', 'play'].includes(r.phase);
+    const box = el('section', { class: 'room' });
+    box.append(el('div', { class: 'rTop' },
+      el('span', { class: 'rTitle', title: '點一下改名', text: r.label, onclick: () => { const v = prompt('房間名稱', r.label); if (v) send({ t: 'rename', code: c, label: v }); } }),
+      el('span', { class: 'rCode', text: c }),
+      el('span', { class: 'badge', style: 'background:' + PHASE_C[r.phase], text: r.phase === 'play' ? '比賽中 ' + Math.max(0, Math.floor((serverNow() - r.startAt) / 1000)) + ' 秒' : r.phase === 'countdown' ? '倒數 ' + Math.max(0, Math.ceil((r.startAt - serverNow()) / 1000)) : PHASE[r.phase] })));
+    const modeSel = el('select', { disabled: playing, 'aria-label': '模式' }); for (const [k, nm] of Object.entries(MODES)) modeSel.append(el('option', { value: k, text: nm, selected: k === r.mode }));
+    modeSel.onchange = () => send({ t: 'setup', code: c, mode: modeSel.value });
+    const minSel = el('select', { disabled: playing, 'aria-label': '時間' }); for (const i of [2, 3, 4, 5, 6, 8, 10]) minSel.append(el('option', { value: i, text: i + ' 分鐘', selected: i === r.minutes }));
+    minSel.onchange = () => send({ t: 'setup', code: c, minutes: +minSel.value });
+    box.append(el('div', { class: 'rMeta' }, modeSel, minSel, el('span', { text: `學生 ${n}/${r.limit}${all > n ? `（${all - n} 人斷線保留）` : ''}${r.locked ? '・🔒 已鎖房' : ''}` })));
+    if (!all) box.append(el('div', { class: 'empty', text: '等待學生加入…學生先上傳自己的人物，再按遊戲裡的「連線對戰」就會看到這間房。' }));
+    else {
+      const tb = el('table');
+      r.people.forEach(p => {
+        const st = r.phase === 'results' ? (p.rank ? `第 ${p.rank} 名・擊倒 ${p.kills}・成語 ${p.score}` : '—') : r.phase === 'play' ? `擊倒 ${p.kills}・成語 ${p.score}${p.alive === false ? '・💀 出局' : ''}` : !p.connected ? '⚠️ 斷線保留中' : !p.model ? '⏳ 分享人物中' : '✅ 準備好';
+        tb.append(el('tr', null,
+          el('td', { text: String(p.slot + 1) }),
+          el('td', null, el('b', { text: (p.id === r.host ? '🖥️ ' : '') + p.name })),
+          el('td', { class: p.connected ? '' : 'warn', text: st }),
+          el('td', null, el('span', { class: 'muted', text: p.rtt ? p.rtt + 'ms' : '' })),
+          el('td', null, el('button', { class: 'kick', title: '請這位學生離開', text: '✕', onclick: () => { if (confirm(`請「${p.name}」離開 ${r.label}？`)) send({ t: 'kick', code: c, id: p.id }); } }))));
+      });
+      box.append(tb);
+    }
+    if (r.history && r.history.length) { const h = r.history[r.history.length - 1]; box.append(el('div', { class: 'hist', text: `上一場（第 ${h.no} 場）：` + h.ranking.map(q => `${q.rank}. ${q.name}（${q.kills}/${q.score}）`).join('　') })); }
+    const B = (text, fn, dis, primary) => el('button', { text, onclick: fn, disabled: !!dis, class: primary ? 'primary' : false });
+    box.append(el('div', { class: 'rBtns' },
+      B(r.phase === 'results' ? '🏁 再來一場' : '🏁 開始', act('start'), !['lobby', 'results'].includes(r.phase) || !ready, true),
+      B('⏹ 提前結束', act('stop'), !playing),
+      B('↩ 等待室', act('lobby'), r.phase === 'lobby' || playing),
+      B(r.locked ? '🔓 解鎖' : '🔒 鎖房', act('lock', { locked: !r.locked })),
+      B('🔳 投影', () => project(r)),
+      B('✖ 結束', () => { if (confirm(`結束「${r.label}」？房內學生會回到單人模式。`)) send({ t: 'end', code: c }); })));
+    return box;
+  }
+  let holding = false, pending = false;
+  document.addEventListener('pointerdown', () => holding = true);
+  const release = () => { holding = false; if (pending) { pending = false; setTimeout(render, 50); } };
+  document.addEventListener('pointerup', release); document.addEventListener('pointercancel', release);
+  function render() {
+    if (!state) return;
+    const rooms = state.rooms;
+    $('net').textContent = `已連線｜${rooms.length}/${state.maxRooms} 間房｜學生 ${rooms.reduce((a, r) => a + r.people.filter(p => p.connected).length, 0)} 人${clock.rtt ? '｜延遲 ' + clock.rtt + 'ms' : ''}`;
+    $('startAll').disabled = !rooms.some(r => ['lobby', 'results'].includes(r.phase) && r.people.length && r.people.every(p => p.connected && p.model));
+    $('create').disabled = rooms.length >= state.maxRooms;
+    const grid = $('grid');
+    if (!rooms.length) { grid.dataset.sig = ''; grid.replaceChildren(el('div', { class: 'empty', text: '還沒有房間。輸入房名、選模式後按「＋ 開新房間」，可以開很多間同時管理。' })); }
+    else {
+      const sig = JSON.stringify(rooms.map(r => [r.code, r.label, r.phase, r.mode, r.minutes, r.locked, r.epoch, r.host, ['play','countdown'].includes(r.phase) ? Math.floor((serverNow() - r.startAt) / 1000) : 0, (r.history || []).length, r.people.map(p => [p.id, p.name, p.connected, p.model, p.kills, p.score, p.alive, p.rank, p.rtt > 0 ? Math.round(p.rtt / 50) : 0])]));
+      if (sig !== grid.dataset.sig) { const a = document.activeElement; if (holding || a && a.tagName === 'SELECT' && grid.contains(a)) pending = true; else { grid.dataset.sig = sig; grid.replaceChildren(...rooms.map(card)); } }
+    }
+    for (const r of rooms) if (r.phase === 'results' && r.history && r.history.length) { const h = r.history[r.history.length - 1], key = r.code + ':' + h.at; if (!seen.has(key)) { seen.add(key); results.push({ key, at: new Date(h.at).toLocaleString('zh-TW'), room: r.label, code: r.code, mode: MODES[h.mode] || h.mode, people: h.ranking }); sset('bomber_teacher_results', results.slice(-100)); } }
+    $('exportBtn').disabled = !results.length;
+  }
+  setInterval(() => { if (live) render(); }, 1000);
+  function gameURL(code) { const u = new URL('index.html', location.href); if (code) u.searchParams.set('room', code); if (endpoint && endpoint !== window.BOMB_MP_SERVER) u.searchParams.set('roomServer', endpoint); return u.href; }
+  function project(r) {
+    const p = $('proj');
+    p.replaceChildren(el('p', { class: 'name', text: r.label }), el('p', { text: `${MODES[r.mode] || ''}｜${r.minutes} 分鐘｜最多 ${r.limit} 人` }), el('p', { text: '打開遊戲 → 上傳人物 → 按「🌐 連線對戰」→ 點這間房加入' }), el('div', { class: 'big', text: r.code }), el('p', { style: 'font-size:min(2vw,18px);word-break:break-all;opacity:.8', text: gameURL() }), el('button', { text: '關閉', style: 'font-size:22px;padding:10px 30px', onclick: () => p.close() }));
+    p.showModal();
+  }
+  function exportCSV() {
+    const rows = [['時間', '房間', '房號', '模式', '名次', '學生', '擊倒', '成語']];
+    for (const r of results) for (const p of r.people) rows.push([r.at, r.room, r.code, r.mode, p.rank || '', p.name, p.kills, p.score]);
+    const csv = '﻿' + rows.map(r => r.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(',')).join('\r\n');
+    const a = el('a', { href: URL.createObjectURL(new Blob([csv], { type: 'text/csv' })), download: `成語炸彈超人_連線成績_${new Date().toISOString().slice(0, 10)}.csv` }); document.body.append(a); a.click(); a.remove();
+  }
+  const saved = sget('bomber_teacher');
+  if (saved?.token && saved.server) login(saved.server, null, saved.token); else setTimeout(() => $('key').focus(), 50);
+})();
+</script>
+</body>
+</html>

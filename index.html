@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 成語炸彈超人 3D  v5.6  2026-10-20  |  大橋國小  |  v5.6：自製人物自動骨架——走路時腳前後擺、手跟著擺，攻擊／放炸彈／丟雪球時右手橫揮武器；v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
+<!-- 成語炸彈超人 3D  v6.0  2026-10-21  |  大橋國小  |  v6.0：🌐 連線對戰（成語大亂鬥，每房 8 人；老師在 teacher.html 開房，伺服器 server/ 部署於 Render）；v5.6：自製人物自動骨架——走路時腳前後擺、手跟著擺，攻擊／放炸彈／丟雪球時右手橫揮武器；v5.5：炸彈／雪球模式的玩家卡併到上排、成語清單改成底部橫列，地圖撐滿整個畫面；v5.4：地圖裡的自製人物再放大（炸彈模式約 2.4 倍）；v5.3：預覽中未儲存的人物，按開始遊戲會自動儲存（沒填名字會提醒）；v5.2：遊戲中所有介面縮小、地圖與鏡頭再放大；v5.1：遊戲中自製人物放大約 1.7 倍、大亂鬥鏡頭拉近；v5.0：Tinkercad .glb 匯出壞掉的顏色（黑白花斑）自動偵測＋逐零件補色、支援 Tinkercad 匯出 .OBJ 的 zip（含材質顏色）；v4.9.1：Tinkercad .glb 頂點顏色修正（顏色和 Tinkercad 裡一致）；v4.9：上傳人物顏色修正（不再變成灰白金屬）、預覽人物放大 2 倍、大亂鬥自製人物預設武器「揮劍」（攻擊範圍統一 1.5 格）；v4.8：成語不斷輪流（最久沒出現的先出）、新增五上／五下／六上／六下 120 個高年級成語；v4.7：定向越野左側介面改成細長條不擋地圖、旗子成語改白底黑字更清楚、四張地圖簡化約一半、可自選電腦人數（0–10）與成語旗子數量（4–12）；v4.6：定向越野全圖撐滿畫面、介面微透明疊在地圖上；吃到成語會唸出來（V 開關）；人物內嵌貼圖不再因 blob 網址被擋而失敗；v4.5：定向越野 4 張地圖可選（五彩大地／湖泊公園／大河蜿蜒／海洋群島），掉進水裡回到上一面旗；v4.4：定向越野旗面改為成語（附號碼）、人物面向前進方向、預設顯示整張地圖（滾輪／Z 縮放）；v4.3：四種模式排成一列（炸彈超人／定向越野／雪球大作戰／成語大亂鬥），雪球與大亂鬥需上傳人物；v4.2：定向越野改為無障礙物、跑速 ×1.5，修正預覽環境 console.info 錯誤；v4.1：新增 🚩 成語定向越野（依序通過 8 面旗、最快者獲勝、每面旗一個成語）；v4.0：🥊 成語大亂鬥 -->
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成語炸彈超人 3D v5.6｜大橋國小</title>
+<title>成語炸彈超人 3D v6.0｜大橋國小</title>
 <script type="importmap">
 { "imports": {
   "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
@@ -418,6 +418,33 @@
   body.mode-small #hud .keyhint{bottom:48px; max-width:420px;}
   body.mode-small #collectPop{bottom:50px;}
   @media (max-width:1000px){ body.mode-small #hud .topbar{left:250px;} body.mode-small #hud .pcard .pups{display:none;} }
+
+  /* ===== v6.0 連線對戰 ===== */
+  #mpDialog{width:min(560px,94vw); max-height:90vh; overflow:auto; border:3px solid #fff; border-radius:22px; background:#fff8e6; color:#3a2a10; padding:18px 20px; font:15px/1.6 inherit; box-shadow:0 10px 40px rgba(0,0,0,.4);}
+  #mpDialog::backdrop{background:rgba(6,30,18,.7);}
+  #mpDialog h2{margin:0 0 4px; color:#1c6b1c;} #mpDialog .mpHint{margin:0 0 8px; color:#6b5326; font-size:13.5px;}
+  #mpDialog label{display:block; margin:8px 0; font-weight:700; font-size:13.5px;}
+  #mpDialog input{box-sizing:border-box; width:100%; border:2px solid #e7d5a6; border-radius:10px; background:#fffdf5; padding:8px 10px; font:inherit;}
+  #mpDialog button{cursor:pointer; border:0; border-radius:10px; padding:8px 12px; background:#e8f3dc; color:#1c4a1c; font:inherit; font-weight:700;}
+  #mpDialog button:disabled{opacity:.45; cursor:default;}
+  #mpClose{float:right;} .mpActions{display:flex; gap:8px; flex-wrap:wrap;}
+  .mpChar{margin:6px 0; padding:8px 12px; border-radius:12px; font-size:14px;} .mpChar.ok{background:#e3f0dc; border:1px solid #b9d3ad;} .mpChar.no{background:#fff1d6; border:2px solid #e0a24f;}
+  .mpRoomsTitle{margin:12px 0 6px; font-size:15px;} .mpRooms{display:grid; gap:8px; max-height:38vh; overflow:auto;}
+  .mpRoom{display:grid !important; grid-template-columns:1fr auto; gap:2px 10px; text-align:left; padding:10px 14px !important; background:#fffdf5 !important; border:2px solid #e7d5a6 !important; border-radius:14px !important;}
+  .mpRoom b{font-size:16px;} .mpRoom .st{grid-row:1/3; grid-column:2; align-self:center; border-radius:99px; padding:3px 10px; font-size:12.5px; background:#e8f3dc;} .mpRoom.open .st{background:#2ea043; color:#fff;} .mpRoom small{color:#6b5326;}
+  .mpEmpty{color:#6b5326; background:#fffdf5; border:2px dashed #e7d5a6; border-radius:12px; padding:14px; text-align:center;}
+  .mpWait{margin:10px 0; padding:10px 12px; border-radius:12px; background:#e3f0dc; border:2px solid #9fcf8f; font-size:14px;}
+  #mpStatus{min-height:22px; color:#a04a1a; font-size:13.5px;} #mpDialog details{margin:8px 0; border-top:1px dashed #e7d5a6; padding-top:8px; font-size:13px;}
+  .mpTeacher{margin:10px 0 0; padding-top:8px; border-top:1px dashed #e7d5a6; font-size:13px; text-align:right;} .mpTeacher a{color:#b95438; font-weight:700;}
+  #mpBar{position:fixed; right:8px; top:46px; z-index:40; width:168px; box-sizing:border-box; padding:7px 9px; border:2px solid rgba(255,255,255,.4); border-radius:12px; background:rgba(8,24,36,.62); color:#fff; font-size:12px; backdrop-filter:blur(4px);}
+  #mpBar[hidden]{display:none;} .mpBarHead{font-weight:900; color:#ffd76b; margin-bottom:3px; font-size:12px;}
+  #mpBar ol{list-style:none; padding:0; margin:3px 0; max-height:200px; overflow:auto;} #mpBar li{display:flex; gap:6px; padding:1px 4px; border-radius:6px;} #mpBar li.me{background:rgba(255,207,63,.3);} #mpBar li .nm{flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700;} #mpBar li .rt{white-space:nowrap; color:#ffe9a8;}
+  #mpNet{font-size:11px; color:#c9d4cf;} #mpBar button{margin-top:4px; width:100%; cursor:pointer; border:0; border-radius:8px; padding:4px; background:rgba(255,255,255,.15); color:#fff; font:inherit; font-size:11.5px;}
+  body.mode-brawl #hud .checklist{right:184px;}
+  body:not(.mode-brawl) #mpBar{display:none;}
+  #mpCountdown{position:fixed; left:50%; top:42%; transform:translate(-50%,-50%); z-index:60; background:rgba(28,74,28,.9); color:#fff4d6; border:4px solid #ffd24a; border-radius:30px; padding:14px 48px; font:900 110px Fredoka,sans-serif; pointer-events:none; text-shadow:0 4px 0 rgba(0,0,0,.3);}
+  #mpCountdown[hidden]{display:none;}
+  #mpResult .panel{max-width:520px;} #mpResult .ranktbl{width:100%; margin:8px 0;} .mpResHint{font-size:13px; color:#6b5326;}
 </style>
 </head>
 <body>
@@ -530,6 +557,7 @@
       </div>
 
       <button class="bigbtn" id="startBtn">開始遊戲 ▶</button>
+      <button class="bigbtn blue" id="mpBtn" type="button" style="margin-top:10px">🌐 連線對戰（和同學一起玩）</button>
     </div>
   </div>
 
@@ -1315,6 +1343,7 @@ function defeatEnemy(en, ownerId){
 
 function breakBrick(c,r){
   G.grid[r][c]=T_EMPTY;
+  if(window.NET&&NET.active&&NET.host) NET.hev({t:'brick',c,r});
   const info=G.cell[key(c,r)];
   if(info){
     if(info.kind==='idiom'){
@@ -2118,7 +2147,7 @@ document.getElementById('nextBtn').addEventListener('click', nextLevel);
 document.getElementById('retryBtn').addEventListener('click', startLevel);
 document.getElementById('backMenuBtn').addEventListener('click', goMenu);
 document.getElementById('loseMenuBtn').addEventListener('click', goMenu);
-document.getElementById('menuBtn').addEventListener('click', ()=>{ G.running=false; goMenu(); });
+document.getElementById('menuBtn').addEventListener('click', ()=>{ if(window.NET&&NET.active){ if(confirm('要離開連線對戰嗎？')) NET.leave(); return; } G.running=false; goMenu(); });
 function goMenu(){
   G.running=false; G.ended=true; G.paused=false;
   document.body.classList.remove('mode-brawl','mode-orient','mode-small');
@@ -2143,6 +2172,7 @@ function togglePause(){
   G.paused ? resumeGame() : pauseGame();
 }
 function pauseGame(){
+  if(window.NET&&NET.active) return;   // 連線對戰不能暫停
   G.paused=true;
   show('pauseOv');
   const pb=document.getElementById('pauseBtn'); if(pb) pb.textContent='▶';
@@ -2653,7 +2683,10 @@ const cellAt = (x,y)=>({c:Math.floor(x/TILE), r:Math.floor(y/TILE)});
 const inMap = (c,r)=>c>=0&&r>=0&&c<COLS&&r<ROWS;
 const SOLID_T = t=>t===T_WALL||t===T_STEEL||t===T_TREE;           // 擋子彈、打不壞
 const fighters = ()=>G.players.concat(G.bots);
-const fname = f=>!f?'熔岩':(f.isBot?f.name:'你');
+const fname = f=>!f?'熔岩':((f.isBot||f.remote)?f.name:'你');
+/* v6.0 連線對戰：世界規則（傷害、磚塊、寶盒、道具、計時）只由主機計算；其他人只做畫面 */
+const netAuth = ()=>!(window.NET&&NET.active)||NET.host;
+const netOn = ()=>!!(window.NET&&NET.active);
 const rnd = (a,b)=>a+Math.random()*(b-a);
 const pick = a=>a[Math.random()*a.length|0];
 const basicW = f=>(f.weapons&&f.weapons.sword>0)?'sword':'snow';
@@ -2779,6 +2812,7 @@ function brawlSetup(lvl){
   G.boxT=5; G.heartT=12; G.hudT=0; G.mapT=0; G.feedT=0;
   G.proj=[]; G.bb=[]; G.beams=[]; G.swings=[]; G.chips=[];
   G.time = 300;
+  if(netOn()) NET.setupBrawl(p);
   brawlBuildUI();
   brawlFeed('🥊 大亂鬥開始！打開 <b>成語寶盒 🎁</b> 解鎖新武器，打倒所有對手！','big');
 }
@@ -2830,6 +2864,22 @@ function tryFire(f){
   let w=WMAP[f.cur];
   if(!(f.weapons[f.cur]>0)){ f.cur=basicW(f); w=WMAP[f.cur]; }
   const ang=Math.atan2(f.aim.y,f.aim.x);
+  if(fireWeapon(f,w,ang)===false) return false;
+  f.cd=w.cd; f.fireT=.18;
+  if(netOn()){
+    if(NET.host) NET.hev({t:'shot', id:NET.idOf(f), w:w.id, a:+ang.toFixed(3), x:Math.round(f.px), y:Math.round(f.py)});
+    else if(f===G.players[0]) NET.ev({t:'fire', w:w.id, a:+ang.toFixed(3), x:Math.round(f.px), y:Math.round(f.py)});
+  }
+  if(w.ammo!==Infinity && netAuth()){
+    f.weapons[w.id]--;
+    if(f.weapons[w.id]<=0){ f.weapons[w.id]=0; f.cur=basicW(f); if(!f.isBot) brawlFeed('彈藥用完了，換回 '+WMAP[f.cur].icon+' '+WMAP[f.cur].name+'。再開寶盒可以補充！'); }
+  }
+  if(!f.isBot){ const s={snow:[900,.04],rapid:[1200,.02],spread:[500,.06],boom:[700,.06],rocket:[220,.14],bomb:[300,.08],laser:[1500,.1],hammer:[160,.1],sword:[520,.07]}[w.id]; beep(s[0],s[1],w.id==='laser'?'sawtooth':'triangle',.045); }
+  if(f.isBot && w.id==='bomb'){ f.think=0; }   // 放完炸彈馬上想辦法躲
+  return true;
+}
+/* 真正發射：回傳 false 表示這次不算（例如腳下已有炸彈） */
+function fireWeapon(f,w,ang){
   switch(w.id){
     case 'snow':   spawnProj(f,'snow',ang,9,1.2,9); break;
     case 'rapid':  spawnProj(f,'rapid',ang+rnd(-.07,.07),13,.45,9); break;
@@ -2846,13 +2896,6 @@ function tryFire(f){
     case 'hammer': swingHammer(f,ang); break;
     case 'sword':  swingSword(f,ang); break;
   }
-  f.cd=w.cd; f.fireT=.18;
-  if(w.ammo!==Infinity){
-    f.weapons[w.id]--;
-    if(f.weapons[w.id]<=0){ f.weapons[w.id]=0; f.cur=basicW(f); if(!f.isBot) brawlFeed('彈藥用完了，換回 '+WMAP[f.cur].icon+' '+WMAP[f.cur].name+'。再開寶盒可以補充！'); }
-  }
-  if(!f.isBot){ const s={snow:[900,.04],rapid:[1200,.02],spread:[500,.06],boom:[700,.06],rocket:[220,.14],bomb:[300,.08],laser:[1500,.1],hammer:[160,.1],sword:[520,.07]}[w.id]; beep(s[0],s[1],w.id==='laser'?'sawtooth':'triangle',.045); }
-  if(f.isBot && w.id==='bomb'){ f.think=0; }   // 放完炸彈馬上想辦法躲
   return true;
 }
 function spawnProj(f,kind,ang,speedT,dmg,rangeT,extra){
@@ -2906,6 +2949,7 @@ function swingSword(f,ang){
   G.swings.push({x:f.px,y:f.py,ang,t:0,dur:.2,owner:f,kind:'sword'});
 }
 function damageBrick(c,r,amt){
+  if(!netAuth()){ G.chips.push({c,r}); return; }   // 連線：磚塊只由主機打壞，壞了會通知大家
   const k=key(c,r); const hp=(G.brickHp[k]===undefined?2:G.brickHp[k])-amt;
   if(hp<=0){ delete G.brickHp[k]; breakBrick(c,r); }
   else { G.brickHp[k]=hp; G.chips.push({c,r}); }
@@ -2913,6 +2957,7 @@ function damageBrick(c,r,amt){
 function damageFighter(f,dmg,src,dx,dy,kb){
   if(G.gameMode==='orient'){ if(f!==src) orientStun(f,src,dx,dy); return; }   // 定向越野：雪球只會讓人暈眩
   if(!f.alive || f.invuln>0) return;
+  if(!netAuth()){ f.hitT=.22; return; }   // 連線：血量由主機決定（快照會更新），這裡只閃一下
   if(f.isBot && src && src.isBot && src!==f) dmg*=.5;   // 電腦互打傷害減半：回合不會太快結束，主角是玩家
   if(!f.isBot && src && src.isBot) dmg*=(src.cfg.dmg||1);   // 依難度調整電腦對玩家的傷害
   f.hp-=dmg; f.hitT=.22; f.lastHit=src;
@@ -2927,13 +2972,15 @@ function koFighter(f,src){
   if(src && src!==f) src.kills=(src.kills||0)+1;
   const me=G.players[0];
   brawlFeed(src===f?`💥 ${fname(f)} 被自己炸到了`:`${src&&!src.isBot?'<b>你</b>':fname(src)} 打倒了 ${f.isBot?f.name:'<b>你</b>'}`, src===me?'good':(!f.isBot?'bad':''));
-  if(f.isBot){
+  if(f.isBot && !f.remote){
     const {c,r}=cellAt(f.px,f.py);
     if(Math.random()<.8 && G.grid[r][c]===T_EMPTY && !G.items.some(it=>it.c===c&&it.r===r)) G.items.push({c,r,kind:Math.random()<.7?'box':'heart',t:0});
     if(src===me){ G.kills++; G.time=Math.min(G.time+6,999); beep(300,.1,'sawtooth',.05); setTimeout(()=>beep(620,.14,'triangle',.06),90); }
   }else{
     f.lives--;
-    if(f.lives>0){ f.respawnT=2; brawlFeed('你被打倒了！2 秒後復活（剩 '+f.lives+' 條命）','bad'); }
+    if(netOn()){ NET.hev({t:'ko', id:NET.idOf(f), by:src?NET.idOf(src):null, lives:f.lives}); }
+    if(f.lives>0){ f.respawnT=2; if(!f.remote) brawlFeed('你被打倒了！2 秒後復活（剩 '+f.lives+' 條命）','bad'); }
+    else if(netOn()){ if(!f.remote) brawlFeed('你出局了，可以繼續觀戰到這場結束','bad'); NET.checkEnd(); }
     else { brawlHUD(true); loseLevel('你被打倒了…'); return; }
   }
   brawlHUD(true);
@@ -2948,6 +2995,7 @@ function respawnPlayer(p){
   }
   if(best){ p.px=best.x; p.py=best.y; }
   p.hp=p.maxhp; p.alive=true; p.invuln=2.5; p.cd=0;
+  if(netOn()) NET.hev({t:'respawn', id:NET.idOf(p), x:Math.round(p.px), y:Math.round(p.py)});
   G.fx.push({x:p.px,y:p.py,t:0,dur:.6,color:'#7fe3ff'});
   brawlHUD(true);
 }
@@ -3180,6 +3228,7 @@ function botDecide(b){
   if(b.path && b.path.length) b.path.pop();   // 不要走到對方身上
 }
 function botUpdate(b,dt){
+  if(b.remote){ NET.remoteTick(b,dt); return; }
   if(!b.alive) return;
   b.think-=dt;
   if(b.think<=0){ b.think=b.cfg.think*rnd(.7,1.3); botDecide(b); }
@@ -3225,9 +3274,10 @@ function botUpdate(b,dt){
    道具：成語寶盒 🎁、愛心 ❤️
    ============================================================ */
 function openBox(f){
-  if(!f.isBot){
-    const idm=nextIdiom(); G.collected.add(idm.w); f.score=(f.score||0)+1;
-    showCollect(idm); updateChecklist();
+  let idm=null;
+  if(!f.isBot || f.remote){
+    idm=nextIdiom(); f.score=(f.score||0)+1;
+    if(!f.remote){ G.collected.add(idm.w); showCollect(idm); updateChecklist(); }
   }
   const locked=WEAPONS.filter(w=>!(w.id in f.weapons)&&!w.own);
   if(locked.length && Math.random()<.8){
@@ -3243,9 +3293,11 @@ function openBox(f){
     f.hp=Math.min(f.maxhp,f.hp+2);
     if(!f.isBot) chime();
   }
+  if(netOn() && f.remote){ NET.hev({t:'box', id:NET.idOf(f), w:idm?idm.w:null, cur:f.cur, wp:f.weapons}); }
   brawlHUD(true);
 }
 function pickups(){
+  if(!netAuth()) return;
   fighters().forEach(f=>{
     if(!f.alive) return;
     const {c,r}=cellAt(f.px,f.py);
@@ -3259,6 +3311,7 @@ function pickups(){
   });
 }
 function dropItem(kind){
+  if(!netAuth()) return;
   const all=fighters().filter(f=>f.alive);
   for(let i=0;i<30;i++){
     const s=pick(G.reach);
@@ -3275,19 +3328,20 @@ function dropItem(kind){
    ============================================================ */
 function fighterTick(f,dt){
   if(!f.alive){
-    if(!f.isBot && f.lives>0 && f.respawnT>0){ f.respawnT-=dt; if(f.respawnT<=0) respawnPlayer(f); }
+    if((!f.isBot||f.remote) && f.lives>0 && f.respawnT>0){ f.respawnT-=dt; if(f.respawnT<=0 && netAuth()) respawnPlayer(f); }
     return;
   }
   if(f.invuln>0) f.invuln-=dt; if(f.cd>0) f.cd-=dt; if(f.hitT>0) f.hitT-=dt; if(f.fireT>0) f.fireT-=dt;
   const {c,r}=cellAt(f.px,f.py);
   f.biome=G.biome[r]&&G.biome[r][c];
   f.onLava=G.grid[r][c]===T_LAVA;
-  if(f.onLava){ f.lavaAcc+=dt; if(f.lavaAcc>=.5){ f.lavaAcc=0; if(f.invuln<=0){ f.hp-=.8; f.hitT=.15; if(!f.isBot){ beep(150,.06,'sawtooth',.04); if(f.hp>0 && f.hp<=3) brawlFeed('🔥 好燙！快離開熔岩！','bad'); } if(f.hp<=0) koFighter(f,null); } } }
+  if(f.onLava && netAuth()){ f.lavaAcc+=dt; if(f.lavaAcc>=.5){ f.lavaAcc=0; if(f.invuln<=0){ f.hp-=.8; f.hitT=.15; if(!f.isBot){ beep(150,.06,'sawtooth',.04); if(f.hp>0 && f.hp<=3) brawlFeed('🔥 好燙！快離開熔岩！','bad'); } if(f.hp<=0) koFighter(f,null); } } }
   else f.lavaAcc=0;
 }
 function brawlUpdate(dt){
-  G.time-=dt;
-  if(G.time<=0){ G.time=0; brawlTimeUp(); return; }
+  if(netOn()){ NET.tick(dt); if(G.ended) return; }
+  if(netAuth()) G.time-=dt;
+  if(G.time<=0){ G.time=0; if(netOn()){ if(NET.host) NET.finish('時間到'); return; } brawlTimeUp(); return; }
   const p=G.players[0];
   playerControl(p,dt);
   G.bots.forEach(b=>botUpdate(b,dt));
@@ -3307,6 +3361,7 @@ function brawlUpdate(dt){
   G.heartT-=dt; if(G.heartT<=0){ G.heartT=14; if(G.items.filter(i=>i.kind==='heart').length<5) dropItem('heart'); }
   G.hudT-=dt; if(G.hudT<=0){ G.hudT=.1; brawlHUD(false); }
   if(G.ended) return;
+  if(netOn()) return;
   if(G.bots.length && G.bots.every(b=>!b.alive)){ brawlFeed('🏆 所有對手都被打倒了！','good'); winLevel(); }
 }
 function brawlTimeUp(){
@@ -3350,7 +3405,7 @@ function brawlHUD(force){
     d.querySelector('.vbio').textContent='📍'+(BIOME_NAME[p.biome]||'');
   }
   const left=G.bots.filter(b=>b.alive).length;
-  progChip.textContent='🥊 對手 '+left+' / '+G.bots.length+' · 📜 '+G.collected.size;
+  progChip.textContent=netOn() ? '🥊 擊倒 '+(p.kills||0)+' · 📜 '+(p.score||0)+' · 同學 '+left+'/'+G.bots.length : '🥊 對手 '+left+' / '+G.bots.length+' · 📜 '+G.collected.size;
   // 武器列
   const bar=document.getElementById('wbar');
   if(bar){
@@ -3766,7 +3821,301 @@ function orientHUD(force){
 }
 G.respawnQ=[];
 
+/* ============================================================
+   🌐 連線對戰（學生端）  v6.0  (2026-10-21)  協定 1
+   - 老師在 teacher.html 用金鑰開房；學生在這裡的大廳看到房間、點一下加入
+   - 加入時把自己的 Tinkercad 人物（量化後的頂點資料）分享給同房同學
+   - 房間裡第一位準備好的學生當「主機」：負責計算傷害、磚塊、寶盒、計時與名次；
+     每個人自己的移動由自己決定（不會卡頓），主機每秒送 10 次快照同步血量等狀態
+   - 主機離線時伺服器自動換下一位接手
+   ============================================================ */
+const NET = window.NET = {
+  active:false, host:false, me:null, code:'', people:[], models:new Map(), ws:null, latest:null,
+  remotes:new Map(),   // netId → G.bots 裡的遠端同學
+  mode:'brawl', epoch:0, minutes:4, seed:0, startAt:0, ended:false, _t:0, _snapT:0, _ping:null, clock:{offset:0, rtt:0, s:[]},
+};
+(function(){
+  const PROTOCOL=1;
+  const $=id=>document.getElementById(id);
+  const el=(tag,attrs,...kids)=>{ const e=document.createElement(tag); if(attrs) for(const [k,v] of Object.entries(attrs)){ if(k==='class') e.className=v; else if(k==='text') e.textContent=v; else if(k.startsWith('on')) e.addEventListener(k.slice(2),v); else if(v!==false&&v!=null) e.setAttribute(k,v===true?'':v); } for(const c of kids) if(c!=null) e.append(c); return e; };
+  const PHASE={lobby:'等老師開始', countdown:'倒數中', play:'比賽中', results:'成績出爐'};
+  const MODES={brawl:'🥊 成語大亂鬥', bomb:'💣 炸彈超人'};
+
+  /* ---------- 介面 ---------- */
+  const dialog=el('dialog',{id:'mpDialog'}); dialog.innerHTML=`
+    <button id="mpClose" type="button" aria-label="關閉">✕</button><h2>🌐 連線對戰</h2>
+    <p class="mpHint">選一間老師開好的房間，用自己做的人物和同學對戰。</p>
+    <div id="mpChar" class="mpChar"></div>
+    <label>班級座號／暱稱<input id="mpName" maxlength="12" placeholder="例如：601-05 小宇" autocomplete="off"></label>
+    <h3 class="mpRoomsTitle">老師開好的房間</h3><div id="mpRooms" class="mpRooms"></div>
+    <div id="mpWait" class="mpWait" hidden></div>
+    <p id="mpStatus" role="status"></p>
+    <details id="mpAdvanced"><summary>進階（連線伺服器）</summary><label>連線伺服器<input id="mpServer" type="url" placeholder="wss://你的連線後端/room" spellcheck="false"></label>
+    <label>房號<input id="mpCode" maxlength="8" placeholder="例如：A3F81C2D" autocomplete="off"></label><div class="mpActions"><button type="button" id="mpJoin">用房號加入</button></div></details>
+    <p class="mpTeacher">👩‍🏫 我是老師 → <a href="teacher.html" target="_blank" rel="noopener">到老師控制台開房間 ↗</a></p>`;
+  document.body.append(dialog);
+  const bar=el('aside',{id:'mpBar',hidden:true}); bar.innerHTML=`<div class="mpBarHead" id="mpSummary">連線對戰</div><ol id="mpPeople"></ol><div id="mpNet"></div><button type="button" id="mpLeave">離開連線</button>`; document.body.append(bar);
+  const cdOv=el('div',{id:'mpCountdown',hidden:true}); document.body.append(cdOv);
+  const resOv=el('div',{id:'mpResult',class:'overlay hidden'}); resOv.innerHTML=`<div class="panel"><h2 id="mpResTitle">🏁 這一場的名次</h2><div id="mpResBody"></div><p class="mpResHint">等老師按「再來一場」就會自動開始；想離開可以按下面的按鈕。</p><button class="bigbtn blue" id="mpResLeave" type="button">離開連線 ⌂</button></div>`; document.body.append(resOv);
+  dialog.addEventListener('keydown',e=>e.stopPropagation()); bar.addEventListener('keydown',e=>e.stopPropagation());
+
+  const params=new URL(location.href).searchParams;
+  const sget=k=>{ try{ return JSON.parse(sessionStorage.getItem(k)||'null'); }catch{ return null; } };
+  const sset=(k,v)=>{ try{ v==null?sessionStorage.removeItem(k):sessionStorage.setItem(k,JSON.stringify(v)); }catch{} };
+  const prev=sget('bomber_mp_session');
+  $('mpServer').value=params.get('roomServer')||window.BOMB_MP_SERVER||prev?.server||(['localhost','127.0.0.1'].includes(location.hostname)||location.protocol==='file:'?'ws://127.0.0.1:8787/room':'');
+  $('mpCode').value=(params.get('room')||'').toUpperCase();
+  try{ $('mpName').value=localStorage.getItem('bomber_mp_name')||''; }catch{}
+  $('mpAdvanced').open=!$('mpServer').value;
+  function wsURL(v){ const u=new URL(v); if(u.protocol==='https:') u.protocol='wss:'; if(u.protocol==='http:') u.protocol='ws:'; if(!['ws:','wss:'].includes(u.protocol)||u.username||u.password||u.search||u.hash) throw Error('請輸入完整 ws:// 或 wss:// 伺服器網址。'); if(location.protocol==='https:'&&u.protocol!=='wss:') throw Error('HTTPS 遊戲必須使用 wss:// 安全連線。'); if(u.pathname==='/'||!u.pathname) u.pathname='/room'; return u.href; }
+  const healthURL=ws=>ws.replace(/^ws/,'http').replace(/\/room\/?$/,'/health');
+  async function wake(ep,onWait){ const t0=Date.now(); while(Date.now()-t0<90000){ try{ const ctl=new AbortController(), tm=setTimeout(()=>ctl.abort(),20000); await fetch(healthURL(ep),{mode:'no-cors',cache:'no-store',signal:ctl.signal}); clearTimeout(tm); return true; }catch(e){ onWait&&onWait(Math.round((Date.now()-t0)/1000)); await new Promise(r=>setTimeout(r,2500)); } } return false; }
+  const status=s=>{ $('mpStatus').textContent=s; };
+  const send=m=>{ if(NET.ws&&NET.ws.readyState===WebSocket.OPEN&&NET.ws.bufferedAmount<6*1024*1024) NET.ws.send(JSON.stringify(m)); };
+  const clock=NET.clock; clock.add=function(c,sv){ const now=Date.now(), rtt=now-c; if(rtt<0||rtt>10000) return; this.s.push({rtt,off:sv-(c+rtt/2)}); if(this.s.length>10) this.s.shift(); this.offset=this.s.reduce((a,b)=>b.rtt<a.rtt?b:a).off; this.rtt=Math.round(rtt); }; clock.local=function(t){ return t-this.offset; };
+
+  /* ---------- 人物檢查 ---------- */
+  const hasChar=()=>!!(window.CHAR&&CHAR.saved&&CHAR.template);
+  function showChar(){
+    const box=$('mpChar');
+    if(hasChar()){ box.className='mpChar ok'; box.innerHTML='✅ 我的人物：<b>'+esc(CHAR.name)+'</b>'+(CHAR.author?'（'+esc(CHAR.author)+'）':''); if(!$('mpName').value) $('mpName').value=(CHAR.author?CHAR.author+' ':'')+CHAR.name; }
+    else { box.className='mpChar no'; box.innerHTML='<b>⚠️ 先在主選單「我的人物」上傳並儲存自己做的人物</b>，才能加入連線對戰。'; }
+  }
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  /* ---------- 大廳 ---------- */
+  let lws=null, lwsT=0, connecting=false, closed=true, live=false, retries=0, retryT=0, connT=0, resumeToken='', endpoint='', localModel=null;
+  function renderRooms(list,msg){
+    showChar(); const box=$('mpRooms');
+    if(msg){ box.replaceChildren(el('div',{class:'mpEmpty',text:msg})); return; }
+    if(!list.length){ box.replaceChildren(el('div',{class:'mpEmpty',text:'老師還沒開房間。開好後會自動出現在這裡，不用重新整理。'})); return; }
+    box.replaceChildren(...list.map(r=>{
+      const st=r.open&&!hasChar()?'先上傳人物':r.open?'點我加入':r.locked?'已鎖房':r.n>=r.limit?'已額滿':r.phase==='play'||r.phase==='countdown'?'比賽中':'暫停加入';
+      return el('button',{type:'button',class:'mpRoom'+(r.open?' open':''),disabled:!r.open||connecting||!hasChar(),onclick:()=>join(r.code)},
+        el('b',{text:r.label}), el('span',{class:'st',text:st}), el('small',{text:`${MODES[r.mode]||r.mode}｜${r.minutes} 分鐘｜${r.n}/${r.limit} 人｜房號 ${r.code}`}));
+    }));
+  }
+  async function openLobby(){
+    if(live||lws||connecting) return;
+    let ep; try{ ep=wsURL($('mpServer').value.trim()); }catch(e){ renderRooms(null,'還沒有連線伺服器網址，請用老師給的連結，或在「進階」填入。'); $('mpAdvanced').open=true; return; }
+    renderRooms(null,'正在找老師開好的房間…');
+    const ok=await wake(ep,s=>renderRooms(null,`正在喚醒連線伺服器…已等 ${s} 秒（閒置後第一次約需 30–60 秒）`));
+    if(!dialog.open||live||connecting) return;
+    if(!ok){ renderRooms(null,'連線伺服器沒有回應，請稍後再試或告訴老師。'); return; }
+    const sock=new WebSocket(ep); lws=sock;
+    sock.onopen=()=>sock.send(JSON.stringify({t:'list',v:PROTOCOL}));
+    sock.onmessage=e=>{ let m; try{ m=JSON.parse(e.data); }catch{ return; } if(lws!==sock) return; if(m.t==='rooms') renderRooms(m.rooms); else if(m.t==='error') renderRooms(null,m.message); };
+    sock.onclose=()=>{ if(lws===sock){ lws=null; if(dialog.open&&!live&&!connecting) lwsT=setTimeout(openLobby,2500); } };
+  }
+  function closeLobby(){ clearTimeout(lwsT); if(lws){ const o=lws; lws=null; o.close(); } }
+  dialog.addEventListener('close',closeLobby);
+
+  /* ---------- 加入 ---------- */
+  async function join(pick){
+    if(connecting||live) return;
+    try{
+      if(!hasChar()) throw Error('請先上傳並儲存自己的人物。');
+      const name=$('mpName').value.trim(); if(!name) throw Error('請填寫班級座號或暱稱。');
+      endpoint=wsURL($('mpServer').value.trim()); NET.code=String(typeof pick==='string'?pick:$('mpCode').value).trim().toUpperCase(); if(!/^[A-F0-9]{8}$/.test(NET.code)) throw Error('請點選一間老師開好的房間。');
+      closeLobby(); try{ localStorage.setItem('bomber_mp_name',name); }catch{}
+      $('mpJoin').disabled=true; connecting=true; renderRooms(null,'準備人物資料…');
+      localModel=window.R3D.exportNetModel(); if(!localModel) throw Error('人物資料讀不出來，請重新上傳人物。');
+      if(localModel.n>240000) throw Error('人物太複雜（'+Math.round(localModel.n/3).toLocaleString()+' 個三角面，上限 8 萬），請在 Tinkercad 簡化後再匯出。');
+      status(`人物 ${Math.round(localModel.n/3).toLocaleString()} 面，正在連線…`);
+      const ok=await wake(endpoint,s=>status(`正在喚醒連線伺服器…已等 ${s} 秒`)); if(!ok) throw Error('連線伺服器沒有回應，請稍後再試或請老師檢查伺服器。');
+      const pv=sget('bomber_mp_session'); closed=false; retries=0;
+      openSocket({t:'join',v:PROTOCOL,name,code:NET.code,token:pv?.server===endpoint&&pv?.code===NET.code?pv.token:undefined});
+    }catch(e){ connecting=false; $('mpJoin').disabled=false; status(e.message); renderRooms(null,e.message); setTimeout(()=>{ if(dialog.open&&!live) openLobby(); },1500); }
+  }
+  function openSocket(req,isRetry){
+    connecting=true; const sock=new WebSocket(endpoint); NET.ws=sock; controls();
+    clearTimeout(connT); connT=setTimeout(()=>sock.close(),15000);
+    sock.onopen=()=>{ if(NET.ws!==sock) return; startPing(sock); send(req); };
+    sock.onmessage=e=>{ if(NET.ws!==sock||closed) return; let m; try{ m=JSON.parse(e.data); }catch{ return; } try{ onMessage(m,isRetry); }catch(err){ console.error(err); status('連線資料處理失敗：'+err.message); } };
+    sock.onerror=()=>status('連線失敗：請確認網路，或請老師確認伺服器狀態。');
+    sock.onclose=()=>{
+      if(NET.ws!==sock||closed) return; clearTimeout(connT); clearInterval(NET._ping); connecting=false;
+      if(!live){ shutdown(); status('未能加入房間，請再點一次房間或稍後再試。'); if(!dialog.open) dialog.showModal(); openLobby(); return; }
+      if(++retries>12){ shutdown(); toast('無法恢復連線，已離開連線對戰。'); return; }
+      controls(); retryT=setTimeout(()=>{ if(!closed) openSocket({t:'join',v:PROTOCOL,code:NET.code,name:$('mpName').value,token:resumeToken},true); },Math.min(10000,800*Math.pow(1.6,retries)));
+    };
+  }
+  function startPing(sock){ clearInterval(NET._ping); let k=0; const ping=()=>{ if(NET.ws===sock&&sock.readyState===WebSocket.OPEN) sock.send(JSON.stringify({t:'ping',c:Date.now(),rtt:clock.rtt})); }; ping(); NET._ping=setInterval(()=>{ if(++k<6||k%4===0) ping(); },500); }
+  function shutdown(){
+    closed=true; live=false; connecting=false; clearTimeout(retryT); clearTimeout(connT); clearInterval(NET._ping); clearInterval(cdT); cdOv.hidden=true;
+    if(NET.ws){ const o=NET.ws; NET.ws=null; o.close(); }
+    const wasActive=NET.active;
+    NET.active=false; NET.host=false; NET.latest=null; NET.people=[]; NET.models.clear(); NET.remotes.clear(); bar.hidden=true; retries=0; $('mpJoin').disabled=false; $('mpWait').hidden=true;
+    sset('bomber_mp_session',null); resOv.classList.add('hidden');
+    if(wasActive && G.running!==undefined){ G.running=false; G.ended=true; if(typeof goMenu==='function') goMenu(); }
+  }
+  function leave(){ if(NET.ws&&NET.ws.readyState===WebSocket.OPEN) send({t:'leave'}); shutdown(); }
+  let toastT=0; function toast(m){ if(typeof brawlFeed==='function'&&G.running) brawlFeed(m,'bad'); else { status(m); } }
+
+  /* ---------- 訊息 ---------- */
+  function onMessage(m,isRetry){
+    if(m.t==='pong'){ clock.add(m.c,m.s); return; }
+    if(m.t==='welcome'){
+      clearTimeout(connT); connecting=false; retries=0; live=true; NET.me=m.id; resumeToken=m.token; NET.code=m.code; sset('bomber_mp_session',{server:endpoint,code:NET.code,token:resumeToken});
+      NET.models.set(NET.me,CHAR.template);
+      receiveState(m); const self=m.people.find(p=>p.id===NET.me); if(self&&!self.model&&localModel) send({t:'model',model:localModel});
+      status('已加入「'+m.label+'」，等老師按開始。'); return;
+    }
+    if(m.t==='state'&&live){ receiveState(m); return; }
+    if(m.t==='model'&&live){ try{ NET.models.set(m.id, window.R3D.importNetModel(m.model)); }catch(e){ console.warn('同學的人物讀取失敗',e); NET.models.set(m.id,null); } const b=NET.remotes.get(m.id); if(b){ b.tpl=NET.models.get(m.id); b.tplVer=(b.tplVer||0)+1; } controls(); return; }
+    if(m.t==='error'){ status(m.message); toast(m.message); if(!live||(isRetry&&connecting)){ shutdown(); if(!dialog.open) dialog.showModal(); openLobby(); } return; }
+    if(m.t==='ended'){ shutdown(); alert(m.reason||'老師已結束這間房。'); if(!dialog.open){ dialog.showModal(); openLobby(); } return; }
+    if(m.t==='start'&&live){ beginGame(m); return; }
+    if(m.t==='host'&&live){ const was=NET.host; NET.host=(m.id===NET.me); if(NET.host&&!was&&G.running){ brawlFeed('🖥️ 你接手當主機了（原主機離線）','unlock'); } controls(); return; }
+    if(m.t==='lobby'&&live){ NET.ended=true; backToLobby(); return; }
+    if(m.t==='result'&&live){ showResult(m); return; }
+    if(!NET.active||!G.running) return;
+    if(m.t==='pose'){ applyPose(m.id,m.d); return; }
+    if(m.t==='ev'&&NET.host){ applyEv(m.id,JSON.parse(m.d)); return; }
+    if(m.t==='snap'&&!NET.host){ applySnap(JSON.parse(m.d)); return; }
+    if(m.t==='hev'&&!NET.host){ applyHev(JSON.parse(m.d)); return; }
+  }
+  function receiveState(s){
+    NET.latest=s; NET.people=s.people; NET.host=(s.host===NET.me);
+    controls();
+    const ids=new Set(s.people.map(p=>p.id));
+    for(const id of [...NET.models.keys()]) if(id!==NET.me&&!ids.has(id)) NET.models.delete(id);
+    const want=s.people.find(p=>p.id!==NET.me&&p.model&&!NET.models.has(p.id)&&!(reqAt.get(p.id)>Date.now()-8000));
+    if(want){ reqAt.set(want.id,Date.now()); send({t:'getModel',id:want.id}); }
+    // 遊戲中有人離開 → 從場上移除
+    if(NET.active&&G.running){ for(const [id,b] of NET.remotes) if(!ids.has(id)){ NET.remotes.delete(id); const i=G.bots.indexOf(b); if(i>=0) G.bots.splice(i,1); } }
+    if(s.phase==='lobby'&&!G.running) { $('mpWait').hidden=false; }
+  }
+  const reqAt=new Map();
+  function controls(){
+    const s=NET.latest; if(!s) return;
+    const n=s.people.filter(p=>p.connected).length;
+    $('mpSummary').textContent=`${s.label}・${MODES[s.mode]||s.mode}・${n}/${s.limit} 人`;
+    const rows=s.people.map(p=>({me:p.id===NET.me,name:(p.id===NET.me?'你・':'')+p.name,right:s.phase==='play'?`🥊${p.kills||0} 📜${p.score||0}${p.alive===false?' 💀':''}`:s.phase==='results'?(p.rank?'第 '+p.rank+' 名':'—'):!p.connected?'斷線':!p.model?'分享人物中':p.id===NET.me||NET.models.has(p.id)?'✅':'載入中',host:p.id===s.host}));
+    $('mpPeople').replaceChildren(...rows.map(o=>el('li',{class:o.me?'me':''},el('span',{class:'nm',text:(o.host?'🖥️ ':'')+o.name}),el('span',{class:'rt',text:o.right}))));
+    $('mpNet').textContent=(connecting?'連線中…':retries?`斷線重連中（第 ${retries} 次）…`:PHASE[s.phase]||'')+(clock.rtt?'｜延遲 '+clock.rtt+'ms':'')+(s.teacherOnline?'':'｜老師暫時離線');
+    bar.hidden=!live;
+    const w=$('mpWait'); if(dialog.open&&live){ w.hidden=false; w.innerHTML='<b>✅ 已加入「'+esc(s.label)+'」</b>（'+esc(MODES[s.mode]||s.mode)+'・'+s.minutes+' 分鐘）<br>同學：'+s.people.map(p=>esc(p.name)+(p.model?'':'（分享人物中）')).join('、')+'<br>等老師按「開始」就會自動開打。<div class="mpActions" style="margin-top:8px"><button type="button" id="mpLeave2">離開房間</button></div>'; const b=$('mpLeave2'); if(b) b.onclick=leave; }
+  }
+
+  /* ---------- 開始一場 ---------- */
+  let cdT=0;
+  function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+  function beginGame(m){
+    NET.active=true; NET.ended=false; NET.epoch=m.epoch; NET.mode=m.mode; NET.seed=m.seed; NET.minutes=m.minutes; NET.startAt=m.startAt; NET.host=(m.host===NET.me); NET.people=m.people;
+    resOv.classList.add('hidden'); if(dialog.open) dialog.close();
+    hideOverlays(); document.getElementById('menu').style.display='none'; document.getElementById('hud').style.display='flex';
+    G.gameMode=m.mode==='bomb'?'bomb':'brawl';
+    G.levels=buildLevelsMulti(G.chapters); G.levelIndex=0;
+    const rng=mulberry32(m.seed), real=Math.random; Math.random=rng;
+    try{ startLevel(); } finally{ Math.random=real; }
+    G.time=m.minutes*60; G.running=false;   // 倒數結束才開始動
+    brawlFeed('🌐 連線對戰：'+NET.people.length+' 人一起玩！'+(NET.host?'你是主機 🖥️':''),'big');
+    const until=clock.local(m.startAt); cdOv.hidden=false; clearInterval(cdT);
+    const draw=()=>{ const left=Math.ceil((until-Date.now())/1000); if(left<=0){ clearInterval(cdT); cdOv.hidden=true; G.running=true; G.ended=false; send({t:'playing'}); if(window.R3D) R3D.newLevel(); return; } cdOv.textContent=left+''; };
+    draw(); cdT=setInterval(draw,100); controls();
+  }
+  NET.setupBrawl=function(p){
+    const spots=[{c:17,r:15},{c:4,r:3},{c:30,r:21},{c:29,r:3},{c:5,r:21},{c:17,r:3},{c:3,r:12},{c:31,r:12}];
+    const slotOf=id=>{ const q=NET.people.find(x=>x.id===id); return q?q.slot:0; };
+    const put=(f,slot)=>{ const s=spots[slot%spots.length]; clearAround(s.c,s.r,1); f.px=s.c*TILE+TILE/2; f.py=s.r*TILE+TILE/2; f.spawn={x:f.px,y:f.py}; };
+    put(p,slotOf(NET.me)); p.netId=NET.me; p.name=(NET.people.find(x=>x.id===NET.me)||{}).name||p.name; p.invuln=3;
+    G.bots=[]; NET.remotes.clear();
+    NET.people.filter(q=>q.id!==NET.me).forEach(q=>{
+      const b={id:200+q.slot, netId:q.id, remote:true, isBot:true, name:q.name, color:BOT_COLORS[q.slot%BOT_COLORS.length], hp:20, maxhp:20, lives:3, alive:true, invuln:3,
+        weapons:{sword:Infinity,snow:Infinity}, cur:'sword', cd:0, aim:{x:0,y:1}, facing:'down', spd:3.6, kills:0, score:0, cfg:{dmg:1}, think:9, path:null, target:null,
+        moving:false, animT:0, hitT:0, fireT:0, respawnT:0, lavaAcc:0, stuckT:0, tx:0, ty:0, tpl:NET.models.get(q.id)||null, tplVer:1};
+      put(b,q.slot); b.tx=b.px; b.ty=b.py; G.bots.push(b); NET.remotes.set(q.id,b);
+    });
+    computeReach();
+    G.items=G.items.filter(it=>!fighters().some(f=>Math.abs(f.px/TILE-it.c-.5)<1.6&&Math.abs(f.py/TILE-it.r-.5)<1.6));
+  };
+  NET.idOf=f=>f===G.players[0]?NET.me:(f.netId||null);
+  // 武器彈藥：∞ 在 JSON 裡會變 null，先編成 -1
+  const encW=w=>{ const o={}; for(const k in w) o[k]=w[k]===Infinity?-1:w[k]; return o; };
+  const decW=w=>{ const o={}; for(const k in w) o[k]=w[k]===-1||w[k]===null?Infinity:w[k]; return o; };
+  const entOf=id=>id===NET.me?G.players[0]:NET.remotes.get(id);
+
+  /* ---------- 每幀 ---------- */
+  NET.tick=function(dt){
+    NET._t+=dt;
+    if(NET._t>=.05){ NET._t=0; const p=G.players[0]; send({t:'pose',d:JSON.stringify([Math.round(p.px),Math.round(p.py),+p.aim.x.toFixed(2),+p.aim.y.toFixed(2),p.moving?1:0])}); }
+    if(NET.host){ NET._snapT+=dt; if(NET._snapT>=.1){ NET._snapT=0; sendSnap(); } }
+  };
+  NET.remoteTick=function(b,dt){
+    if(b.cd>0) b.cd-=dt; if(b.fireT>0) b.fireT-=dt;
+    const k=Math.min(1,dt*14), dx=b.tx-b.px, dy=b.ty-b.py;
+    if(Math.hypot(dx,dy)>TILE*3){ b.px=b.tx; b.py=b.ty; } else { b.px+=dx*k; b.py+=dy*k; }
+    if(b.moving) b.animT+=dt*10;
+    b.facing=dirName(b.aim);
+  };
+  function applyPose(id,d){ const b=NET.remotes.get(id); if(!b) return; let a; try{ a=JSON.parse(d); }catch{ return; } if(!Array.isArray(a)||a.length<5) return; b.tx=a[0]; b.ty=a[1]; if(a[2]||a[3]) b.aim={x:a[2],y:a[3]}; b.moving=!!a[4]; }
+  NET.ev=m=>send({t:'ev',d:JSON.stringify(m)});
+  NET.hev=m=>{ if(NET.host){ if(m.wp) m.wp=encW(m.wp); send({t:'hev',d:JSON.stringify(m)}); } };
+  function applyEv(id,m){   // 主機收到同學的動作
+    const f=NET.remotes.get(id); if(!f||!f.alive) return;
+    if(m.t==='fire'){
+      if(!(f.weapons[m.w]>0)) { m.w=basicW(f); }
+      f.cur=m.w; f.aim={x:Math.cos(m.a),y:Math.sin(m.a)}; f.cd=0;
+      const ox=f.px, oy=f.py; if(Number.isFinite(m.x)&&Number.isFinite(m.y)&&Math.hypot(m.x-f.px,m.y-f.py)<TILE*2.5){ f.px=m.x; f.py=m.y; }
+      tryFire(f); if(f.px===m.x&&f.py===m.y){ f.px=ox; f.py=oy; }
+    } else if(m.t==='sel'){ if(f.weapons[m.w]>0) f.cur=m.w; }
+  }
+  function sendSnap(){
+    const pl=fighters().map(f=>({id:NET.idOf(f),hp:+f.hp.toFixed(1),l:f.lives,a:f.alive?1:0,k:f.kills||0,s:f.score||0,cur:f.cur,w:encW(f.weapons),i:f.invuln>0?1:0,r:f.respawnT>0?+f.respawnT.toFixed(1):0}));
+    send({t:'snap',d:JSON.stringify({time:Math.round(G.time),pl,it:G.items.map(it=>[it.c,it.r,it.kind])})});
+  }
+  function applySnap(s){
+    G.time=s.time;
+    s.pl.forEach(q=>{ const f=entOf(q.id); if(!f) return;
+      if(q.hp<f.hp-.05) f.hitT=.22;
+      f.hp=q.hp; f.lives=q.l; f.kills=q.k; f.score=q.s; f.respawnT=q.r;
+      const wasAlive=f.alive; f.alive=!!q.a; if(f!==G.players[0]){ f.cur=q.cur; } else { const W=decW(q.w); if(!(W[f.cur]>0) && W[q.cur]>0) f.cur=q.cur; }
+      f.weapons=decW(q.w); if(q.i&&f.invuln<=0) f.invuln=.3; if(!q.i) f.invuln=0;
+      if(!wasAlive&&f.alive&&f===G.players[0]){ f.hp=q.hp; }
+    });
+    const have=new Map(G.items.map(it=>[it.c+','+it.r+it.kind,it]));
+    G.items=s.it.map(([c,r,kind])=>have.get(c+','+r+kind)||{c,r,kind,t:Math.random()*3});
+    brawlHUD(true);
+  }
+  function applyHev(m){
+    if(m.t==='shot'){ if(m.id===NET.me) return; const f=entOf(m.id); if(!f) return; const w=WMAP[m.w]||WMAP.snow; f.cur=m.w; f.aim={x:Math.cos(m.a),y:Math.sin(m.a)}; const ox=f.px,oy=f.py; if(Number.isFinite(m.x)) { f.px=m.x; f.py=m.y; } fireWeapon(f,w,m.a); f.px=ox; f.py=oy; f.fireT=.18; }
+    else if(m.t==='brick'){ if(inMap(m.c,m.r)) breakBrick(m.c,m.r); G.chips.push({c:m.c,r:m.r}); }
+    else if(m.t==='ko'){ const f=entOf(m.id), by=m.by?entOf(m.by):null; if(f){ f.alive=false; f.hp=0; f.lives=m.lives; G.fx.push({x:f.px,y:f.py,t:0,dur:.8,color:f.remote?f.color.body:'#ffffff'}); }
+      const me=G.players[0]; brawlFeed(`${by===me?'<b>你</b>':by?fname(by):'熔岩'} 打倒了 ${f===me?'<b>你</b>':f?f.name:'同學'}`, by===me?'good':(f===me?'bad':''));
+      if(f===me){ if(m.lives>0){ f.respawnT=2; brawlFeed('你被打倒了！2 秒後復活（剩 '+m.lives+' 條命）','bad'); } else brawlFeed('你出局了，可以繼續觀戰到這場結束','bad'); if(window.R3D&&R3D.ready) R3D.shake(.3); }
+      brawlHUD(true); }
+    else if(m.t==='respawn'){ const f=entOf(m.id); if(!f) return; f.alive=true; f.hp=f.maxhp; f.invuln=2.5; if(f===G.players[0]){ f.px=m.x; f.py=m.y; } else { f.px=f.tx=m.x; f.py=f.ty=m.y; } G.fx.push({x:m.x,y:m.y,t:0,dur:.6,color:'#7fe3ff'}); brawlHUD(true); }
+    else if(m.t==='box'){ const f=entOf(m.id); if(!f) return; if(f===G.players[0]){ const idm=m.w?IDIOMS.find(i=>i.w===m.w):null; if(idm){ G.collected.add(idm.w); f.score=(f.score||0)+1; showCollect(idm); updateChecklist(); } const before=f.weapons||{}; f.weapons=decW(m.wp); f.cur=m.cur; const nw=Object.keys(m.wp).find(k=>!(k in before)); const w=WMAP[m.cur]; if(nw&&WMAP[nw]) { brawlFeed(`🔓 解鎖新武器：${WMAP[nw].icon} <b>${WMAP[nw].name}</b>（按 ${WMAP[nw].slot}）— ${WMAP[nw].desc}`,'unlock'); chime(); } else { brawlFeed('🎁 補滿 '+(w?w.icon+' '+w.name:'武器')+' 的彈藥，再回復一點血！','unlock'); chime(); } brawlHUD(true); } else { f.weapons=decW(m.wp); f.cur=m.cur; } }
+  }
+
+  /* ---------- 結束 ---------- */
+  NET.checkEnd=function(){ if(!NET.host||NET.ended) return; const alive=fighters().filter(f=>f.alive||f.lives>0); if(alive.length<=1 && fighters().length>1) NET.finish(alive.length?alive[0].name+' 是最後的倖存者！':'大家都出局了'); };
+  NET.finish=function(why){
+    if(!NET.host||NET.ended) return; NET.ended=true;
+    const rk=fighters().slice().sort((a,b)=>(b.kills||0)-(a.kills||0)||(b.score||0)-(a.score||0)||(b.alive?1:0)-(a.alive?1:0)||(b.lives||0)-(a.lives||0));
+    send({t:'result',why,ranking:rk.map(f=>({id:NET.idOf(f),kills:f.kills||0,score:f.score||0,alive:!!f.alive}))});
+  };
+  function showResult(m){
+    NET.ended=true; G.running=false; G.ended=true; clearInterval(cdT); cdOv.hidden=true;
+    const me=G.players[0]; const myRank=m.ranking.findIndex(r=>r.name===me.name)+1;
+    $('mpResTitle').textContent=(myRank===1?'🏆 你是第 1 名！':myRank?'🏁 你是第 '+myRank+' 名':'🏁 這一場的名次')+(m.why?'　'+m.why:'');
+    $('mpResBody').innerHTML='<table class="ranktbl"><tr><th>名次</th><th>同學</th><th>擊倒</th><th>成語</th></tr>'+m.ranking.map((r,i)=>`<tr class="${r.name===me.name?'me':''}"><td>${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td><td>${esc(r.name)}</td><td>${r.kills}</td><td>${r.score}</td></tr>`).join('')+'</table>';
+    resOv.classList.remove('hidden'); controls();
+    if(myRank===1){ beep(784,.12); setTimeout(()=>beep(988,.12),120); setTimeout(()=>beep(1319,.2),240); }
+  }
+  function backToLobby(){ G.running=false; G.ended=true; NET.active=false; resOv.classList.add('hidden'); clearInterval(cdT); cdOv.hidden=true; goMenu(); dialog.showModal(); $('mpWait').hidden=false; controls(); }
+
+  /* ---------- 入口 ---------- */
+  const btn=$('mpBtn'); if(btn) btn.addEventListener('click',()=>{ if(live){ dialog.showModal(); controls(); return; } showChar(); dialog.showModal(); openLobby(); });
+  $('mpClose').onclick=()=>{ if(connecting) shutdown(); dialog.close(); }; dialog.addEventListener('cancel',()=>{ if(connecting) shutdown(); });
+  $('mpJoin').onclick=()=>join(); $('mpLeave').onclick=()=>{ if(confirm('要離開連線對戰嗎？')) leave(); }; $('mpResLeave').onclick=leave;
+  NET.leave=leave;
+  window.addEventListener('beforeunload',()=>{ if(NET.ws&&NET.ws.readyState===WebSocket.OPEN) send({t:'leave'}); });
+})();
+
 </script>
+<script src="multiplayer-config.js"></script>
 <script type="module">
 
 /* ============================================================
@@ -4616,6 +4965,50 @@ function animCustomRig(u, f) {
     else { r.armR.rotation.y = 0; r.armR.rotation.x = sw * .45; }
   } else if (k > 0 && r.armL) { r.armL.rotation.y = (k - .5) * 1.9; }
 }
+/* =========================================================
+   v6.0 連線對戰：把自己的人物打包成小小的頂點資料（位置 uint16、顏色 uint8）分享給同學
+   ========================================================= */
+function exportNetModel(template) {
+  if (!template) return null;
+  template.updateMatrixWorld(true);
+  const inv = template.matrixWorld.clone().invert(), chunks = [];
+  template.traverse(o => {
+    if (!o.isMesh || !o.geometry) return;
+    let g = o.geometry.index ? o.geometry.toNonIndexed() : o.geometry.clone();
+    g.applyMatrix4(new THREE.Matrix4().multiplyMatrices(inv, o.matrixWorld));
+    const pos = g.attributes.position, col = g.attributes.color, mats = Array.isArray(o.material) ? o.material : [o.material];
+    const groups = (g.groups && g.groups.length && mats.length > 1) ? g.groups : [{ start: 0, count: pos.count, materialIndex: 0 }];
+    groups.forEach(gr => {
+      const mat = mats[gr.materialIndex] || mats[0], mc = mat && mat.color ? mat.color : new THREE.Color(1, 1, 1);
+      const n = Math.min(gr.count, pos.count - gr.start), P = new Float32Array(n * 3), C = new Uint8Array(n * 3);
+      for (let i = 0; i < n; i++) {
+        const k = gr.start + i; P[i * 3] = pos.getX(k); P[i * 3 + 1] = pos.getY(k); P[i * 3 + 2] = pos.getZ(k);
+        let r, gg, b; if (col) { r = col.getX(k); gg = col.getY(k); b = col.getZ(k); } else { r = mc.r; gg = mc.g; b = mc.b; }
+        // 線性 → sRGB 存成 8 位元
+        const e = v => Math.round(Math.max(0, Math.min(1, v <= .0031308 ? v * 12.92 : 1.055 * Math.pow(v, 1 / 2.4) - .055)) * 255);
+        C[i * 3] = e(r); C[i * 3 + 1] = e(gg); C[i * 3 + 2] = e(b);
+      }
+      chunks.push({ P, C });
+    });
+  });
+  const n = chunks.reduce((a, c) => a + c.P.length / 3, 0); if (!n) return null;
+  const bb = [Infinity, Infinity, Infinity, -Infinity, -Infinity, -Infinity];
+  chunks.forEach(c => { for (let i = 0; i < c.P.length; i += 3) for (let k = 0; k < 3; k++) { bb[k] = Math.min(bb[k], c.P[i + k]); bb[3 + k] = Math.max(bb[3 + k], c.P[i + k]); } });
+  const Q = new Uint16Array(n * 3), CC = new Uint8Array(n * 3); let w = 0;
+  chunks.forEach(c => { for (let i = 0; i < c.P.length; i += 3) { for (let k = 0; k < 3; k++) { const span = bb[3 + k] - bb[k] || 1; Q[w * 3 + k] = Math.round((c.P[i + k] - bb[k]) / span * 65535); } w++; } CC.set(c.C, (w - c.P.length / 3) * 3); });
+  const b64 = u8 => { let s = ''; for (let i = 0; i < u8.length; i += 8192) s += String.fromCharCode.apply(null, u8.subarray(i, i + 8192)); return btoa(s); };
+  return { v: 2, n, bb: bb.map(v => +v.toFixed(5)), p: b64(new Uint8Array(Q.buffer)), c: b64(CC) };
+}
+function importNetModel(m) {
+  const u8 = s => { const b = atob(s), a = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) a[i] = b.charCodeAt(i); return a; };
+  const Q = new Uint16Array(u8(m.p).buffer), CC = u8(m.c), n = m.n, P = new Float32Array(n * 3), C = new Float32Array(n * 3);
+  const d = v => { v /= 255; return v <= .04045 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); };
+  for (let i = 0; i < n * 3; i++) { const k = i % 3; P[i] = m.bb[k] + Q[i] / 65535 * (m.bb[3 + k] - m.bb[k]); C[i] = d(CC[i]); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(P, 3)); g.setAttribute('color', new THREE.BufferAttribute(C, 3)); g.computeVertexNormals();
+  const mesh = new THREE.Mesh(g, smat(0xffffff, { vertexColors: true, roughness: .6 })); mesh.castShadow = true; mesh.receiveShadow = true;
+  const grp = new THREE.Group(); grp.add(mesh);
+  return normalize(grp, 0, 0);
+}
 const CUSTOM_SCALE = 2.2, CUSTOM_SCALE_BOMB = 2.7, CUSTOM_SCALE_ORIENT = 3.0;   // v5.4 自製人物在遊戲裡的大小（原本 1.12）：大亂鬥 2.2、炸彈／雪球 2.7、定向越野全圖 3.0
 function buildCustom(template) {
   const g = new THREE.Group(), inner = new THREE.Group(); g.add(inner);
@@ -5112,11 +5505,13 @@ const lavaCells = [];
 function syncBrawl(dt, me) {
   const g = G();
   // 電腦對手
-  sync(pools.bots, g.bots.filter(b => b.alive), b => buildBomber(b.color), (b, m) => {
+  // 遠端同學（連線對戰）：人物還沒載到時先用預設炸彈人；模型到了就重建
+  for (const [b, m] of pools.bots) if (b.remote && m.userData.tplVer !== (b.tplVer || 0)) { root.remove(m); pools.bots.delete(b); }
+  sync(pools.bots, g.bots.filter(b => b.alive), b => { const m = (b.remote && b.tpl) ? buildCustom(b.tpl) : buildBomber(b.color); m.userData.tplVer = b.tplVer || 0; return m; }, (b, m) => {
     m.visible = !(b.invuln > 0 && Math.floor(b.invuln * 10) % 2 === 0);
     m.position.set(wx(b.px), 0, wz(b.py));
     const u = m.userData; u.ang = lerpAng(u.ang, Math.atan2(b.aim.x, b.aim.y), .3); u.inner.rotation.y = u.ang;
-    walkAnim(u, b); decorate(m, b);
+    walkAnim(u, b); if (u.crig) animCustomRig(u, b); decorate(m, b);
   });
   // 定向越野：旗子＋導引箭頭
   const p = g.players[0];
@@ -5369,7 +5764,7 @@ function adapt(ms, dt) {
 try {
   init();
   scene.add(root);
-  window.R3D = { aim: AIM, orientZoom, get zoomLevel() { return ozoom; }, toggleGlow() { quality.bloom = !quality.bloom; quality.decided = true; return quality.bloom; }, ready: true, debug: { get camera() { return camera; }, get scene() { return scene; }, get pools() { return pools; } }, render, newLevel() { gridRef = null; }, cycleView, shake, get quality() { return quality; } };
+  window.R3D = { exportNetModel: () => exportNetModel(CHAR.template), importNetModel, aim: AIM, orientZoom, get zoomLevel() { return ozoom; }, toggleGlow() { quality.bloom = !quality.bloom; quality.decided = true; return quality.bloom; }, ready: true, debug: { get camera() { return camera; }, get scene() { return scene; }, get pools() { return pools; } }, render, newLevel() { gridRef = null; }, cycleView, shake, get quality() { return quality; } };
   document.body.classList.add('r3d');
   const cb = document.getElementById('camBtn'); if (cb) cb.addEventListener('click', cycleView);
 } catch (e) {
